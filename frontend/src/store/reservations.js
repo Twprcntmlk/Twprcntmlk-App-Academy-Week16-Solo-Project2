@@ -4,7 +4,7 @@ const ADD_RESERVATION = "reservation/ADD";
 const STORE_RESERVATION  = "reservation/STORE";
 const GET_RESERVATION  = "reservation/GET";
 const DELETE_RESERVATION  = "reservation/DELETE";
-
+const EDIT_RESERVATION = "reservation/EDIT";
 /////////////////// ACTION CREATORS ////////////////////
 
 const addReservation  = reservation => ({
@@ -23,13 +23,21 @@ const getReservation  = (reservation) => ({
 });
 
 const deleteReservation  = (reservationId) => ({
-    type: DELETE_RESERVATION ,
+    type: DELETE_RESERVATION,
     reservationId
 });
+
+const editReservation  = (Changedreservation) => ({
+    type: EDIT_RESERVATION,
+    Changedreservation
+
+});
+
 
 //////////////// THUNK ACTION CREATORS ////////////////////
 
 export const createReservation  = reservation => async (dispatch) => {
+
     const response = await csrfFetch(`/api/reservation`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -69,6 +77,18 @@ export const cancelReservation  = (reservationId) => async (dispatch) => {
     };
 }
 
+export const editReservations  = (reservation) => async (dispatch) => {
+    const response = await csrfFetch(`/api/reservation/${reservation.Id}`, {
+        method: "PUT",
+        body: JSON.stringify(reservation),
+    });
+
+    if (response.ok) {
+        const Changedreservation = await response.json();
+        dispatch(editReservation(Changedreservation));
+    };
+}
+
 /////////////////////// REDUCER //////////////////////////
 
 const initialState = {};
@@ -86,9 +106,19 @@ const reservationReducer = (state = initialState, action) => {
             });
             return {...allreservations}
         case DELETE_RESERVATION :
-            const newState = { ...state }
+            const newState={...state}
             delete newState[action.reservationId]
             return newState;
+        case EDIT_RESERVATION :
+            const newState2 = { ...state,
+            [action.Changedreservation.id]: {
+            ...state[action.Changedreservation.id],
+            checkInDate: action.Changedreservation.checkInDate,
+            checkOutDate: action.Changedreservation.checkOutDate,
+            }
+            }
+            return newState2
+
         default:
             return state;
     }

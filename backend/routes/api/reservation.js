@@ -27,10 +27,14 @@ router.delete('/:id', asyncHandler(async function(req, res) {
 //Edit A Specific Reservations Dates (for User)
 router.put('/:id', asyncHandler(async function(req, res) {
     const userId = req.params.id;
-    const { checkInDate,checkOutDate } = req.body;
-    const reservation = await Reservation.findByPk(userId);
-    await reservation.update({checkInDate,checkOutDate,})
-    return res.json(reservation);
+    const { Id, listingId, checkInDate, checkOutDate } = req.body;
+    // const reservation = await Reservation.findByPk(Number(Id));
+    const changed=await Reservation.update({userId, listingId, checkInDate,checkOutDate},{where: {id:Number(Id)}})
+
+    const Ares = await Reservation.findOne({where: { id: Id}})
+  console.log(Ares.dataValues)
+    return res.json(Ares.dataValues);
+
   }))
 
 

@@ -44,7 +44,6 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 //Edit A Reviews (NOT USER ID BUT USER AND LISTING ID)
 router.put('/edit', asyncHandler( async (req, res) => {//validateReview,
     const { Id,review,cleanliness,communication,checkIn,accuracy,location,value } = req.body;
-    console.log("REQ_______",req.body)
     const [...change] = await Review.update(//updatedReviews return the number of lines modified?
       {review,cleanliness,communication,checkIn,accuracy,location,value},
       {where: {id:Number(Id)}}
