@@ -3,8 +3,8 @@ import React,{ useState } from "react"; // useEffect,
 import { useDispatch } from 'react-redux';//, useSelector
 import {  editReview,} from '../../store/reviews';//getReviews, deleteReview,
 
-function EditReviewForm ({Id,listingId, toggleState=true}) { //will probably need to pass id
-  // const pokeTypes = useSelector(state => state.pokemon.types);
+function EditReviewForm ({Id,listingId, toggleState=true}) { 
+
   const dispatch = useDispatch();
 
   const [review, setReview] = useState("");
@@ -14,7 +14,6 @@ function EditReviewForm ({Id,listingId, toggleState=true}) { //will probably nee
   const [accuracy, setAccuracy] = useState(0);
   const [location, setLocation] = useState(0);
   const [value, setValue] = useState(0);
-  // const [createdAt, setCreatedAt] = useState(new Date());
 
   const updateReview = (e) => setReview(e.target.value);
   const updateCleanliness = (e) => setCleanliness(e.target.value);
@@ -23,13 +22,6 @@ function EditReviewForm ({Id,listingId, toggleState=true}) { //will probably nee
   const updateAccuracy= (e) => setAccuracy(e.target.value);
   const updateLocation = (e) => setLocation(e.target.value);
   const updateValue = (e) => setValue(e.target.value);
-  // const updateCreatedAt= (e) => setCreatedAt(e.target.value);
-
-  // useEffect(() => {
-  //   dispatch(getPokemonTypes());
-  // }, [dispatch]);
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 
 function ProfileButton({ user }) {
+
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory()
@@ -33,9 +34,10 @@ function ProfileButton({ user }) {
 
   };
 
+
   const goToProfile = (e) => {
     e.preventDefault()
-    history.push('/profile')
+    history.push(`/users/${user.id}`)
   }
 
 
@@ -60,6 +62,7 @@ function ProfileButton({ user }) {
           <li>
             <button onClick={goToProfile}>Profile</button>
             <button onClick={logout}>Log Out</button>
+
           </li>
         </ul>
       )}

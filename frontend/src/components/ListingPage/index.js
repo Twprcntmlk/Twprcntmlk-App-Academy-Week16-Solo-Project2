@@ -1,5 +1,5 @@
 // frontend/src/components/ListingPage/index.js
-import React, { useEffect, useState, useCallback }from 'react';
+import React, { useEffect, useState }from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { findlistings } from '../../store/listings';
@@ -15,8 +15,6 @@ function ListingPage(){
     const dispatch = useDispatch();
 
     let [showEditForm, setShowEditForm]=useState(true);
-    const [buttonId, setbuttonId] = useState(0);
-
     const listingState = useSelector(state => state.listings);
     const reviewsState = useSelector(state => state.reviews);
     // const {user} = useSelector(state => state.session);
@@ -52,12 +50,12 @@ function ListingPage(){
             <h1>This is Reviews that are for this ID Section</h1>
             <div>{allListingReview?.map((el) =><div key={el.id} >
                 {el.review}Cleanliness:{el.cleanliness}Communication:{el.communication}CheckIn:{el.checkIn}Accuracy:{el.accuracy}Location:{el.location}Value:{el.value}
-                {console.log(allListingReview)}
-                <button className='edit-button' id={el.id} onClick={(e) => {{setbuttonId(e.target.id);setShowEditForm((prev)=>!prev)}}}>Edit</button>
-                {console.log(buttonId)}
-                {(setbuttonId===id)?null:<EditReviewForm Id={el.id} listingId={listingId} toggleState={showEditForm}/>}
 
-                {console.log(buttonId)}
+                <button className='edit-button' id={el.id} onClick={(e) => {setShowEditForm((prev)=>!prev)}}>Edit</button>
+
+                {<EditReviewForm Id={el.id} listingId={listingId} toggleState={showEditForm}/>}
+
+
 
                 <button className='delete-button' id={el.id} onClick={(e) =>  dispatch(deleteReview(e.target.id))}>Delete</button>
                 {/* disabled={user && id === el.userId ? false : true} */}

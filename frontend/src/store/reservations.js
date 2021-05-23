@@ -59,7 +59,7 @@ export const getReservations = (userId) => async (dispatch) => {
 }
 
 export const cancelReservation  = (reservationId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/reservations/${reservationId}`, {
+    const response = await csrfFetch(`/api/reservation/${reservationId}`, {
         method: "DELETE"
     });
 
@@ -80,7 +80,11 @@ const reservationReducer = (state = initialState, action) => {
         case STORE_RESERVATION :
             return action.reservation;
         case GET_RESERVATION :
-            return action.reservation;
+            const allreservations = {};
+            action.reservation.forEach(res => {
+                allreservations[res.id] = res;
+            });
+            return {...allreservations}
         case DELETE_RESERVATION :
             const newState = { ...state }
             delete newState[action.reservationId]

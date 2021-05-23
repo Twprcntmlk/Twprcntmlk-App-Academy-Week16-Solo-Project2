@@ -1,20 +1,20 @@
 // frontend/src/components/Navigation/ProfileButton.js
-import React,{ useState } from "react"; // useEffect,
-import { useDispatch } from 'react-redux';//, useSelector
-import { addReview } from '../../store/reviews';
-import 'react-dates/initialize';
-import { DateRangePicker} from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
+import React from "react"; // useEffect,{ useState }
+// import { useDispatch } from 'react-redux';//, useSelector
+// import { addReview } from '../../store/reviews';
+// import 'react-dates/initialize';
+// import { DateRangePicker} from 'react-dates';
+// import 'react-dates/lib/css/_datepicker.css';
 import './reservations.css';
 
 function ReservationForm ({userId, listingId}) { //will probably need to pass id
   // const pokeTypes = useSelector(state => state.pokemon.types);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const [checkInDate, setcheckInDate] = useState("");
-  const [checkOutDate, setcheckOutDate] = useState("");
-  const [startDate, setStartDate] = useState('2021-05-01');
-  const [endDate, setendDate] = useState('2021-06-30');
+  // const [checkInDate, setcheckInDate] = useState("");
+  // const [checkOutDate, setcheckOutDate] = useState("");
+  // const [startDate, setStartDate] = useState('2021-05-01');
+  // const [endDate, setendDate] = useState('2021-06-30');
   // const [createdAt, setCreatedAt] = useState(new Date());
 
 //   const updateReview = (e) => setReview(e.target.value);
@@ -30,10 +30,10 @@ function ReservationForm ({userId, listingId}) { //will probably need to pass id
   //   dispatch(getPokemonTypes());
   // }, [dispatch]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const payload = {
+  //   const payload = {
     //   userId,
     //   listingId,
     //   review,
@@ -43,28 +43,29 @@ function ReservationForm ({userId, listingId}) { //will probably need to pass id
     //   accuracy,
     //   location,
     //   value,
-    };
+    // };
 
-    const addedReview = await dispatch(addReview(payload));
-    if (addedReview) {
-    //   setReview('');
-    //   setCleanliness(0);
-    //   setCommunication(0);
-    //   setCheckIn(0);
-    //   setAccuracy(0);
-    //   setLocation(0);
-    //   setValue(0);
-    }
-  };
+  //   const addedReview = await dispatch(addReview(payload));
+  //   if (addedReview) {
+  //   //   setReview('');
+  //   //   setCleanliness(0);
+  //   //   setCommunication(0);
+  //   //   setCheckIn(0);
+  //   //   setAccuracy(0);
+  //   //   setLocation(0);
+  //   //   setValue(0);
+  //   }
+  // };
 
-  const handleCancelClick = (e) => {
-    e.preventDefault();
+  // const handleCancelClick = (e) => {
+  //   e.preventDefault();
 
-  };
+  // };
 
   return (
     <section className="edit-form-holder centered middled">
-        <DateRangePicker
+      THIS IS THE DATE RANGE AND ADDING RES COMPONENT
+        {/* <DateRangePicker
   startDate={startDate} // momentPropTypes.momentObj or null,
   startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
   endDate={endDate} // momentPropTypes.momentObj or null,
@@ -72,7 +73,7 @@ function ReservationForm ({userId, listingId}) { //will probably need to pass id
   onDatesChange={({ startDate, endDate })} // PropTypes.func.isRequired,
   focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
   onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-/>
+/> */}
     {/* <form onSubmit={handleSubmit}>
       <textarea value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
       <input value={cleanliness} type='number' onChange={updateCleanliness }></input>
