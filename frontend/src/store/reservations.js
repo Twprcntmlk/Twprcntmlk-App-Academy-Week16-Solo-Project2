@@ -27,9 +27,9 @@ const deleteReservation  = (reservationId) => ({
     reservationId
 });
 
-const editReservation  = (Changedreservation) => ({
+const editReservation  = (changedReservation) => ({
     type: EDIT_RESERVATION,
-    Changedreservation
+    changedReservation
 
 });
 
@@ -84,8 +84,8 @@ export const editReservations  = (reservation) => async (dispatch) => {
     });
 
     if (response.ok) {
-        const Changedreservation = await response.json();
-        dispatch(editReservation(Changedreservation));
+        const changedReservation = await response.json();
+        dispatch(editReservation(changedReservation));
     };
 }
 
@@ -111,10 +111,10 @@ const reservationReducer = (state = initialState, action) => {
             return newState;
         case EDIT_RESERVATION :
             const newState2 = { ...state,
-            [action.Changedreservation.id]: {
-            ...state[action.Changedreservation.id],
-            checkInDate: action.Changedreservation.checkInDate,
-            checkOutDate: action.Changedreservation.checkOutDate,
+            [action.changedReservation.id]: {
+            ...state[action.changedReservation.id],
+            checkInDate: action.changedReservation.checkInDate,
+            checkOutDate: action.changedReservation.checkOutDate,
             }
             }
             return newState2

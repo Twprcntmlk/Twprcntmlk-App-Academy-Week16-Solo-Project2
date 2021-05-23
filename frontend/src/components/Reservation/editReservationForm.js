@@ -43,7 +43,7 @@ function EditReservationForm ({Id,userId,listingId, toggleState=true}) {
     <form onSubmit={handleSubmit}>
       <input value={checkInDate} type='date' onChange={updatedcheckInDate}></input>
       <input value={checkOutDate} type='date' onChange={updatedcheckOutDate}></input>
-      <button type="submit">Submit Review</button>
+      <button type="submit">Modify Dates</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>
