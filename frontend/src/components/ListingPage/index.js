@@ -6,6 +6,7 @@ import { findlistings } from '../../store/listings';
 import { getReviews, deleteReview} from '../../store/reviews';//, editReview,
 import ReviewForm from '../ReviewForm/index';
 import EditReviewForm from '../ReviewForm/editReviewForm';
+import Reservation from '../Reservation/index';
 import './listing.css';
 
 
@@ -45,14 +46,16 @@ function ListingPage(){
                 <p className='listing-bedrooms'># of Bedrooms---{listingState.bedrooms}</p>
                 <p className='listing-baths'># of Baths---{listingState.baths}</p>
                 <p className='listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
+                {/* <p className='listing-baths'>Rating---{allListingReview[id].review}</p> */}
             <div>
 
             <h1>This is Reviews that are for this ID Section</h1>
-            <div>{allListingReview?.map((el) =><div key={el.id} >{el.review}
+            <div>{allListingReview?.map((el) =><div key={el.id} >
+                {el.review}Cleanliness:{el.cleanliness}Communication:{el.communication}CheckIn:{el.checkIn}Accuracy:{el.accuracy}Location:{el.location}Value:{el.value}
                 {console.log(allListingReview)}
                 <button className='edit-button' id={el.id} onClick={(e) => {{setbuttonId(e.target.id);setShowEditForm((prev)=>!prev)}}}>Edit</button>
                 {console.log(buttonId)}
-                {(setbuttonId===id)?null:<EditReviewForm Id={id} listingId={listingId} toggleState={showEditForm}/>}
+                {(setbuttonId===id)?null:<EditReviewForm Id={el.id} listingId={listingId} toggleState={showEditForm}/>}
 
                 {console.log(buttonId)}
 
@@ -65,6 +68,11 @@ function ListingPage(){
             <h1>This is Review FORM
                 <div>
                     <ReviewForm Id={id} listingId={listingId}/>
+                </div>
+            </h1>
+            <h1>This is Date Picker
+                <div>
+                    <Reservation Id={id} listingId={listingId}/>
                 </div>
             </h1>
         </>

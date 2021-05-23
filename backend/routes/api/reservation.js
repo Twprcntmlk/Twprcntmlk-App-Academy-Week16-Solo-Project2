@@ -10,6 +10,12 @@ router.get('/', asyncHandler(async function (req, res) {
     return res.json(reservations);
   }));
 
+//Get Specific Reservation (for User)
+  router.get('/:id', asyncHandler(async function(req, res) {
+    const reservation = await Reservation.findByPk(req.params.id);
+    return res.json(reservation);
+  }));
+
 //"Delete"/Cancel A Specific Reservation (for User)
 router.delete('/:id', asyncHandler(async function(req, res) {
     const reservation = await Reservation.destroy({

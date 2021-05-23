@@ -49,8 +49,12 @@ router.put('/edit', asyncHandler( async (req, res) => {//validateReview,
       {review,cleanliness,communication,checkIn,accuracy,location,value},
       {where: {id:Number(Id)}}
     );
-    console.log("WHAT THE FUCK",[...change])
-    return res.json(change)
+    const Areview = await Review.findOne({where: { id: Id }})
+    // const modReview = {};
+    // modReview[Areview.dataValues.id] = Areview.dataValues;
+
+    console.log("This is backend Object",Areview.dataValues)
+    return res.json(Areview.dataValues)
 
 
   }));

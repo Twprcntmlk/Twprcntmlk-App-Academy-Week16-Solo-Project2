@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
+
 // import { , Nav } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 import './listings.css';
@@ -33,6 +34,7 @@ useEffect(() => {
             {listings?.map((el) => {
             return <Listing key={el.id} list={el}/>
             })}
+
         </div>
     </div>
 

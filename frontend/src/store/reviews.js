@@ -61,7 +61,9 @@ export const editReview = (updatedReview) => async dispatch => {
   });
 
   if (res.ok) {
+
     const review = await res.json(); //
+    console.log(review)
     // const [change] = review[1];
     return await dispatch(edit(review));
   }
@@ -113,7 +115,6 @@ const reviewReducer = (state = {}, action) => {
           accuracy: action.changedReview.accuracy,
           location: action.changedReview.location,
           value: action.changedReview.value,
-
         }
         }
         return newState
