@@ -7,6 +7,7 @@ import { getReviews, deleteReview} from '../../store/reviews';//, editReview,
 import ReviewForm from '../ReviewForm/index';
 import EditReviewForm from '../ReviewForm/editReviewForm';
 import Reservation from '../Reservation/index';
+import ReservationForm from '../Reservation/ReservationForm';
 import './listing.css';
 
 
@@ -71,6 +72,7 @@ function ListingPage(){
             <h1>This is Date Picker
                 <div>
                     <Reservation Id={id} listingId={listingId}/>
+                    <ReservationForm />
                 </div>
             </h1>
         </>

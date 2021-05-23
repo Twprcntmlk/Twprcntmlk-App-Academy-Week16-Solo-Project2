@@ -36,12 +36,13 @@ router.put('/:id', asyncHandler(async function(req, res) {
 
 //Create a Reservation (for User)
 router.post('/', asyncHandler(async function (req, res) {
-    const booking = await Reservation.create(req.body);
-    const newBooking = await Reservation.findOne({
-        where: { id: booking.id },
-        include: [{ User },{ Listing, include:[{Photo}]}]
+    const reservation = await Reservation.create(req.body);
+    console.log("THIS IS IN BACKEND__________", reservation)
+    const newreservation = await Reservation.findOne({
+        where: { id: reservation.id }
+        // include: [{ User },{ Listing, include:[{Photo}]}]
         })
-    return res.json(newBooking)
+    return res.json(newreservation)
     })
 );
 
