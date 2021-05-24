@@ -16,7 +16,7 @@ function Listing ({ list }) {
                     <p className='listing-name_parts'>Name---{list.name}</p>
                     <p className='listing-description_parts'>Description---{list.description}</p>
                 </div>
-                <div className='listing-description_component'>
+                <div className className='listing-description_component'>
                     <p className='listing-address_parts'>Address---{list.address}</p>
                     <p className='listing-price_parts'>Price Per Night---${list.price}</p>
                     <p className='listing-guests_parts'># of Guests---{list.guests}</p>
@@ -25,7 +25,6 @@ function Listing ({ list }) {
                     <p className='listing-coordinates_parts'>latitude:---{list.latitude},longitude:---{list.longitude}</p>
                 </div>
             </div>
-            
         </div>
       )
 }

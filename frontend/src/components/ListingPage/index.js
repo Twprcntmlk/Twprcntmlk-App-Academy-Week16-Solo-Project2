@@ -15,6 +15,12 @@ function ListingPage(){
     const { id } = useParams();
     const dispatch = useDispatch();
 
+    let [clean, setClean]=useState(0);
+    let [communication, setCommunication]=useState(0);
+    let [checkIn, setCheckIn]=useState(0);
+    let [accuracy, setAccuracy]=useState(0);
+    let [location, setLocation]=useState(0);
+    let [value, setValue]=useState(0);
 
     const listingState = useSelector(state => state.listings);
     const reviewsState = useSelector(state => state.reviews);
@@ -25,20 +31,46 @@ function ListingPage(){
     const allListingReview = reviews.filter((review) => (review.listingId === Number(id)))
     const listingId = allListingReview[0]?.listingId
 
+
     useEffect(() => {
         dispatch(findlistings(id));
         dispatch(getReviews(id));
         }, [dispatch, id, ])
 
     useEffect(() => {
-        let clean;
         if(allListingReview.length){
             clean = allListingReview.reduce((accum,nums) =>{
                 console.log(nums.cleanliness)
                 return accum+nums.cleanliness
             },0)
+            setClean(clean/allListingReview.length)
+            communication = allListingReview.reduce((accum,nums) =>{
+                console.log(nums.communication)
+                return accum+nums.communication
+            },0)
+            setCommunication(communication/allListingReview.length)
+            checkIn = allListingReview.reduce((accum,nums) =>{
+                console.log(nums.checkIn)
+                return accum+nums.checkIn
+            },0)
+            setCheckIn(checkIn/allListingReview.length)
+            accuracy = allListingReview.reduce((accum,nums) =>{
+                console.log(nums.accuracy)
+                return accum+nums.accuracy
+            },0)
+            setAccuracy(accuracy/allListingReview.length)
+            location = allListingReview.reduce((accum,nums) =>{
+                console.log(nums.location)
+                return accum+nums.location
+            },0)
+            setLocation(location/allListingReview.length)
+            value = allListingReview.reduce((accum,nums) =>{
+                console.log(nums.value)
+                return accum+nums.value
+            },0)
+            setValue(value/allListingReview.length)
         }
-        }, [allListingReview])
+        }, [allListingReview,clean,communication,checkIn,accuracy,location,value])
 
 
 
@@ -63,7 +95,13 @@ function ListingPage(){
 
             <div className='SingleList-reviews'>
                 <div className='SingleList-reviews_stats'>
-
+                <p>RATING---{Math.ceil((clean+communication+checkIn+accuracy+location+value)/6)}</p>
+                <p>CLEANLINESS---{Math.ceil(clean)}</p>
+                <p>COMMUNICATION---{Math.ceil(communication)}</p>
+                <p>CHECKIN---{Math.ceil(checkIn)}</p>
+                <p>ACCURACY---{Math.ceil(accuracy)}</p>
+                <p>LOCATION---{Math.ceil(location)}</p>
+                <p>VALUE---{Math.ceil(value)}</p>
                 </div>
 
                 <div>{allListingReview?.map((el) =><div key={el.id} >
