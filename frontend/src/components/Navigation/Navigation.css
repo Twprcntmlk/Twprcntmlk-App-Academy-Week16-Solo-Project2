@@ -9,7 +9,6 @@
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 1fr;
     width: 99vw;
-    position:absolute;
 }
 
 .nav-dropdown{

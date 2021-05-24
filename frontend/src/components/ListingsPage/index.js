@@ -27,14 +27,15 @@ useEffect(() => {
 
     <div className='explore-page'>
         <h1>THIS IS LISTINGS PAGE</h1>
-        <div>
+        <div >
             <div className='explore-page--header_container'>
             <h3 className='explore-page--header'>Discover</h3>
-            </div>
+        </div>
+        <div >
             {listings?.map((el) => {
             return <Listing key={el.id} list={el}/>
             })}
-
+        </div>
         </div>
     </div>
 

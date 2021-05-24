@@ -14,6 +14,10 @@ module.exports = {
     */
       return queryInterface.bulkInsert('Photos', [
         {listingId:1,photo:faker.random.image("city")},
+        {listingId:1,photo:faker.random.image("city")},
+        {listingId:1,photo:faker.random.image("city")},
+        {listingId:1,photo:faker.random.image("city")},
+        {listingId:1,photo:faker.random.image("city")},
         {listingId:2,photo:faker.random.image("city")},
         {listingId:3,photo:faker.random.image("city")},
         {listingId:4,photo:faker.random.image("city")},

@@ -9,7 +9,7 @@ function ReservationForm() {
   const { id } = useParams()
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  console.log(sessionUser.id)
+  // console.log("WHAT IS THIS_________________",sessionUser.user)
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
 

@@ -15,7 +15,6 @@ function UserPage () { //will probably need to pass id
     console.log(reservations)
     const allReservations = reservations.filter((el) => (el.userId === Number(id)))
 
-
     useEffect(() => {
         dispatch(getReservations(id));
         }, [dispatch, id])
@@ -28,6 +27,7 @@ function UserPage () { //will probably need to pass id
         <button id={el.id} onClick={()=> {dispatch(cancelReservation(el.id))}}>Delete</button>
         <button id={el.id} onClick={(e) => {setShowEditForm((prev)=>!prev)}}>Edit</button>
         <EditReservationForm Id={el.id} userId={id} listingId={el.listingId} toggleState={showEditForm}/>
+
         </>
 
         )}

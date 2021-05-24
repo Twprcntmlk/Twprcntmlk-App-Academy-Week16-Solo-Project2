@@ -3,7 +3,7 @@ import React,{ useState } from "react"; // useEffect,
 import { useDispatch } from 'react-redux';//, useSelector
 import {  editReview,} from '../../store/reviews';//getReviews, deleteReview,
 
-function EditReviewForm ({Id,listingId, toggleState=true}) { 
+function EditReviewForm ({Id,listingId, button,toggleState}) {
 
   const dispatch = useDispatch();
 
@@ -53,21 +53,22 @@ function EditReviewForm ({Id,listingId, toggleState=true}) {
     e.preventDefault();
 
   };
-
+console.log('updatedBUtton_______',button)
+console.log('ID_______',Id)
   return (
-    <section className="edit-form-holder centered middled" hidden={toggleState}>
-    <form onSubmit={handleSubmit}>
-      <textarea value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
-      <input value={cleanliness} type='number' onChange={updateCleanliness }></input>
-      <input value={communication} type='number' onChange={updateCommunication}></input>
-      <input value={checkIn} type='number' onChange={updateCheckIn}></input>
-      <input value={accuracy} type='number' onChange={updateAccuracy}></input>
-      <input value={location} type='number' onChange={updateLocation}></input>
-      <input value={value} type='number' onChange={updateValue}></input>
-      <button type="submit">Submit Review</button>
-      <button type="button" onClick={handleCancelClick}>Cancel</button>
-    </form>
-  </section>
+    <section className="edit-form-holder centered middled" hidden={Id===button?toggleState:!toggleState}>
+      <form onSubmit={handleSubmit}>
+        <textarea value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
+        <input value={cleanliness} type='number' onChange={updateCleanliness }></input>
+        <input value={communication} type='number' onChange={updateCommunication}></input>
+        <input value={checkIn} type='number' onChange={updateCheckIn}></input>
+        <input value={accuracy} type='number' onChange={updateAccuracy}></input>
+        <input value={location} type='number' onChange={updateLocation}></input>
+        <input value={value} type='number' onChange={updateValue}></input>
+        <button type="submit">Submit Review</button>
+        <button type="button" onClick={handleCancelClick}>Cancel</button>
+      </form>
+    </section>
   );
 }
 

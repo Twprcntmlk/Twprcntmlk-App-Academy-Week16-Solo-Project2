@@ -3,7 +3,7 @@ import React,{ useState } from "react"; // useEffect,
 import { useDispatch } from 'react-redux';//, useSelector
 import { editReservations } from '../../store/reservations';//getReviews, deleteReview,
 
-function EditReservationForm ({Id,userId,listingId, toggleState=true}) {
+function EditReservationForm ({Id,userId,listingId, toggleState}) {
 
   const dispatch = useDispatch();
   const [checkInDate, setCheckInDate] = useState(null);
@@ -39,7 +39,7 @@ function EditReservationForm ({Id,userId,listingId, toggleState=true}) {
   };
 
   return (
-    <section className="edit-form-holder centered middled" hidden={toggleState}>
+    <section className="edit-form-holder centered middled" hidden={Id && Id===listingId ? toggleState:null}>
     <form onSubmit={handleSubmit}>
       <input value={checkInDate} type='date' onChange={updatedcheckInDate}></input>
       <input value={checkOutDate} type='date' onChange={updatedcheckOutDate}></input>
