@@ -23,7 +23,7 @@ function Footer(){
           </div>
 
 
-          <div className="footer-nav-about">
+          <div className=" footer footer-nav-about">
             <ul> About
               <li>How Airbnb works</li>
               <li>Newsroom</li>
@@ -33,7 +33,7 @@ function Footer(){
             </ul>
           </div>
 
-          <div className="footer-nav-community">
+          <div className="footer footer-nav-community">
             <ul> Community
               <li>How Airbnb works</li>
               <li>Newsroom</li>
@@ -43,7 +43,7 @@ function Footer(){
             </ul>
           </div>
 
-          <div className="footer-nav-host">
+          <div className="footer footer-nav-host">
             <ul> Host
               <li>How Airbnb works</li>
               <li>Newsroom</li>
@@ -53,7 +53,7 @@ function Footer(){
             </ul>
           </div>
 
-          <div className="footer-nav-support">
+          <div className="footer footer-nav-support">
             <ul> Support
               <li>How Airbnb works</li>
               <li>Newsroom</li>

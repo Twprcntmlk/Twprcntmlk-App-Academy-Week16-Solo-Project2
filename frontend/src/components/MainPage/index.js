@@ -8,14 +8,22 @@ function MainPage(){
 
     return(
       <>
-        <h1>This is the main page</h1>
-        <div className="splash">
+        <div className="Main-page">
+        <div className="Main-splash">
             <img src={splash} alt="splash1"/>
-        </div>
-        <NavLink to="/listings">
-            <button> Explore The World!</button>
-        </NavLink>
 
+          <div className="Main-title">
+            <h1 className ="Main-title_title">The Greatest Outdoors </h1>
+            <h3 className ="Main-title_span">Wishlists curated by Airbnb.</h3>
+            <div className="Main-button_div">
+            <NavLink to="/listings">
+                <button className="Main-button_Button"> Explore The World!</button>
+            </NavLink>
+          </div>
+          </div>
+
+          </div>
+        </div>
       </>
     )
   }

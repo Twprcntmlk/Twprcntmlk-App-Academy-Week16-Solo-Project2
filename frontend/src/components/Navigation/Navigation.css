@@ -1,0 +1,29 @@
+*{
+    border-width: 2px solid;
+    box-sizing: border-box;
+}
+
+.nav-list{
+    display: grid;
+    padding: 0px 10px 0px 10px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 1fr;
+    width: 99vw;
+    position:absolute;
+}
+
+.nav-dropdown{
+    display:flex;
+    grid-column: 5/6;
+    justify-content:flex-end;
+
+}
+
+.nav-signup-button{
+    text-decoration: none;
+}
+
+.nav-logo{
+    grid-column: 1/2;
+    justify-content:flex-start;
+}

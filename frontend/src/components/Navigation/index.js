@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
-
+import AirBNBlogo from './images/Airbnb-logo.png';
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
@@ -18,17 +18,23 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink to="/signup">
+          <button>Sign Up</button>
+        </NavLink>
+
       </>
     );
   }
 
   return (
     <ul className="nav-list">
-      <li>
+      <div className="nav-logo">
+        <img src={AirBNBlogo} alt="splash1"/>
+      </div>
+      <div className="nav-dropdown">
          <NavLink  exact to="/"></NavLink>
         {isLoaded && sessionLinks}
-      </li>
+      </div>
     </ul>
   );
 }
