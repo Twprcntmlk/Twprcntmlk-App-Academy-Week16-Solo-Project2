@@ -39,7 +39,7 @@ function EditReservationForm ({Id,userId,listingId, toggleState}) {
   };
 
   return (
-    <section className="edit-form-holder centered middled" hidden={Id && Id===listingId ? toggleState:null}>
+    <section className="edit-form-holder centered middled" hidden={toggleState}>
     <form onSubmit={handleSubmit}>
       <input value={checkInDate} type='date' onChange={updatedcheckInDate}></input>
       <input value={checkOutDate} type='date' onChange={updatedcheckOutDate}></input>
