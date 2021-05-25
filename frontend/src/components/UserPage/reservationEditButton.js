@@ -1,14 +1,8 @@
 // frontend/src/components/ListingPage/index.js
-import React, { useEffect, useState }from 'react';
+import React, { useState }from 'react';//useEffect,
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { findlistings } from '../../store/listings';
-import { getReviews, deleteReview} from '../../store/reviews';//, editReview,
-import ReviewForm from '../ReviewForm/index';
-import EditReviewForm from '../ReviewForm/editReviewForm';
-import Reservation from '../Reservation/index';
-import ReservationForm from '../Reservation/ReservationForm';
-import { getReservations,cancelReservation } from '../../store/reservations';
+import { useDispatch} from 'react-redux'; //, useSelector
+import {cancelReservation } from '../../store/reservations'; // getReservations,
 import EditReservationForm from '../Reservation/editReservationForm';
 
 

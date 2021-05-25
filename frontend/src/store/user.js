@@ -9,7 +9,7 @@ const getOne = user => ({
   });
 
 
-export const findlistings = (id) => async dispatch => {
+export const findusers = (id) => async dispatch => {
 const res = await csrfFetch(`/api/users/${id}`);
 
 if (res.ok) {

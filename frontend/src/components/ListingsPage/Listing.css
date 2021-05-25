@@ -1,7 +1,7 @@
 .listings-main{
     display:grid;
     grid-template-columns: 30% 30% 40%;
-    height: 490px;
+    height: 370px;
     border-bottom: 1px solid;
     border-color: rgb(206, 209, 209);
 
@@ -41,4 +41,8 @@
 .listing-description_component{
     grid-row: 2/3;
 
+}
+
+.listpart{
+    margin:0px 0px 0px 0px;
 }
