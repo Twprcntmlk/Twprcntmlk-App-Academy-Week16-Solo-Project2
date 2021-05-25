@@ -29,7 +29,9 @@ function Navigation({ isLoaded }){
   return (
     <ul className="nav-list">
       <div className="nav-logo">
-        <img src={AirBNBlogo} alt="splash1"/>
+        <NavLink  exact to="/">
+          <img src={AirBNBlogo} alt="splash1"/>
+        </NavLink>
       </div>
       <div className="nav-dropdown">
          <NavLink  exact to="/"></NavLink>
