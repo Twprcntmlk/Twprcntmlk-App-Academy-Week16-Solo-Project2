@@ -39,6 +39,12 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      personal: {
+        type: Sequelize.TEXT
+      },
+      isHost: {
+        type: Sequelize.BOOLEAN,
+      },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false,

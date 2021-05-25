@@ -4,9 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
-
-// import { , Nav } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 import './listings.css';
 
 function ListingsPage(){
@@ -14,9 +11,6 @@ function ListingsPage(){
 const listingsState = useSelector(state => state.listings);
 const listings = Object.values(listingsState);
 const dispatch = useDispatch();
-
-// console.log(listingsState)
-// console.log(listings)
 
 useEffect(() => {
     dispatch(getlistings());

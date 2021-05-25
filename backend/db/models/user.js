@@ -48,6 +48,12 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     latitude: DataTypes.FLOAT,
     longitude: DataTypes.FLOAT,
+    personal: {
+      type: DataTypes.TEXT
+    },
+    isHost: {
+      type: DataTypes.BOOLEAN
+    },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,
       allowNull: false,
@@ -106,9 +112,11 @@ module.exports = (sequelize, DataTypes) => {
   };
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Listing, {foreignKey: 'userId'});
     User.hasMany(models.Review, {foreignKey: 'userId'});
     User.hasMany(models.Message, {foreignKey: 'userId'});
     User.hasMany(models.Reservation, {foreignKey: 'userId'});
+    User.hasMany(models.Message, {foreignKey: 'hostId'});
   };
   return User;
 };

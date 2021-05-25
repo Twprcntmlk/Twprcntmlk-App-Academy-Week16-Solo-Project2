@@ -35,7 +35,7 @@ module.exports = {
       baths: {
         type: Sequelize.INTEGER
       },
-      hostId: {
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
