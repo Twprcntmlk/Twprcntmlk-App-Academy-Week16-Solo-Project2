@@ -13,22 +13,43 @@ import './listing.css';
 
 function Review({el, listingId}){
     const dispatch = useDispatch();
-    const [toggleState, setToggleState] = useState(true);
+    const [toggleState, setToggleState] = useState(false);
     const [showEditForm, setShowEditForm] = useState(null);
-
+    const {user} = useSelector(state => state.session);
+    console.log(user)
+    console.log(el.userId)
     return(
     <section>
-        {el.review}Cleanliness:{el.cleanliness}Communication:{el.communication}CheckIn:{el.checkIn}Accuracy:{el.accuracy}Location:{el.location}Value:{el.value}
-    <div>
-        <button className='edit-button' id={el.id} onClick={()=>setToggleState(!toggleState)}>Edit</button>
+        <div>
+            {el.review}
+        </div>
+        <div>
+            <div>
+                Cleanliness:{el.cleanliness}
+            </div>
+            <div>
+                Communication:{el.communication}
+            </div>
+            <div>
+                CheckIn:{el.checkIn}
+            </div>
+            <div>
+                Accuracy:{el.accuracy}
+            </div>
+            <div>
+                Location:{el.location}
+            </div>
+            <div>
+                Value:{el.value}
+            </div>
+        </div>
 
+        <div>
+        <button className='delete-button' disabled={user && user.id === el.userId ? false : true} id={el.id} onClick={(e) =>  dispatch(deleteReview(e.target.id))}>Delete</button>
+            <button className='edit-button' disabled={user && user.id === el.userId ? false : true} id={el.id} onClick={()=>setToggleState(!toggleState)}>Edit</button>
+            {<EditReviewForm  Id={el.id} listingId={listingId} toggleState={toggleState} button={showEditForm}/>}
 
-        {<EditReviewForm Id={el.id} listingId={listingId} toggleState={toggleState} button={showEditForm}/>}
-
-
-        <button className='delete-button' id={el.id} onClick={(e) =>  dispatch(deleteReview(e.target.id))}>Delete</button>
-        {/* disabled={user && id === el.userId ? false : true} */}
-    </div>
+        </div>
     </section>
     )
 }

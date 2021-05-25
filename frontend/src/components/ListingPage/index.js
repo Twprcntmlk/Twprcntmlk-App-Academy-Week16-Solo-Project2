@@ -15,6 +15,7 @@ function ListingPage(){
     const { id } = useParams();
     const dispatch = useDispatch();
 
+    const {user} = useSelector(state => state.session);
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
     let [checkIn, setCheckIn]=useState(0);
@@ -24,7 +25,7 @@ function ListingPage(){
 
     const listingState = useSelector(state => state.listings);
     const reviewsState = useSelector(state => state.reviews);
-    // const {user} = useSelector(state => state.session);
+
     const reviews = Object.values(reviewsState);
     const photos= listingState.Photos
 
@@ -105,7 +106,7 @@ function ListingPage(){
                     <p className='stats SingleList-reviews_stats_accuracy'>ACCURACY---{Math.ceil(accuracy)}</p>
                     <p className='stats SingleList-reviews_stats_location'>LOCATION---{Math.ceil(location)}</p>
                     <p className='stats SingleList-reviews_stats_value'>VALUE---{Math.ceil(value)}</p>
-                    <ReviewForm className='SingleList-ReviewForm' userId={id} listingId={listingId} />
+                    <ReviewForm className='SingleList-ReviewForm' userId={user.id} listingId={listingId} />
                 </div>
 
                 <div>{allListingReview?.map((el) =>

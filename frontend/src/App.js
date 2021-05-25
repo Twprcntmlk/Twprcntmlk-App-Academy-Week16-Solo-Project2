@@ -10,6 +10,7 @@ import MainPage from "./components/MainPage";
 import ListingsPage from "./components/ListingsPage";
 import ListingPage from "./components/ListingPage";
 import UserPage from "./components/UserPage";
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

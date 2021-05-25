@@ -44,7 +44,7 @@ router.post('',validateSignup,asyncHandler(async (req, res) => {
 
 // Get Specific User Info
 router.get('/:id', asyncHandler(async (req, res) => {
-
+  const userId = req.params.id;
   const user = await User.findByPk(userId);
   // await setTokenCookie(res, user);
   return res.json({user});

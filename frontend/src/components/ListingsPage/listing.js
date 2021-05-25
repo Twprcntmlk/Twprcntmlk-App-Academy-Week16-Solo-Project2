@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import './Listing.css';
 
 function Listing ({ list }) {
-
-    const photos=list.Photos
+    const photos=[list.Photos[0]]
+    //get a single object and then put it back in a list to map*
+    // {console.log("Array of objects",list.Photos)}
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
@@ -26,7 +27,7 @@ function Listing ({ list }) {
                 </div>
             </div>
         </div>
-      )
+    )
 }
-//<img className='listing-image' key={el} alt='' src={el.photo}/>
+
 export default Listing;
