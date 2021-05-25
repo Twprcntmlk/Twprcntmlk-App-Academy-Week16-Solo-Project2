@@ -20,6 +20,9 @@ module.exports = {
       checkOutDate: {
         type: Sequelize.DATEONLY
       },
+      guests: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

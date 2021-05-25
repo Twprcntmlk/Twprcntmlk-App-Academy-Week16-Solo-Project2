@@ -13,11 +13,11 @@ module.exports = {
       }], {});
     */
       return queryInterface.bulkInsert('Reservations', [
-        {userId:1,listingId:5,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30')},
-        {userId:2,listingId:4,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30')},
-        {userId:3,listingId:3,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30')},
-        {userId:4,listingId:2,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30')},
-        {userId:5,listingId:1,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30')},
+        {userId:1,listingId:5,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30'),guests:3},
+        {userId:2,listingId:4,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30'),guests:2},
+        {userId:3,listingId:3,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30'),guests:2},
+        {userId:4,listingId:2,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30'),guests:3},
+        {userId:5,listingId:1,checkInDate:faker.date.between('2021-05-01', '2021-05-05'),checkOutDate:faker.date.between('2021-05-06', '2021-05-30'),guests:2},
 
          ], {});
     },

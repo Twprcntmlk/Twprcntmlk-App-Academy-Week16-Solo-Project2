@@ -7,7 +7,7 @@ import { getReviews, deleteReview} from '../../store/reviews';//, editReview,
 import ReviewForm from '../ReviewForm/index';
 import EditReviewForm from '../ReviewForm/editReviewForm';
 import Reservation from '../Reservation/index';
-import ReservationForm from '../Reservation/ReservationForm';
+import ReservationForm from '../Reservation/index';
 import './listing.css';
 import Review from '../ListingPage/review';
 
@@ -79,6 +79,7 @@ function ListingPage(){
             <div className='SingleList-title'>
                 <h1>{listingState.name}</h1>
                 <h3>{listingState.address}</h3>
+                <p>	&#11088; {((clean+communication+checkIn+accuracy+location+value)/6).toFixed(2)} {`(${allListingReview.length} reviews)`} </p>
             </div>
             <div className='SingleList-Photos'>
                 {photos?.map((el, i) => <img src={el.photo} id={`photo-${el.id}`} key={i} alt="listy2"></img>)}
@@ -95,45 +96,33 @@ function ListingPage(){
 
             <div className='SingleList-reviews'>
                 <div className='SingleList-reviews_stats'>
-                <p>RATING---{Math.ceil((clean+communication+checkIn+accuracy+location+value)/6)}</p>
-                <p>CLEANLINESS---{Math.ceil(clean)}</p>
-                <p>COMMUNICATION---{Math.ceil(communication)}</p>
-                <p>CHECKIN---{Math.ceil(checkIn)}</p>
-                <p>ACCURACY---{Math.ceil(accuracy)}</p>
-                <p>LOCATION---{Math.ceil(location)}</p>
-                <p>VALUE---{Math.ceil(value)}</p>
+                    <p className='stats SingleList-reviews_stats_rating'>
+                        &#11088; {((clean+communication+checkIn+accuracy+location+value)/6).toFixed(2)} {`(${allListingReview.length} reviews)`}
+                    </p>
+                    <p className='stats SingleList-reviews_stats_cleanliness'>CLEANLINESS---{Math.ceil(clean)}</p>
+                    <p className='stats SingleList-reviews_stats_communication'>COMMUNICATION---{Math.ceil(communication)}</p>
+                    <p className='stats SingleList-reviews_stats_checkin'>CHECKIN---{Math.ceil(checkIn)}</p>
+                    <p className='stats SingleList-reviews_stats_accuracy'>ACCURACY---{Math.ceil(accuracy)}</p>
+                    <p className='stats SingleList-reviews_stats_location'>LOCATION---{Math.ceil(location)}</p>
+                    <p className='stats SingleList-reviews_stats_value'>VALUE---{Math.ceil(value)}</p>
+                    <ReviewForm className='SingleList-ReviewForm' userId={id} listingId={listingId} />
                 </div>
 
-                <div>{allListingReview?.map((el) =><div key={el.id} >
-                  <Review el={el} listingId={el.listingId}/>
-
+                <div>{allListingReview?.map((el) =>
+                    <div key={el.id} >
+                        <Review el={el} listingId={el.listingId}/>
                     </div>)}
                 </div>
 
-                <ReviewForm userId={id} listingId={listingId} />
             </div>
 
 
-            <div>
-                <Reservation />
-                <ReservationForm userId={id} listingId={listingId}/>
+            <div className='SingleList-reservation'>
+                <Reservation userId={id} listingId={listingId}/>
+
             </div>
 
         </>
     )
 }
   export default ListingPage;
-    //   {/* <div className='listing-main'>
-    //         <Link className='listing-info' to={`/listings/${listing.id}`}>
-    //             {photos.map((el) => <img src={el.photo}></img>)}
-    //         </Link> */}
-//   const listingsState = useSelector(state => state.listings);
-//   const listings = Object.values(listingsState);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//       dispatch(getlistings());
-//       }, [dispatch])
-
-//       console.log(listingsState)
-//       console.log(listings)

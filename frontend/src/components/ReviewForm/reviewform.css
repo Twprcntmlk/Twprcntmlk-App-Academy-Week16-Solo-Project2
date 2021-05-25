@@ -1,0 +1,5 @@
+.reviewform{
+    display:grid;
+    grid-template-columns:25% 25% 50%;
+    padding-top: 10px;
+}
