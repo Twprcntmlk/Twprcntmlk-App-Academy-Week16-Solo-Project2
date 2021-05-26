@@ -70,28 +70,46 @@ function Listing ({ list }) {
             </Link>
             </div>
             <div className='listing-description'>
+
                 <div className='listing-title_component'>
                     <p className='listing-name_parts'>Name---{list.name}</p>
                     <p className='listing-description_parts'>Description---{list.description}</p>
                 </div>
+
                 <div className='listing-description_component'>
                     <p className='listpart listing-address_parts'>Address---{list.address}</p>
-                    <p className='listpart listing-price_parts'>Price Per Night---${list.price}</p>
                     <p className='listpart listing-guests_parts'># of Guests---{list.guests}</p>
                     <p className='listpart listing-bedrooms_parts'># of Bedrooms---{list.bedrooms}</p>
                     <p className='listpart listing-baths_parts'># of Baths---{list.baths}</p>
-                    <p className='listpart listing-coordinates_parts'>latitude:---{list.latitude},longitude:---{list.longitude}</p>
                 </div>
-                <div>
-                {Math.ceil(clean)}
-                {Math.ceil(communication)}
-                {Math.ceil(checkIn)}
-                {Math.ceil(accuracy)}
-                {Math.ceil(location)}
-                {Math.ceil(value)}
+
+                <div className='listing-ratings_parts'>
+                    <div>
+                        Cleanliness: {Math.ceil(clean)}
+                    </div>
+                    <div>
+                        Communication:{Math.ceil(communication)}
+                    </div>
+                    <div>
+                        Check In:{Math.ceil(checkIn)}
+                    </div>
+                    <div>
+                        Accuracy:{Math.ceil(accuracy)}
+                    </div>
+                    <div>
+                        Location:{Math.ceil(location)}
+                    </div>
+                    <div>
+                        Value:{Math.ceil(value)}
+                    </div>
                 </div>
+
+                <div className='listing-price_parts'>
+                    <p>Price Per Night---${list.price}</p>
+                </div>
+                
                 <div className="GoogleMaps">
-                    <GoogleApiWrapper />
+                    <GoogleApiWrapper lat={list.latitude} lon={list.longitude}/>
                 </div>
             </div>
         </div>

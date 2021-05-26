@@ -3,11 +3,20 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import './GoogleMapApi.css'
 
 const style = {
-  width: '30%',
-  height: '40%'
+  width: '100%',
+  height: '100%'
+}
+
+const containerStyle= {
+  width: '490px',
+  height: '360px'
 }
 
 export class MapContainer extends Component {
+  constructor(props) {
+    super(props)
+
+  }
     state = {
       showingInfoWindow: false,
       activeMarker: {},
@@ -31,14 +40,19 @@ export class MapContainer extends Component {
     };
 
     render() {
+      const lat = this.props.lat
+      const lon = this.props.lon
       return (
+
         <div className='GoogleMap'>
+
             <Map google={this.props.google}
                 onClick={this.onMapClicked}
+                containerStyle={containerStyle}
                 style={style}
                 initialCenter={{
-                  lat: 40.854885,//pass in my coordinates
-                  lng: -88.081807//pass in my coordinates
+                  lat: lat,
+                  lng: lon
                 }}
                 >
             <Marker onClick={this.onMarkerClick}
@@ -49,6 +63,8 @@ export class MapContainer extends Component {
       )
     }
   }
+
+
 
 export default GoogleApiWrapper({
   apiKey: ('AIzaSyBpfbp2b1e6kzv8_A1yrUGO3eVt20eFSNA')

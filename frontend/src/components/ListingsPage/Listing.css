@@ -1,10 +1,10 @@
 .listings-main{
     display:grid;
-    grid-template-columns: 30% 30% 40%;
+    grid-template-columns: 35% 35% 30%;
     height: 370px;
     border-bottom: 1px solid;
     border-color: rgb(206, 209, 209);
-
+    grid-gap: 15px;
 
 }
 .listing-description{
@@ -22,15 +22,16 @@
 
 .listing-photo .photo{
     padding:0px 0px 0px 10px;
-    max-height:450px;
-    max-width:450px;
+    max-height:21em;
+    max-width:34em;
     border-radius:30px;
 }
 
 .listing-description{
     display:grid;
-    grid-template-rows: 30% 50% 20%;
-    grid-template-columns: 1fr;
+    grid-template-rows: 30% 20% 20% 30%;
+    grid-template-columns: .9fr;
+    grid-gap: 15px;
 }
 
 .listing-title_component{
@@ -40,15 +41,37 @@
 
 .listing-description_component{
     grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
 
-}
 
-.listpart{
-    margin:0px 0px 0px 0px;
 }
 
 .GoogleMaps{
     grid-column: 3/4;
     max-height: 300px;
     max-width: 300px;
+}
+
+.listing-price_parts{
+    grid-row: 4/5;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.listing-price_parts > p{
+    font-size: 2em;
+    margin: 0px 0px 0px 0px;
+}
+
+.listpart{
+    margin:7px 0px 0px 0px;
+}
+
+
+.listing-ratings_parts{
+    display: flex;
+    grid-row: 3/4;
+    justify-content: space-around;
 }

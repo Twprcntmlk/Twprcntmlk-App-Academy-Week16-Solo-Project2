@@ -7,9 +7,19 @@
     grid-column-gap: 10px;
 }
 
+.SingleList-description_holder{
+    display:grid;
+    grid-template-columns:33% 33% 33%;
+    height:390px;
+    padding: 20px 0px 0px 0px;
+}
 .SingleList-description{
-    padding: 0px 80px 0px 80px;
 
+    padding: 0px 80px 0px 80px;
+    grid-column: 1/2;
+}
+.GoogleMaps {
+    grid-column: 2/3;
 }
 
 .SingleList-title{

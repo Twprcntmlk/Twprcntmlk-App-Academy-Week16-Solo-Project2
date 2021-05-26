@@ -8,6 +8,7 @@ import ReviewForm from '../ReviewForm/index';
 import Reservation from '../Reservation/index';
 import './listing.css';
 import Review from '../ListingPage/review';
+import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 function ListingPage(){
     const { id } = useParams();
@@ -21,7 +22,7 @@ function ListingPage(){
     let [value, setValue]=useState(0);
 
     const {user} = useSelector(state => state.session);
-    
+
     const listingState = useSelector(state => state.listings);
 
     const reviewsState = useSelector(state => state.reviews);
@@ -78,14 +79,19 @@ function ListingPage(){
             </div>
             <div className='SingleList-Photos'>
                 {photos?.map((el, i) => <img src={el.photo} id={`photo-${el.id}`} key={i} alt="listy2"></img>)}
-            </div>
-            <div className='SingleList-description'>
-                <p className='listing-description'>Description---{listingState.description}</p>
-                <p className='listing-price'>Price Per Night---${listingState.price}</p>
-                <p className='listing-guests'># of Guests---{listingState.guests}</p>
-                <p className='listing-bedrooms'># of Bedrooms---{listingState.bedrooms}</p>
-                <p className='listing-baths'># of Baths---{listingState.baths}</p>
-                <p className='listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
+            </div >
+            <div className='SingleList-description_holder'>
+                <div className='SingleList-description'>
+                    <p className='SingleList-listing-description'>Description---{listingState.description}</p>
+                    <p className='SingleList-listing-price'>Price Per Night---${listingState.price}</p>
+                    <p className='SingleList-listing-guests'># of Guests---{listingState.guests}</p>
+                    <p className='SingleList-listing-bedrooms'># of Bedrooms---{listingState.bedrooms}</p>
+                    <p className='SingleList-listing-baths'># of Baths---{listingState.baths}</p>
+                    <p className='SingleList-listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
+                </div>
+                <div className="GoogleMaps">
+                    <GoogleApiWrapper lat={listingState.latitude} lon={listingState.longitude}/>
+                </div>
             </div>
 
             <div className='SingleList-reviews'>
