@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import './LoginFormModal.css';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -30,14 +31,14 @@ function LoginForm() {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className='form-holder-modals'>
+      <form className='.form-signin-modals' onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
+        <label className="form-inputs-modals">
           Username or Email
           <input
             type="text"
@@ -46,7 +47,7 @@ function LoginForm() {
             required
           />
         </label>
-        <label>
+        <label className="form-inputs-modals">
           Password
           <input
             type="password"
@@ -55,10 +56,13 @@ function LoginForm() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <div id='button-modals'>
+          <button className="form-button-modals" type="submit">Log In</button>
+          <button className="form-button-modals" type="submit" onClick={handleDemoSubmit}>Demo User</button>
+        </div>
       </form>
-      <button type="submit" onClick={handleDemoSubmit}>Demo User</button>
-    </>
+
+    </div>
   );
 }
 

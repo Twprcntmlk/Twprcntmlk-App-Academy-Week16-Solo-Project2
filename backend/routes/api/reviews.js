@@ -44,16 +44,18 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 //Edit A Reviews (NOT USER ID BUT USER AND LISTING ID)
 router.put('/edit', asyncHandler( async (req, res) => {//validateReview,
     const { Id,review,cleanliness,communication,checkIn,accuracy,location,value } = req.body;
-    const [...change] = await Review.update(//updatedReviews return the number of lines modified?
+
+    const change = await Review.update(//updatedReviews return the number of lines modified?
       {review,cleanliness,communication,checkIn,accuracy,location,value},
       {where: {id:Number(Id)}}
     );
-    const Areview = await Review.findOne({where: { id: Id }})
-    // const modReview = {};
-    // modReview[Areview.dataValues.id] = Areview.dataValues;
 
-    console.log("This is backend Object",Areview.dataValues)
-    return res.json(Areview.dataValues)
+    // const Areview = await Review.findOne({where: { id: Id }})
+    // // const modReview = {};
+    // // modReview[Areview.dataValues.id] = Areview.dataValues;
+
+    // console.log("This is backend Object",Areview.dataValues)
+    return res.json({Id}) // Areview.dataValues
 
 
   }));

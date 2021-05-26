@@ -5,11 +5,13 @@ import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
 import './listings.css';
+import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 function ListingsPage(){
 
 const listingsState = useSelector(state => state.listings);
-const listings = Object.values(listingsState);
+// const listings =
+// console.log(listings)
 const dispatch = useDispatch();
 
 useEffect(() => {
@@ -26,13 +28,15 @@ useEffect(() => {
             <h3 className='explore-page--header'>Discover</h3>
         </div>
         <div >
-            {listings?.map((el) => {
+            {Object.values(listingsState)?.map((el) => {
             return <Listing key={el.id} list={el}/>
             })}
         </div>
+            <GoogleApiWrapper />
         </div>
     </div>
 
     )
   }
   export default ListingsPage;
+

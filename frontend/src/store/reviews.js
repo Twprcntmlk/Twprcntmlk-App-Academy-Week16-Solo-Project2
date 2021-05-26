@@ -61,11 +61,8 @@ export const editReview = (updatedReview) => async dispatch => {
   });
 
   if (res.ok) {
-
-    const review = await res.json(); //
-    console.log(review)
-    // const [change] = review[1];
-    return await dispatch(edit(review));
+    const id = await res.json(); //
+    return await dispatch(getReviews(id.Id));////////////edit(review)//////////////
   }
 }
 

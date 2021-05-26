@@ -2,31 +2,38 @@ import React, { useEffect, useState }from 'react';//
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
+// import { getlistings } from '../../store/listings';
 import './Listing.css';
-
+import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 function Listing ({ list }) {
-    // console.log({list})
     const dispatch = useDispatch();
     const reviewsState = useSelector(state => state.reviews);
     const reviews = Object.values(reviewsState);
     const allListingReview = reviews.filter((review) => (review.listingId === Number(list.id)))
-    // const listingId = allListingReview[0]?.listingId
-    console.log(allListingReview)
-    // const {user} = useSelector(state => state.session);
 
-    const photos=[list.Photos[0]]
+    // const photos=[list.Photos[0]]
     //get a single object and then put it back in a list to map*
     // {console.log("Array of objects",list.Photos)}
+
+    // const listingsState = useSelector(state => state.listings);
+    // const listings = Object.values(listingsState);
+    let [photos, setPhoto]=useState([]);
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
     let [checkIn, setCheckIn]=useState(0);
     let [accuracy, setAccuracy]=useState(0);
     let [location, setLocation]=useState(0);
     let [value, setValue]=useState(0);
+    console.log(photos)
 
     useEffect(() => {
         dispatch(getReviews(list.id));
         }, [dispatch])
+
+    useEffect(() => {
+        setPhoto([...list.Photos]);
+        console.log(list)
+        }, [list])
 
     useEffect(() => {
         if(allListingReview.length){
@@ -35,27 +42,27 @@ function Listing ({ list }) {
             },0)
             setClean(cleanE/allListingReview.length)
             let communicationE = allListingReview.reduce((accum,nums) =>{
-                console.log(nums.communication)
+
                 return accum+nums.communication
             },0)
             setCommunication(communicationE/allListingReview.length)
             let checkInE = allListingReview.reduce((accum,nums) =>{
-                console.log(nums.checkIn)
+
                 return accum+nums.checkIn
             },0)
             setCheckIn(checkInE/allListingReview.length)
             let accuracyE = allListingReview.reduce((accum,nums) =>{
-                console.log(nums.accuracy)
+
                 return accum+nums.accuracy
             },0)
             setAccuracy(accuracyE/allListingReview.length)
             let locationE = allListingReview.reduce((accum,nums) =>{
-                console.log(nums.location)
+
                 return accum+nums.location
             },0)
             setLocation(locationE/allListingReview.length)
             let valueE = allListingReview.reduce((accum,nums) =>{
-                console.log(nums.value)
+
                 return accum+nums.value
             },0)
             setValue(valueE/allListingReview.length)
@@ -89,6 +96,9 @@ function Listing ({ list }) {
                 {Math.ceil(accuracy)}
                 {Math.ceil(location)}
                 {Math.ceil(value)}
+                </div>
+                <div className="GoogleMaps">
+                    <GoogleApiWrapper latitude={list.latitude} longitude={list.longitude}/>
                 </div>
             </div>
         </div>

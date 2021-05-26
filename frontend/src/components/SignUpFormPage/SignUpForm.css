@@ -11,7 +11,7 @@
   justify-content: center;
   border-radius: 20px;
   color: darkslategray;
-  z-index: 10;
+  z-index: 1;
 }
 
 .form-inputs
@@ -61,4 +61,8 @@ button:hover
   display: flex;
   flex-direction: column;
   margin-right:40px;
+}
+
+button {
+   justify-content:center;
 }

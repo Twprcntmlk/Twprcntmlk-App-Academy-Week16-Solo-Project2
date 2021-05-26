@@ -21,6 +21,7 @@ function ListingPage(){
     let [value, setValue]=useState(0);
 
     const {user} = useSelector(state => state.session);
+    
     const listingState = useSelector(state => state.listings);
 
     const reviewsState = useSelector(state => state.reviews);
