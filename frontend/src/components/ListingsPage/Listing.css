@@ -46,3 +46,9 @@
 .listpart{
     margin:0px 0px 0px 0px;
 }
+
+.GoogleMaps{
+    grid-column: 3/4;
+    max-height: 300px;
+    max-width: 300px;
+}

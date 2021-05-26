@@ -11,12 +11,6 @@ function Listing ({ list }) {
     const reviews = Object.values(reviewsState);
     const allListingReview = reviews.filter((review) => (review.listingId === Number(list.id)))
 
-    // const photos=[list.Photos[0]]
-    //get a single object and then put it back in a list to map*
-    // {console.log("Array of objects",list.Photos)}
-
-    // const listingsState = useSelector(state => state.listings);
-    // const listings = Object.values(listingsState);
     let [photos, setPhoto]=useState([]);
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
@@ -24,7 +18,6 @@ function Listing ({ list }) {
     let [accuracy, setAccuracy]=useState(0);
     let [location, setLocation]=useState(0);
     let [value, setValue]=useState(0);
-    console.log(photos)
 
     useEffect(() => {
         dispatch(getReviews(list.id));
@@ -32,7 +25,6 @@ function Listing ({ list }) {
 
     useEffect(() => {
         setPhoto([...list.Photos]);
-        console.log(list)
         }, [list])
 
     useEffect(() => {
@@ -69,11 +61,12 @@ function Listing ({ list }) {
         }
         }, [allListingReview,clean,communication,checkIn,accuracy,location,value, list.id])
 
+
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
             <Link to={`/listings/${list.id}`}>
-                {photos.map((el) => <img className='photo'src={el.photo} alt="listy"></img>)}
+                {photos.map((el) => <img key={el.id} className='photo'src={el.photo} alt="listy"></img>)}
             </Link>
             </div>
             <div className='listing-description'>
@@ -98,7 +91,7 @@ function Listing ({ list }) {
                 {Math.ceil(value)}
                 </div>
                 <div className="GoogleMaps">
-                    <GoogleApiWrapper latitude={list.latitude} longitude={list.longitude}/>
+                    <GoogleApiWrapper />
                 </div>
             </div>
         </div>

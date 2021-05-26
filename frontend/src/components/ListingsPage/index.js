@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
 import './listings.css';
-import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 function ListingsPage(){
 
@@ -32,11 +31,10 @@ useEffect(() => {
             return <Listing key={el.id} list={el}/>
             })}
         </div>
-            <GoogleApiWrapper />
+
         </div>
     </div>
 
     )
   }
   export default ListingsPage;
-
