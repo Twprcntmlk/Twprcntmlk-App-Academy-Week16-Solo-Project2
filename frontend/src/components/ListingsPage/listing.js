@@ -24,7 +24,7 @@ function Listing ({ list }) {
         }, [dispatch])
 
     useEffect(() => {
-        setPhoto([...list.Photos]);
+        setPhoto(list.Photos[0]);
         }, [list])
 
     useEffect(() => {
@@ -66,7 +66,7 @@ function Listing ({ list }) {
         <div className='listings-main'>
             <div className='listing-photo'>
             <Link to={`/listings/${list.id}`}>
-                {photos.map((el) => <img key={el.id} className='photo'src={el.photo} alt="listy"></img>)}
+                {[photos].map((el) => <img key={el.id} className='photo'src={el.photo} alt="listy"></img>)}
             </Link>
             </div>
             <div className='listing-description'>
