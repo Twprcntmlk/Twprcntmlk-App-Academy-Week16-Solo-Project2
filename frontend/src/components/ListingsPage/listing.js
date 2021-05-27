@@ -1,17 +1,18 @@
 import React, { useEffect, useState }from 'react';//
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
-// import { getlistings } from '../../store/listings';
-import './Listing.css';
+import { getlistings } from '../../store/listings';
+import { getphotos } from '../../store/photo';
+import './listingsComponent.css';
 import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
+
 function Listing ({ list }) {
     const dispatch = useDispatch();
-    const reviewsState = useSelector(state => state.reviews);
-    const reviews = Object.values(reviewsState);
-    const allListingReview = reviews.filter((review) => (review.listingId === Number(list.id)))
-
-    let [photos, setPhoto]=useState([]);
+    // console.log(list)
+    // let [holdlist, setHoldlist]=useState("");
+    let [photos, setPhoto]=useState({});
+    //////////////////////////////////////////
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
     let [checkIn, setCheckIn]=useState(0);
@@ -19,13 +20,31 @@ function Listing ({ list }) {
     let [location, setLocation]=useState(0);
     let [value, setValue]=useState(0);
 
+    const reviewsState = useSelector(state => state.reviews);
+    const reviews = Object.values(reviewsState);
+    const allListingReview = reviews.filter((review) => (review.listingId === Number(list.id)))
+
+///////////////////////////////////////////////
+    const PhotosState= useSelector(state => state.photos);
+    const allphotos = Object.values(PhotosState);
+    const OnePhoto = allphotos.find((el) => (el.id === list.id))
+ ////////////////////////////////////////////////
+
+
+    console.log(OnePhoto)
+
     useEffect(() => {
+        dispatch(getlistings(list.id));
         dispatch(getReviews(list.id));
+        dispatch(getphotos())
         }, [dispatch])
 
     useEffect(() => {
-        setPhoto(list.Photos[0]);
-        }, [list])
+        setPhoto(OnePhoto)
+        // setHoldlist(holdlist)
+        }, [])
+
+
 
     useEffect(() => {
         if(allListingReview.length){
@@ -61,12 +80,11 @@ function Listing ({ list }) {
         }
         }, [allListingReview,clean,communication,checkIn,accuracy,location,value, list.id])
 
-
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
             <Link to={`/listings/${list.id}`}>
-                {[photos].map((el) => <img key={el.id} className='photo'src={el.photo} alt="listy"></img>)}
+                {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>}
             </Link>
             </div>
             <div className='listing-description'>
@@ -107,7 +125,7 @@ function Listing ({ list }) {
                 <div className='listing-price_parts'>
                     <p>Price Per Night---${list.price}</p>
                 </div>
-                
+
                 <div className="GoogleMaps">
                     <GoogleApiWrapper lat={list.latitude} lon={list.longitude}/>
                 </div>

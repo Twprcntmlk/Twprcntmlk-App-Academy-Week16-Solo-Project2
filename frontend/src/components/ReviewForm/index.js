@@ -1,10 +1,10 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React,{ useState } from "react"; // useEffect,
-import { useDispatch } from 'react-redux';//, useSelector
+import { useDispatch }  from 'react-redux';//, useSelector
 import { addReview } from '../../store/reviews';
 import './reviewform.css'
 
-function ReviewForm ({userId, listingId}) { //will probably need to pass id
+function ReviewForm ({listingId, userId}) { //will probably need to pass id userId,
   const dispatch = useDispatch();
 
   const [review, setReview] = useState("");

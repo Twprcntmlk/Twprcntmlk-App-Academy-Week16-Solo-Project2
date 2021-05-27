@@ -1,0 +1,64 @@
+.User-splash img{
+    width: 100vw;
+    z-index: -1;
+}
+
+.User-splash {
+    display:grid;
+    grid-template-columns: 10% 10% 20% 20% 20% 10% 10% ;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    height:1055px;
+}
+
+.User-title{
+    grid-row: 2/3;
+    grid-column: 2/6;
+    color:White;
+}
+
+.User-button_div{
+    grid-row: 3/4;
+    grid-column: 2/4;
+
+
+}
+
+.User-button_Button{
+    background-color: black;
+    color:white;
+    border-radius:20px;
+    font-size:1.1em;
+    padding: 13px 13px 13px 13px ;
+    border: none;
+    box-shadow: .5px 1px #888888;
+}
+
+.User-button_Button:hover{
+    box-shadow: 1.5px 2.5px #888888;
+    font-size:1.11em;
+}
+.User-title_title{
+    font-size:4.5em;
+    margin-bottom:0px;
+}
+
+.User-title_span{
+    margin-top:0px;
+    margin-bottom:10px;
+    font-size:2.5em;
+}
+
+.UserBlock_holder{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.UserBlock{
+    border-style: solid;
+    border-width: 5px;
+
+}
+
+.UserPage-Reservation{
+    border-style: solid;
+    border-width: 5px;
+}

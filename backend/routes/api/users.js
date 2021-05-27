@@ -63,14 +63,5 @@ router.patch('/:id', asyncHandler(async (req, res) => {
     });
   }),
 );
-///////////////////////////////////////////////////////////////////////////////////////
-// //Get Specific Reservation (for User)
-// router.get('/:id/reservations', asyncHandler(async function(req, res) {
-//   const reservation = await Reservation.findByPk(req.params.id);
-//   return res.json(reservation);
-// }));
-
-
-
 
 module.exports = router;

@@ -25,7 +25,9 @@ function Footer(){
 
           <div className=" footer footer-nav-about">
             <ul> About
-              <li>How Airbnb works</li>
+              <li>
+                <a href="https://www.airbnb.com/d/howairbnbworks">How Airbnb works</a>
+              </li>
               <li>Newsroom</li>
               <li>Investors</li>
               <li>Airbnb Plus</li>
@@ -35,7 +37,9 @@ function Footer(){
 
           <div className="footer footer-nav-community">
             <ul> Community
-              <li>How Airbnb works</li>
+              <li>
+                <a href="https://www.airbnb.com/diversity">Diversity & Belonging</a>
+              </li>
               <li>Newsroom</li>
               <li>Investors</li>
               <li>Airbnb Plus</li>
@@ -45,21 +49,25 @@ function Footer(){
 
           <div className="footer footer-nav-host">
             <ul> Host
-              <li>How Airbnb works</li>
-              <li>Newsroom</li>
-              <li>Investors</li>
-              <li>Airbnb Plus</li>
-              <li>Airbnb Luxe</li>
+              <li>
+                <a href="https://www.airbnb.com/diversity">Host your Home</a>
+              </li>
+              <li>Host and Online Experience</li>
+              <li>Host and Experience</li>
+              <li>Responsible Hosting</li>
+              <li>Community Center</li>
             </ul>
           </div>
 
           <div className="footer footer-nav-support">
             <ul> Support
-              <li>How Airbnb works</li>
-              <li>Newsroom</li>
-              <li>Investors</li>
-              <li>Airbnb Plus</li>
-              <li>Airbnb Luxe</li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Our COVID-19 Response</a>
+              </li>
+              <li>Help Center</li>
+              <li>Cancellation options</li>
+              <li>Neighborhood Support</li>
+              <li>Trust & Safety</li>
             </ul>
           </div>
 

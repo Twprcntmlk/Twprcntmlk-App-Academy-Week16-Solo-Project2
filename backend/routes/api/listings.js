@@ -7,16 +7,12 @@ const router = express.Router();
 //Get All Listings
 router.get('/', asyncHandler(async function (req, res) {
     const listings = await Listing.findAll( {include:Photo});
-    // const listings = await Photo.findAll();
-    // {include:[Photo]}
-    // console.log(listings)
     return res.json(listings);
   }));
 
 //Get Specific Listing
   router.get('/:id', asyncHandler(async function(req, res) {
     const listing = await Listing.findByPk(req.params.id,{include:Photo});
-    // console.log(listing)
     return res.json(listing);
   }));
 
@@ -30,9 +26,9 @@ router.get('/', asyncHandler(async function (req, res) {
   router.put('/:id', asyncHandler(async function(req, res) {
       const listingId = req.params.id;
       const { name,description,address,price,guests,bedrooms,baths } = req.body;
-      const listing = await Listing.findByPk(listingId);
       await listing.update({name,description,address,price,guests,bedrooms,baths})
-      return res.json(listing);
+      // const listing = await Listing.findByPk(listingId);
+      return res.json(listingId); //assume I get back listingId
     }))
 
   //Create a Listings (for User)

@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
-import './listings.css';
+import './listingsIndex.css';
 
 function ListingsPage(){
 
 const listingsState = useSelector(state => state.listings);
+
 // const listings =
-// console.log(listings)
 const dispatch = useDispatch();
 
 useEffect(() => {
@@ -28,7 +28,7 @@ useEffect(() => {
         </div>
         <div >
             {Object.values(listingsState)?.map((el) => {
-            return <Listing key={el.id} list={el}/>
+            return <Listing key={el.id} list={el} />
             })}
         </div>
 

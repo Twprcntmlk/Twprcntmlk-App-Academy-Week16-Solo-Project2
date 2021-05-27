@@ -33,7 +33,6 @@ export const getReviews = (id) => async dispatch => {
 
   if (res.ok) {
     const reviews = await res.json();
-
     dispatch(reviewFind(reviews, id));
   }
 };
@@ -98,22 +97,6 @@ const reviewReducer = (state = {}, action) => {
       {
         const newState = { ...state }
         delete newState[action.id]
-        return newState
-      }
-    case EDIT:
-      {//changedReview{id:id,review:review....}
-        const newState = { ...state,
-        [action.changedReview.id]: {
-          ...state[action.changedReview.id],
-          review: action.changedReview.review,
-          cleanliness: action.changedReview.cleanliness,
-          communication: action.changedReview.communication,
-          checkIn: action.changedReview.checkIn,
-          accuracy: action.changedReview.accuracy,
-          location: action.changedReview.location,
-          value: action.changedReview.value,
-        }
-        }
         return newState
       }
     default:

@@ -22,8 +22,8 @@ if (res.ok) {
     dispatch(load(listings));
     }
 }
-////////////////////////////////////////////////
 
+//Get Specific listings from database//I might not need this
 export const findlistings = (id) => async dispatch => {
 const res = await csrfFetch(`/api/listings/${id}`);
 
@@ -32,6 +32,18 @@ if (res.ok) {
     dispatch(getOne(listing));
 }
 };
+//Edit listings from database//////////////////////////////
+export const editlistings = (listing) => async dispatch => {
+    const res = await csrfFetch(`/api/listings/${listing.id}`, {
+                method: "PUT",
+                body: JSON.stringify(listing),
+            });
+
+    if (res.ok) {
+        const listingId = await res.json();
+        dispatch(findlistings(listingId));
+    }
+    };
 
 
 const listingsReducer = (state = {}, action) => {

@@ -1,0 +1,13 @@
+.Reservation_Form-Holder{
+    height: 350px;
+    max-width: 450px;
+    border:solid;
+    border-color: black;
+
+}
+
+.Reservation_Form{
+    display:flex;
+    flex-direction:column;
+
+}

@@ -7,13 +7,15 @@ import listingsReducer from "./listings";
 import reviewReducer from "./reviews";
 import reservationReducer from "./reservations";
 import usersReducer from "./user";
+import PhotosReducer from "./photo";
 
 const rootReducer = combineReducers({
   listings: listingsReducer,
   session: sessionReducer,
   reviews: reviewReducer,
   reservation: reservationReducer,
-  user:usersReducer
+  user:usersReducer,
+  photos:PhotosReducer
 });
 
 let enhancer;

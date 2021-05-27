@@ -4,7 +4,7 @@ import './GoogleMapApi.css'
 
 const style = {
   width: '100%',
-  height: '100%'
+  height: '100%',
 }
 
 const containerStyle= {
@@ -43,23 +43,20 @@ export class MapContainer extends Component {
       const lat = this.props.lat
       const lon = this.props.lon
       return (
-
-        <div className='GoogleMap'>
-
-            <Map google={this.props.google}
-                onClick={this.onMapClicked}
-                containerStyle={containerStyle}
-                style={style}
-                initialCenter={{
-                  lat: lat,
-                  lng: lon
-                }}
-                >
-            <Marker onClick={this.onMarkerClick}
-                    name={'Current location'}
-                   />
-            </Map>
-        </div>
+        <Map google={this.props.google}
+            onClick={this.onMapClicked}
+            containerStyle={containerStyle}
+            style={style}
+            zoom={10}
+            initialCenter={{
+              lat: lat,
+              lng: lon
+            }}
+            >
+        <Marker onClick={this.onMarkerClick}
+                name={'Current location'}
+                />
+        </Map>
       )
     }
   }

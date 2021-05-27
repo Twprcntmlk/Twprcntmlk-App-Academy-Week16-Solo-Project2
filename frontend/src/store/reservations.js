@@ -5,7 +5,6 @@ const STORE_RESERVATION  = "reservation/STORE";
 const GET_RESERVATION  = "reservation/GET";
 const DELETE_RESERVATION  = "reservation/DELETE";
 const EDIT_RESERVATION = "reservation/EDIT";
-/////////////////// ACTION CREATORS ////////////////////
 
 const addReservation  = reservation => ({
     type: ADD_RESERVATION ,
@@ -33,8 +32,6 @@ const editReservation  = (changedReservation) => ({
 
 });
 
-
-//////////////// THUNK ACTION CREATORS ////////////////////
 
 export const createReservation  = reservation => async (dispatch) => {
 

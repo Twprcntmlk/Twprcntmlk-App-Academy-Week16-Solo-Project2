@@ -1,0 +1,60 @@
+.Main-page{
+}
+
+.Main-splash_container{
+    display:grid;
+    grid-template-rows: auto auto auto;
+}
+.Main-splash img{
+    width: 100vw;
+    z-index: -1;
+}
+
+.Main-splash {
+    grid-row: 1/2;
+    display:grid;
+    grid-template-columns: 10% 10% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
+
+}
+
+.Main-title{
+    grid-row: 2/3;
+    grid-column: 2/6;
+}
+
+.Main-button_div{
+    grid-row: 3/4;
+    grid-column: 2/4;
+
+
+}
+
+.Main-button_Button{
+    background-color: black;
+    color:white;
+    border-radius:20px;
+    font-size:1.1em;
+    padding: 13px 13px 13px 13px ;
+    border: none;
+    box-shadow: .5px 1px #888888;
+}
+
+.Main-button_Button:hover{
+    box-shadow: 1.5px 2.5px #888888;
+    font-size:1.11em;
+}
+.Main-title_title{
+    font-size:5.5em;
+    margin-bottom:0px;
+}
+
+.Main-title_span{
+    margin-top:0px;
+    margin-bottom:10px;
+    font-size:3.5em;
+}
+
+.Main-page_footer{
+    grid-row: 3/4;
+}

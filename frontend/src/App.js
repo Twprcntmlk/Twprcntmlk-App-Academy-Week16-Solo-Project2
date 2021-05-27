@@ -5,10 +5,10 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignUpFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
+
 import MainPage from "./components/MainPage";
 import ListingsPage from "./components/ListingsPage";
-import ListingPage from "./components/ListingPage";
+import SingleListingPage from "./components/SingleListingPage";
 import UserPage from "./components/UserPage";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           </Route>
 
           <Route path="/listings/:id" exact>
-            <ListingPage />
+            <SingleListingPage />
           </Route>
 
           <Route path="/users/:id" exact>
@@ -45,7 +45,7 @@ function App() {
 
         </Switch>
       )}
-      <Footer />
+
     </>
   );
 }

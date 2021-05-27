@@ -27,17 +27,15 @@ router.get('/:id', asyncHandler(async function(req, res) {
 
 //Create a Reviews (for User)
 router.post('/', asyncHandler(async function (req, res) {
-const review = await Review.create(req.body);
-const newReview= await Review.findOne({where: { id: review.id }})
-return res.json(newReview)
+  const review = await Review.create(req.body);
+  const newReview= await Review.findOne({where: { id: review.id }})
+  return res.json(newReview)
 })
 );
 
 //"Delete"/Cancel A Specific Reviews  (NOT USER ID BUT USER AND LISTING ID)
 router.delete('/:id', asyncHandler(async (req, res) => {
-
-    const item = await Review.findOne({ where : {id: req.params.id} });
-    const removed = await item.destroy();
+    const removed = await Review.destroy({ where : {id: req.params.id}});
     return res.json(removed);
   }));
 
@@ -49,16 +47,7 @@ router.put('/edit', asyncHandler( async (req, res) => {//validateReview,
       {review,cleanliness,communication,checkIn,accuracy,location,value},
       {where: {id:Number(Id)}}
     );
-
-    // const Areview = await Review.findOne({where: { id: Id }})
-    // // const modReview = {};
-    // // modReview[Areview.dataValues.id] = Areview.dataValues;
-
-    // console.log("This is backend Object",Areview.dataValues)
-    return res.json({Id}) // Areview.dataValues
-
-
+    return res.json({Id})
   }));
-
 
 module.exports = router;
