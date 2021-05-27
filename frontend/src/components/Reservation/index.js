@@ -2,15 +2,18 @@
 import React, { useState } from "react";
 // import * as sessionActions from "../../store/session";
 // import { createReservation} from '../../store/session';
+import { useHistory } from 'react-router-dom';
+
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createReservation} from '../../store/reservations';
 import './reservationform.css';
 
 function ReservationForm({price}) {
-  console.log(price)
+
   const { id } = useParams()
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
   const [checkInDate, setCheckInDate] = useState("");
@@ -22,7 +25,9 @@ function ReservationForm({price}) {
     e.preventDefault();
 
     const payload={ userId:sessionUser.id , listingId:id, checkInDate, checkOutDate, guests:guest }
+    history.push(`/users/${sessionUser.id}`)
     return dispatch(createReservation(payload))
+
   };
 
 

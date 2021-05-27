@@ -2,6 +2,7 @@
 import React,{ useState } from "react"; // useEffect,
 import { useDispatch }  from 'react-redux';//, useSelector
 import { addReview } from '../../store/reviews';
+
 import './reviewform.css'
 
 function ReviewForm ({listingId, userId}) { //will probably need to pass id userId,
@@ -47,7 +48,9 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
       setAccuracy(null);
       setLocation(null);
       setValue(null);
+
     }
+
   };
 
   const handleCancelClick = (e) => {

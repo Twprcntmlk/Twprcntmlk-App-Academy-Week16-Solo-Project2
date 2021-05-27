@@ -55,9 +55,6 @@ switch(action.type) {
         });
         return {...allPhotos}
     }
-
-    // case FIND_ONE:
-    //     return {...action.photo}
     default:
         return state;
     };

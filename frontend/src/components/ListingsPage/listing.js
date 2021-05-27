@@ -9,9 +9,6 @@ import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 function Listing ({ list }) {
     const dispatch = useDispatch();
-    // console.log(list)
-    // let [holdlist, setHoldlist]=useState("");
-    let [photos, setPhoto]=useState({});
     //////////////////////////////////////////
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
@@ -29,9 +26,6 @@ function Listing ({ list }) {
     const allphotos = Object.values(PhotosState);
     const OnePhoto = allphotos.find((el) => (el.id === list.id))
  ////////////////////////////////////////////////
-
-
-    console.log(OnePhoto)
 
     useEffect(() => {
         dispatch(getlistings(list.id));

@@ -29,7 +29,7 @@ const remove = id => ({
 })
 
 export const getReviews = (id) => async dispatch => {
-  const res = await csrfFetch(`/api/reviews`,);//${id}`
+  const res = await csrfFetch(`/api/reviews`);
 
   if (res.ok) {
     const reviews = await res.json();
@@ -60,8 +60,8 @@ export const editReview = (updatedReview) => async dispatch => {
   });
 
   if (res.ok) {
-    const id = await res.json(); //
-    return await dispatch(getReviews(id.Id));////////////edit(review)//////////////
+    const id = await res.json();
+    return await dispatch(getReviews(id.Id));
   }
 }
 

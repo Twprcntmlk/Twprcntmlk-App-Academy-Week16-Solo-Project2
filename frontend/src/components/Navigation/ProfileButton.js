@@ -40,9 +40,6 @@ function ProfileButton({ user }) {
     history.push(`/users/${user.id}`)
   }
 
-
-
-
   return (
     <>
       <button onClick={openMenu} className="profile-button">

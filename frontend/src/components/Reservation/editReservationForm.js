@@ -8,11 +8,12 @@ function EditReservationForm ({Id,userId,listingId, toggleState}) {
   const dispatch = useDispatch();
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
+  const [guests, setGuest] = useState(0);
 
 
   const updatedcheckInDate = (e) => setCheckInDate(e.target.value);
   const updatedcheckOutDate = (e) => setCheckOutDate(e.target.value);
-
+  const updatedguest = (e) => setGuest(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,8 +24,9 @@ function EditReservationForm ({Id,userId,listingId, toggleState}) {
       listingId,
       checkInDate,
       checkOutDate,
+      guests
     };
-    console.log(payload)
+
     const editedReservation = await dispatch(editReservations(payload));
     if (editedReservation) {
      setCheckInDate('');
@@ -43,7 +45,8 @@ function EditReservationForm ({Id,userId,listingId, toggleState}) {
     <form onSubmit={handleSubmit}>
       <input value={checkInDate} type='date' onChange={updatedcheckInDate}></input>
       <input value={checkOutDate} type='date' onChange={updatedcheckOutDate}></input>
-      <button type="submit">Modify Dates</button>
+      <input value={guests} type='number' onChange={updatedguest}></input>
+      <button type="submit">Modify Reservations</button>
       <button type="button" onClick={handleCancelClick}>Cancel</button>
     </form>
   </section>

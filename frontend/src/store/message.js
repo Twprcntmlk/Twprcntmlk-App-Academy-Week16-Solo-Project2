@@ -19,7 +19,7 @@ export const getmessages = () => async dispatch => {
 const res = await csrfFetch('/api/messages'); // problem is here?
 if (res.ok) {
     const messages = await res.json();
-    console.log(messages)
+
     dispatch(load(messages));
     }
 }

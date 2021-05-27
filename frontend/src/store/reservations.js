@@ -86,7 +86,7 @@ export const editReservations  = (reservation) => async (dispatch) => {
     };
 }
 
-/////////////////////// REDUCER //////////////////////////
+
 
 const initialState = {};
 
@@ -112,6 +112,7 @@ const reservationReducer = (state = initialState, action) => {
             ...state[action.changedReservation.id],
             checkInDate: action.changedReservation.checkInDate,
             checkOutDate: action.changedReservation.checkOutDate,
+            guests: action.changedReservation.guests,
             }
             }
             return newState2

@@ -7,16 +7,16 @@ import './message.css';
 
 function Messages ({hostId}) { //will probably need to pass id userId,
   const dispatch = useDispatch();
-console.log("hostid",hostId)
+
   const [message, setMessage] = useState(null);
   const updateMessage = (e) => setMessage(e.target.value);
   const {user} = useSelector(state => state.session);
   const MessageState= useSelector(state => state.messages);
   const messages = Object.values(MessageState);
-console.log("where",user.id)
+
     const usermessages= messages.filter((el) => (el.userId === user.id))
     const hostmessages= messages.filter((el) => (el.userId === 2))
-    console.log(hostmessages)
+ 
 useEffect(() => {
     dispatch(getmessages());
     }, [dispatch])

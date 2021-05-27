@@ -27,12 +27,10 @@ router.delete('/:id', asyncHandler(async function(req, res) {
 //Edit A Specific Reservations Dates (for User)
 router.put('/:id', asyncHandler(async function(req, res) {
     const userId = req.params.id;
-    const { Id, listingId, checkInDate, checkOutDate } = req.body;
+    const { Id, listingId, checkInDate, checkOutDate, guests } = req.body;
     // const reservation = await Reservation.findByPk(Number(Id));
-    const changed=await Reservation.update({userId, listingId, checkInDate,checkOutDate},{where: {id:Number(Id)}})
-
+    const changed=await Reservation.update({userId, listingId, checkInDate,checkOutDate, guests},{where: {id:Number(Id)}})
     const Ares = await Reservation.findOne({where: { id: Id}})
-  console.log(Ares.dataValues)
     return res.json(Ares.dataValues);
 
   }))
@@ -40,10 +38,7 @@ router.put('/:id', asyncHandler(async function(req, res) {
 
 //Create a Reservation (for User)
 router.post('/', asyncHandler(async function (req, res) {
-    console.log(req.body)
     const reservation = await Reservation.create(req.body);
-    console.log("THIS IS IN BACKEND__________", reservation)
-
     const newreservation = await Reservation.findOne({
         where: { id: reservation.id }
 
