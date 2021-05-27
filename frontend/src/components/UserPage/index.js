@@ -5,8 +5,9 @@ import { getReservations } from '../../store/reservations'; //,cancelReservation
 import { findusers} from '../../store/user';
 import { useParams } from 'react-router-dom';
 import ReservationEditButton from '../Reservation/reservationEditButton';
-import hostSplash from './images/hostPage.jpeg'
-import "./UserPage.css"
+import Messages from '../../components/Message/message';
+import hostSplash from './images/hostPage.jpeg';
+import "./UserPage.css";
 
 function UserPage () { //will probably need to pass id
     const { id } = useParams();
@@ -18,7 +19,6 @@ function UserPage () { //will probably need to pass id
     const reservationsState = useSelector(state => state.reservation);
     const reservations = Object.values(reservationsState);
     const allReservations = reservations.filter((el) => (el.userId === Number(id)))
-
 
     useEffect(() => {
       dispatch(findusers(id))
@@ -35,10 +35,15 @@ function UserPage () { //will probably need to pass id
         {allReservations?.map((el) =>
         <div className='UserPage-Reservation'>
         <div key={el.id}>{el.checkInDate}-----{el.checkOutDate} Number of Guests-----{el.guests}
+        {el.Listings}
         </div>
           <ReservationEditButton el={el}/>
+
         </div>
          )}
+        <div>
+            <Messages />
+        </div>
 
 
         <div className="UserBlock_holder">

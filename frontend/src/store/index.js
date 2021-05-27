@@ -8,6 +8,7 @@ import reviewReducer from "./reviews";
 import reservationReducer from "./reservations";
 import usersReducer from "./user";
 import PhotosReducer from "./photo";
+import messagesReducer from "./message";
 
 const rootReducer = combineReducers({
   listings: listingsReducer,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   reviews: reviewReducer,
   reservation: reservationReducer,
   user:usersReducer,
-  photos:PhotosReducer
+  photos:PhotosReducer,
+  messages:messagesReducer
 });
 
 let enhancer;

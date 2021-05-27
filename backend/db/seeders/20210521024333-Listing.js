@@ -3,11 +3,11 @@ const faker = require('faker');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Listings', [
-      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:1,},
       {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:2,},
-      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:3,},
-      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:4,},
-      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:5,},
+      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:2,},
+      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:2,},
+      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:2,},
+      {name:faker.lorem.sentence(),description:faker.lorem.sentences(),address:faker.address.streetAddress(),latitude:faker.address.latitude(),longitude:faker.address.longitude(),price:faker.datatype.number(1000),guests:faker.datatype.number(7),bedrooms:faker.datatype.number(7),baths:faker.datatype.number(7),userId:2,},
     ], {});
   },
 

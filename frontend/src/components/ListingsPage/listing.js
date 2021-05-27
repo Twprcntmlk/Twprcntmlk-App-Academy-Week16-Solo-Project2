@@ -39,10 +39,10 @@ function Listing ({ list }) {
         dispatch(getphotos())
         }, [dispatch])
 
-    useEffect(() => {
-        setPhoto(OnePhoto)
-        // setHoldlist(holdlist)
-        }, [])
+    // useEffect(() => {
+    //     setPhoto(OnePhoto)
+    //     // setHoldlist(holdlist)
+    //     }, [])
 
 
 

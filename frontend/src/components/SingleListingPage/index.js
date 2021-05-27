@@ -6,6 +6,7 @@ import { findlistings } from '../../store/listings';
 import { getReviews } from '../../store/reviews';//, editReview, deleteReview
 import ReviewForm from '../ReviewForm/index';
 import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
+
 import Reservation from '../Reservation/index';
 import { } from 'react-router-dom';
 
@@ -27,7 +28,8 @@ function SingleListingPage(){
 
     const {user}= useSelector(state => state.session);
     const listingState = useSelector(state => state.listings);
-    console.log(listingState)
+
+
     const reviewsState = useSelector(state => state.reviews);
     const reviews = Object.values(reviewsState);
 
@@ -122,6 +124,8 @@ function SingleListingPage(){
                         <Review el={el} listingId={el.listingId}/>
                     </div>)}
                 </div>
+
+
 
             </div>
 

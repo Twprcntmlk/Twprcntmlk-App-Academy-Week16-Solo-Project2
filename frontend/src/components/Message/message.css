@@ -1,0 +1,20 @@
+.messages{
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 30% 30% 30%;
+}
+
+.UserChat{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.HostChat{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.Chat{
+    grid-column: 3/4;
+    grid-row: 3/4;
+}

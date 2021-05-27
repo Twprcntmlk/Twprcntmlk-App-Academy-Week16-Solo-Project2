@@ -6,7 +6,8 @@ const router = express.Router();
 
 //Get All Listings
 router.get('/', asyncHandler(async function (req, res) {
-    const messages = await Message.findAll();
+    const messages = await Message.findAll({order: [['createdAt', 'DESC']]},);
+    console.log("are you printing",messages)
     return res.json(messages);
   }));
 
@@ -29,10 +30,8 @@ router.get('/', asyncHandler(async function (req, res) {
   //Create a messages (for User)
   router.post('/', asyncHandler(async function (req, res) {
       const message = await Message.create(req.body);
-      const newMessage = await Reservation.findOne({
-          where: { id: message.id }
-          })
-      return res.json(newMessage)
+
+      return res.json(message)
       })
   );
 
