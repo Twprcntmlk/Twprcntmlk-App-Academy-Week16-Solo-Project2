@@ -25,9 +25,7 @@ function ReservationForm({price}) {
     e.preventDefault();
 
     const payload={ userId:sessionUser.id , listingId:id, checkInDate, checkOutDate, guests:guest }
-    history.push(`/users/${sessionUser.id}`)
     return dispatch(createReservation(payload))
-
   };
 
 
