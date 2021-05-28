@@ -1,5 +1,5 @@
 import React, { useEffect, useState }from 'react';//
-import { Link} from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom'; //, Redirect
 import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
@@ -7,8 +7,10 @@ import { getphotos } from '../../store/photo';
 import './listingsComponent.css';
 import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
+
 function Listing ({ list }) {
     const dispatch = useDispatch();
+
     //////////////////////////////////////////
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
@@ -77,12 +79,11 @@ function Listing ({ list }) {
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
-            <Link to={`/listings/${list.id}`}>
-                {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>}
-            </Link>
+                <a href={`/listings/${list.id}`}>
+                    {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>}
+                </a>
             </div>
             <div className='listing-description'>
-
                 <div className='listing-title_component'>
                     <p className='listing-name_parts'>Name---{list.name}</p>
                     <p className='listing-description_parts'>Description---{list.description}</p>
@@ -119,10 +120,9 @@ function Listing ({ list }) {
                 <div className='listing-price_parts'>
                     <p>Price Per Night---${list.price}</p>
                 </div>
-
-                <div className="GoogleMaps">
-                    <GoogleApiWrapper lat={list.latitude} lon={list.longitude}/>
-                </div>
+            </div>
+            <div className="GoogleMaps">
+                <GoogleApiWrapper lat={list.latitude} lon={list.longitude}/>
             </div>
         </div>
     )

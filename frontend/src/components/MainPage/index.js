@@ -1,11 +1,24 @@
 // frontend/src/components/MainPage/index.js
-import React from 'react';
+import React,{useState} from 'react';
 import { NavLink } from 'react-router-dom'; //NavLink,
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { Redirect, useHistory} from 'react-router-dom'; //, Redirect
 import './MainPage.css';
 import splash from './images/splash-page-img.jpg';
 import Footer from "../../components/Footer";
 function MainPage(){
+  let history = useHistory();
+  let [error, setError]=useState("");
+  const sessionUser = useSelector((state) => state.session.user);
+  const direct = () =>{
+    if (!sessionUser){
+      setError("Please Log In")
+      setTimeout(() =>{setError("")},1000)
+      return Redirect("/");
+  } else{
+    return history.push("/listings");
+  }
+  }
 
     return(
       <div className="Main-page">
@@ -15,9 +28,10 @@ function MainPage(){
           <h1 className ="Main-title_title">The Greatest Outdoors </h1>
           <h3 className ="Main-title_span">Wishlists curated by Airbnb.</h3>
           <div className="Main-button_div">
-            <NavLink to="/listings">
-                <button className="Main-button_Button"> Explore The World!</button>
-            </NavLink>
+                <button onClick={direct} className="Main-button_Button"> Explore The World!</button>
+            <span className="error">
+              {error}
+            </span>
           </div>
         </div>
         </div>

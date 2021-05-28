@@ -25,7 +25,6 @@ module.exports = {
         type: Sequelize.TEXT
       },
       address: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       latitude: {

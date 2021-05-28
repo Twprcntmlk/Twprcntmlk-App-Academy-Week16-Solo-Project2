@@ -58,3 +58,8 @@
 .Main-page_footer{
     grid-row: 3/4;
 }
+
+.error{
+    color:red;
+    padding-left: 10px;
+}

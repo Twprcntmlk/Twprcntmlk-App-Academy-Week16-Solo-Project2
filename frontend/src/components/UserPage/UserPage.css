@@ -8,6 +8,7 @@
     grid-template-columns: 10% 10% 20% 20% 20% 10% 10% ;
     grid-template-rows: 20% 20% 20% 20% 20%;
     height:1055px;
+    padding-top: 20px;
 }
 
 .User-title{
@@ -50,7 +51,7 @@
 
 .UserBlock_holder{
     display:grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 30% 30% 30%;
 }
 .UserBlock{
     border-style: solid;
@@ -61,4 +62,16 @@
 .UserPage-Reservation{
     border-style: solid;
     border-width: 5px;
+}
+
+.UserBlock_userImage{
+    grid-row: 1/2;
+    height: 400px;
+    width: 400px;
+}
+
+.message_system{
+    border-style: solid;
+    border-width: 5px;
+
 }

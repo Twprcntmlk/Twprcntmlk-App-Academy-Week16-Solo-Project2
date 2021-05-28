@@ -30,10 +30,11 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    imageUrl: DataTypes.TEXT,
+    imageUrl:{
+      type:DataTypes.TEXT,
+    },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         len: [3, 256]
       },
@@ -45,9 +46,15 @@ module.exports = (sequelize, DataTypes) => {
         len: [3, 256]
       },
     },
-    address: DataTypes.STRING,
-    latitude: DataTypes.FLOAT,
-    longitude: DataTypes.FLOAT,
+    address:{
+      type:DataTypes.STRING,
+    },
+    latitude:{
+      type:DataTypes.FLOAT,
+    },
+    longitude: {
+      type:DataTypes.FLOAT,
+    },
     personal: {
       type: DataTypes.TEXT
     },
@@ -101,11 +108,13 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     }
   };
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ username, firstName,lastName, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
       email,
+      firstName,
+      lastName,
       hashedPassword,
     });
     return await User.scope('currentUser').findByPk(user.id);

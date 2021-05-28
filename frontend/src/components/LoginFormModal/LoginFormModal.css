@@ -74,3 +74,11 @@ button:hover
 
 
 }
+.LoginButton{
+  max-height: 30px;
+  max-height: 30px;
+  background-color: darkslategray;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -1,11 +1,13 @@
 .listings-main{
     display:grid;
-    grid-template-columns: 35% 35% 30%;
+    grid-template-columns: 25% 35% 30%;
     height: 370px;
     border-bottom: 1px solid;
     border-color: rgb(206, 209, 209);
-    grid-gap: 15px;
-
+    grid-gap: 30px;
+    background: rgba(0, 0, 0, 0);
+    justify-content: space-between;
+    align-content: start;
 }
 .listing-description{
     grid-column: 2/3;
@@ -14,25 +16,43 @@
 
 .listing-photo{
     grid-column: 1/2;
-    margin:20px 0px 20px 0px;
-    height:80px;
-    width:80px;
+    margin:0px 0px 0px 20px;
+    height:100px;
+    width:100px;
+
+}
+.GoogleMaps{
+    grid-column: 3/4;
+    max-height: 300px;
+    max-width: 300px;
 
 }
 
 .listing-photo .photo{
-    padding:0px 0px 0px 10px;
-    max-height:21em;
-    max-width:34em;
+
+    max-height:23em;
+    max-width:31em;
     border-radius:30px;
+    border: solid 5px;
+    border-color:black;
 }
 
+
 .listing-description{
+    background-color: white;
+    height:360px;
+    width:700px;
+    margin-right:50px;
     display:grid;
-    grid-template-rows: 30% 20% 20% 30%;
-    grid-template-columns: .9fr;
+    grid-template-rows: 40% 20% 10% 20%;
+    background: rgba(255, 255, 255, 0.7);
     grid-gap: 15px;
+    padding:15px;
+    border: solid 1px;
+    border-radius:25px;
+    font-weight:bold;
 }
+
 
 .listing-title_component{
     grid-row: 1/2;
@@ -48,11 +68,6 @@
 
 }
 
-.GoogleMaps{
-    grid-column: 3/4;
-    max-height: 300px;
-    max-width: 300px;
-}
 
 .listing-price_parts{
     grid-row: 4/5;

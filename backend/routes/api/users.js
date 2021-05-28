@@ -32,13 +32,12 @@ const validateSignup = [
 
 
 // Sign up
-router.post('',validateSignup,asyncHandler(async (req, res) => {
-    const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+router.post('/',validateSignup,asyncHandler(async (req, res) => {
+    const { email, firstName, lastName, password, username } = req.body;
+    console.log('this is req.body',req.body)
+    const user = await User.signup({ email, firstName, lastName, username, password });
     await setTokenCookie(res, user);
-    return res.json({
-      user,
-    });
+    return res.json({user});
   }),
 );
 

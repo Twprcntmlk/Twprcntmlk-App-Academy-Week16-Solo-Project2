@@ -1,7 +1,35 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
-const { Reservation, User, Photo, Listing } = require('../../db/models')
+const { Reservation, User, Listing } = require('../../db/models')
+// const { handleValidationErrors } = require('../../utils/validation');
+// const { check } = require('express-validator');
+
+// const validateReservation = [
+//   check('total')
+//     .exists({ checkFalsy: true })
+//     .notEmpty()
+//     .isInt(),
+//   check('checkIn')
+//     .exists({ checkFalsy: true })
+//     .notEmpty()
+//     .isDate()
+//     .withMessage('Please provide a valid check in date.'),
+//   check('checkOut')
+//     .exists({ checkFalsy: true })
+//     .notEmpty()
+//     .isDate()
+//     .withMessage('Please provide a valid check out date.'),
+//   check('guests')
+//     .exists({ checkFalsy: true })
+//     .notEmpty()
+//     .withMessage('Please provide the number of guests staying.'),
+//   handleValidationErrors
+// ]
+
+
+
+
 
 //Get All Reservations (for the page)
 router.get('/', asyncHandler(async function (req, res) {

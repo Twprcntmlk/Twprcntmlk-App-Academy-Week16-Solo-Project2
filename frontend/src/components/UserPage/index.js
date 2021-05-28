@@ -19,7 +19,7 @@ function UserPage () { //will probably need to pass id
     const reservationsState = useSelector(state => state.reservation);
     const reservations = Object.values(reservationsState);
     const allReservations = reservations.filter((el) => (el.userId === Number(id)))
-
+    console.log(allReservations)
     useEffect(() => {
       dispatch(findusers(id))
       dispatch(getReservations(id));
@@ -34,45 +34,54 @@ function UserPage () { //will probably need to pass id
 
         {allReservations?.map((el) =>
         <div className='UserPage-Reservation'>
+        THIS IS A RESERVATION MADE BY USER
         <div key={el.id}>{el.checkInDate}-----{el.checkOutDate} Number of Guests-----{el.guests}
-        {el.Listings}
+        <div>Name: {el.Listing.name}</div>
+        <div>Address: {el.Listing.address}</div>
+        <div>Baths: {el.Listing.baths}</div>
+        <div>Bedrooms: {el.Listing.bedrooms}</div>
+        <div>Total Price: {el.Listing.price*el.guests}</div>
+        <div>Descrption: {el.Listing.description}</div>
         </div>
           <ReservationEditButton el={el}/>
 
         </div>
          )}
-        <div>
+        <div className="message_system">
             <Messages />
         </div>
 
 
         <div className="UserBlock_holder">
-        <img src={user?.imageUrl} alt="userPhoto" ></img>
-        <div className="UserBlock">
-          <div>
-            {user?.firstName}
+          <img className='UserBlock_userImage'src={user?.imageUrl} alt="userPhoto" ></img>
+
+          <div className="UserBlock">
+            <div>
+              {user?.firstName}
+            </div>
+
+            <div>
+              {user?.lastName}
+            </div>
+            <div>
+              {user?.address}
+            </div>
+            <div>
+              {user?.latitude}
+            </div>
+            <div>
+              {user?.longitude}
+            </div>
+            <div>
+              {user?.personal}
+            </div>
+            <div>
+              Host: {`${user?.isHost}`}
+            </div>
           </div>
 
-          <div>
-            {user?.lastName}
-          </div>
-          <div>
-            {user?.address}
-          </div>
-          <div>
-            {user?.latitude}
-          </div>
-          <div>
-            {user?.longitude}
-          </div>
-          <div>
-            {user?.personal}
-          </div>
-          <div>
-            Host: {`${user?.isHost}`}
-          </div>
         </div>
-        </div>
+
       </div>
 
       <section>
