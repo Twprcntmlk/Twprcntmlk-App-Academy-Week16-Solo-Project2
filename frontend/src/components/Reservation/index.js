@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 // import * as sessionActions from "../../store/session";
 // import { createReservation} from '../../store/session';
-import { useHistory } from 'react-router-dom';
-
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { createReservation} from '../../store/reservations';
@@ -13,7 +11,7 @@ function ReservationForm({price}) {
 
   const { id } = useParams()
   const dispatch = useDispatch();
-  const history = useHistory();
+
   const sessionUser = useSelector(state => state.session.user);
 
   const [checkInDate, setCheckInDate] = useState("");
@@ -33,7 +31,7 @@ function ReservationForm({price}) {
     <div className='Reservation_Form-Holder'>
       <form className='Reservation_Form' onSubmit={handleSubmit}>
         <label className='Reservation_Form-checkin'>
-          CheckInDate
+          <div>Check-In Date</div>
           <input
             type="date"
             value={checkInDate}
@@ -42,7 +40,7 @@ function ReservationForm({price}) {
           />
         </label>
         <label className="Reservation_Form-checkout">
-            CheckOutDate
+            <div>Check-Out Date</div>
           <input
             type="date"
             value={checkOutDate}
@@ -51,7 +49,7 @@ function ReservationForm({price}) {
           />
         </label>
         <label>
-            Guests
+          <div>Guests</div>
           <input
             type="number"
             value={guest}
@@ -62,7 +60,7 @@ function ReservationForm({price}) {
         <button type="submit">Make Reservation</button>
       </form>
       <div>
-        Total:{price*Number(guest)}
+        Total:----${price*Number(guest)}
       </div>
     </div>
   );

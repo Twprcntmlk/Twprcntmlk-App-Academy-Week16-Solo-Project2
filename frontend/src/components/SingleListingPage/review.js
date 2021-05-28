@@ -14,6 +14,7 @@ function Review({el, listingId}){
 
     return(
     <section className="SingleReview_container">
+        
         <div>
             {el.review}
         </div>

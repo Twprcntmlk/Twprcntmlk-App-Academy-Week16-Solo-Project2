@@ -101,6 +101,7 @@ function SingleListingPage(){
                 <p className='SingleList-listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
             </div>
             <div className='SingleList-reservation'>
+
                 <Reservation userId={id} listingId={listingId} price={listingState.price}/>
             </div>
             <div className="GoogleMap">
@@ -121,7 +122,9 @@ function SingleListingPage(){
                 <p className='stats SingleList-reviews_stats_value'>VALUE---{Math.ceil(value)}</p>
                 <ReviewForm className='SingleList-ReviewForm' userId={user.id} listingId={listingId}  />
             </div>
-
+            <div>
+                <h1>Reviews</h1>
+            </div>
             <div>{allListingReview?.map((el) =>
                 <div key={el.id} >
                     <Review el={el} listingId={el.listingId}/>
