@@ -23,10 +23,10 @@ function ListingsPage(){
 
     <div className='explore-page'>
         <h1>Discover Listings</h1>
-        <div >
+        <div className='explore-page--header_container_photo'>
             <div className='explore-page--header_container'>
             <h3 className='explore-page--header'>Discover</h3>
-        </div>
+            </div>
         <div >
             {Object.values(listingsState)?.map((el) => {
             return <Listing key={el.id} list={el} />

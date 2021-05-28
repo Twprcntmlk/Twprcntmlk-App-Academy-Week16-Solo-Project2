@@ -16,13 +16,13 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <>
+      <div className='Nav'>
         <LoginFormModal />
         <NavLink to="/signup">
           <button className='signUpButton'>Sign Up</button>
         </NavLink>
 
-      </>
+      </div>
     );
   }
 

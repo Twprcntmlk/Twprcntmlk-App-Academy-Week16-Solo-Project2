@@ -1,0 +1,11 @@
+.SingleReview_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 20% 20%
+
+}
+
+.rating {
+    grid-row: 2/3;
+    justify-content: space-between;
+}

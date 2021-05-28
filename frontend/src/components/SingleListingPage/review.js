@@ -3,7 +3,7 @@ import React, { useState }from 'react';//useEffect,
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteReview } from '../../store/reviews';//, editReview,getReviews,
 import EditReviewForm from '../ReviewForm/editReviewForm';
-
+import './SingleListingReview.css';
 
 
 
@@ -13,27 +13,27 @@ function Review({el, listingId}){
     const {user} = useSelector(state => state.session);
 
     return(
-    <section>
+    <section className="SingleReview_container">
         <div>
             {el.review}
         </div>
-        <div>
-            <div>
+        <div className='rating'>
+            <div >
                 Cleanliness:{el.cleanliness}
             </div>
-            <div>
+            <div >
                 Communication:{el.communication}
             </div>
-            <div>
+            <div >
                 CheckIn:{el.checkIn}
             </div>
-            <div>
+            <div >
                 Accuracy:{el.accuracy}
             </div>
-            <div>
+            <div >
                 Location:{el.location}
             </div>
-            <div>
+            <div >
                 Value:{el.value}
             </div>
         </div>

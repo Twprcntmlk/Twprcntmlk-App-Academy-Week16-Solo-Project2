@@ -65,9 +65,11 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
 
-
 }
-
+.listing-description_link{
+    text-decoration: none;
+    color: black
+}
 
 .listing-price_parts{
     grid-row: 4/5;

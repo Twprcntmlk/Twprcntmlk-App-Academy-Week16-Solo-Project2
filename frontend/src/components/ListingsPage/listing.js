@@ -83,6 +83,7 @@ function Listing ({ list }) {
                     {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>}
                 </a>
             </div>
+            <a href={`/listings/${list.id}`} className='listing-description_link'>
             <div className='listing-description'>
                 <div className='listing-title_component'>
                     <p className='listing-name_parts'>Name---{list.name}</p>
@@ -120,7 +121,9 @@ function Listing ({ list }) {
                 <div className='listing-price_parts'>
                     <p>Price Per Night---${list.price}</p>
                 </div>
+
             </div>
+            </a>
             <div className="GoogleMaps">
                 <GoogleApiWrapper lat={list.latitude} lon={list.longitude}/>
             </div>

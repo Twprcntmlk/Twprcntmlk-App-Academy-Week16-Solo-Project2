@@ -8,6 +8,7 @@
 .Main-splash img{
     width: 100vw;
     z-index: -1;
+    transform: translateY(-100px);
 }
 
 .Main-splash {
