@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { Redirect, useHistory} from 'react-router-dom'; //, Redirect
 import './MainPage.css';
 import splash from './images/splash-page-img.jpg';
+import middle from './images/Main-Page-Middle1.jpg';
 import Footer from "../../components/Footer";
 function MainPage(){
   let history = useHistory();
@@ -35,7 +36,9 @@ function MainPage(){
           </div>
         </div>
         </div>
-
+        <div>
+         <img src={middle} alt="splash1"/>
+        </div>
 
         <div className="Main-page_footer">
           <Footer />

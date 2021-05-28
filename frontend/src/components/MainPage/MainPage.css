@@ -12,8 +12,9 @@
 .Main-splash {
     grid-row: 1/2;
     display:grid;
-    grid-template-columns: 10% 10% 20% 20% 20%;
+    grid-template-columns: 10% 10% 20% 20%;
     grid-template-rows: 20% 20% 20% 20%;
+    height:980px;
 
 }
 

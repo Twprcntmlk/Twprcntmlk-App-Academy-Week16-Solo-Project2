@@ -42,12 +42,12 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
     const addedReview = await dispatch(addReview(payload));
     if (addedReview) {
       setReview('');
-      setCleanliness(null);
-      setCommunication(null);
-      setCheckIn(null);
-      setAccuracy(null);
-      setLocation(null);
-      setValue(null);
+      setCleanliness("");
+      setCommunication("");
+      setCheckIn("");
+      setAccuracy("");
+      setLocation("");
+      setValue("");
 
     }
 

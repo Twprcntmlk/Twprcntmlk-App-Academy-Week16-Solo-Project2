@@ -17,11 +17,12 @@ function ReservationForm({price}) {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [guest, setGuest] = useState(1);
-
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setError("Confirmed")
+    setTimeout(() =>{setError("")},1000)
     const payload={ userId:sessionUser.id , listingId:id, checkInDate, checkOutDate, guests:guest }
     return dispatch(createReservation(payload))
   };
@@ -59,9 +60,11 @@ function ReservationForm({price}) {
         </label>
         <button type="submit">Make Reservation</button>
       </form>
-      <div>
-        Total:----${price*Number(guest)}
+      <div className="Confirm-Box">
+        <div>Total:----${price*Number(guest)}</div>
+        <div id="Res-error">&nbsp;&nbsp;{error}</div>
       </div>
+
     </div>
   );
 }
