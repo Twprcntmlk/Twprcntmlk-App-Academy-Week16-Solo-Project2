@@ -31,11 +31,9 @@ function SingleListingPage(){
 
     const {user}= useSelector(state => state.session);
     const listingState = useSelector(state => state.listings);
-
-
+    console.log(listingState)
     const reviewsState = useSelector(state => state.reviews);
     const reviews = Object.values(reviewsState);
-
 
     const allListingReview = reviews.filter((review) => (review.listingId === Number(id)))
     const listingId = allListingReview[0]?.listingId
@@ -105,7 +103,7 @@ function SingleListingPage(){
                 <Reservation userId={id} listingId={listingId} price={listingState.price}/>
             </div>
             <div className="GoogleMap">
-                <GoogleApiWrapper lat={listingState.latitude} lon={listingState.longitude}/>
+                <GoogleApiWrapper props={[listingState]}/>
             </div>
         </div>
 

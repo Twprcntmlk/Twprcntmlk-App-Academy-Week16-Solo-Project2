@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
 import { getphotos } from '../../store/photo';
-import './listingsComponent.css';
-import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
+import './listingsComponent.css';
+
+import Slider from '../ListingsPage/slider.js'
 
 function Listing ({ list }) {
     const dispatch = useDispatch();
@@ -18,29 +19,24 @@ function Listing ({ list }) {
     let [accuracy, setAccuracy]=useState(0);
     let [location, setLocation]=useState(0);
     let [value, setValue]=useState(0);
+//////////////////////////////////////////////////////
 
     const reviewsState = useSelector(state => state.reviews);
     const reviews = Object.values(reviewsState);
     const allListingReview = reviews.filter((review) => (review.listingId === Number(list.id)))
-
 ///////////////////////////////////////////////
     const PhotosState= useSelector(state => state.photos);
     const allphotos = Object.values(PhotosState);
-    const OnePhoto = allphotos.find((el) => (el.id === list.id))
+    const OnePhoto = allphotos?.filter((el) => (el.listingId === list.id))
  ////////////////////////////////////////////////
+    // console.log("Should be Array_______",OnePhoto)
+    console.log("Should be list_______",list.id)
 
     useEffect(() => {
         dispatch(getlistings(list.id));
         dispatch(getReviews(list.id));
         dispatch(getphotos())
         }, [dispatch])
-
-    // useEffect(() => {
-    //     setPhoto(OnePhoto)
-    //     // setHoldlist(holdlist)
-    //     }, [])
-
-
 
     useEffect(() => {
         if(allListingReview.length){
@@ -74,15 +70,19 @@ function Listing ({ list }) {
             },0)
             setValue(valueE/allListingReview.length)
         }
-        }, [allListingReview,clean,communication,checkIn,accuracy,location,value, list.id])
+        }, [allListingReview,clean,communication,checkIn,accuracy,location,value])
 
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
                 <a href={`/listings/${list.id}`}>
-                    {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>}
+                    <Slider prop={OnePhoto} />
+                    {/* {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>} */}
                 </a>
             </div>
+
+            {/* <Slider prop={OnePhoto} /> */}
+
             <a href={`/listings/${list.id}`} className='listing-description_link'>
             <div className='listing-description'>
                 <div className='listing-title_component'>
@@ -124,9 +124,7 @@ function Listing ({ list }) {
 
             </div>
             </a>
-            <div className="GoogleMaps">
-                <GoogleApiWrapper lat={list.latitude} lon={list.longitude}/>
-            </div>
+
         </div>
     )
 }

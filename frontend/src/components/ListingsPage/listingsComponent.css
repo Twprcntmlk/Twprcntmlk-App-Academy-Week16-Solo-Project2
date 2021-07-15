@@ -1,46 +1,44 @@
 .listings-main{
     display:grid;
-    grid-template-columns: 25% 35% 30%;
-    height: 370px;
-    border-bottom: 1px solid;
+    grid-template-columns: 20% 35% 55%;
+    height: 7%;
+
     border-color: rgb(206, 209, 209);
     grid-gap: 30px;
     background: rgba(0, 0, 0, 0);
     justify-content: space-between;
     align-content: start;
-}
-.listing-description{
-    grid-column: 2/3;
-
+    margin: 2%;
 }
 
 .listing-photo{
     grid-column: 1/2;
-    margin:0px 0px 0px 20px;
-    height:100px;
-    width:100px;
-
-}
-.GoogleMaps{
-    grid-column: 3/4;
-    max-height: 300px;
-    max-width: 300px;
-
+    margin:0px 0px 0px 2%;
 }
 
-.listing-photo .photo{
+.listing-photo {
 
-    max-height:23em;
-    max-width:31em;
+    height:380px;
+    width:400px;
     border-radius:30px;
     border: solid 5px;
     border-color:black;
+    overflow:hidden;
 }
 
+.keen-slider__image{
+    height:400px;
+    width:400px;
+}
+
+.keen-slider__slide{
+    overflow:hidden;
+}
 
 .listing-description{
+    grid-column: 2/3;
     background-color: white;
-    height:360px;
+    height:380px;
     width:700px;
     margin-right:50px;
     display:grid;
@@ -91,4 +89,13 @@
     display: flex;
     grid-row: 3/4;
     justify-content: space-around;
+}
+
+.explore-page--header_container_photo{
+    background-image: url('https://a0.muscache.com/im/pictures/415fe2dc-98a1-4565-a702-70b03ae757d7.jpg?im_w=2560');
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100vw;
+    background-position: -500px -200px;
+    transform: translateY(0px);
 }

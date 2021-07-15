@@ -13,8 +13,8 @@
     grid-row: 1/2;
     display:grid;
     grid-template-columns: 10% 10% 20% 20%;
-    grid-template-rows: 20% 20% 20% 20%;
-    height:980px;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    height:780px;
 
 }
 
@@ -26,8 +26,6 @@
 .Main-button_div{
     grid-row: 3/4;
     grid-column: 2/4;
-
-
 }
 
 .Main-button_Button{
@@ -45,14 +43,14 @@
     font-size:1.11em;
 }
 .Main-title_title{
-    font-size:5.5em;
+    font-size:5.75em;
     margin-bottom:0px;
 }
 
 .Main-title_span{
     margin-top:0px;
     margin-bottom:10px;
-    font-size:3.5em;
+    font-size:3.75em;
 }
 
 .Main-page_footer{

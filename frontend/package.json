@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "google-maps-react": "^2.0.6",
     "js-cookie": "^2.2.1",
+    "keen-slider": "^5.5.1",
     "moment": "^2.29.1",
     "ol": "^6.5.0",
     "react": "^16.14.0",

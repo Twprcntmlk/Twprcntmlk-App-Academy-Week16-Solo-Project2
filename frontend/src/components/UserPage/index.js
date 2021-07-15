@@ -29,27 +29,13 @@ function UserPage () { //will probably need to pass id
 
 
   return (
-    <>
+    <div>
       <div>
 
-        {allReservations?.map((el) =>
-        <div className='UserPage-Reservation'>
-        THIS IS A RESERVATION MADE BY USER
-        <div key={el.id}>{el.checkInDate}-----{el.checkOutDate} Number of Guests-----{el.guests}
-        <div>Name: {el.Listing.name}</div>
-        <div>Address: {el.Listing.address}</div>
-        <div>Baths: {el.Listing.baths}</div>
-        <div>Bedrooms: {el.Listing.bedrooms}</div>
-        <div>Total Price: {el.Listing.price*el.guests}</div>
-        <div>Descrption: {el.Listing.description}</div>
-        </div>
-          <ReservationEditButton el={el}/>
 
-        </div>
-         )}
-        <div className="message_system">
+        {/* <div className="message_system">
             <Messages />
-        </div>
+        </div> */}
 
 
         <div className="UserBlock_holder">
@@ -83,8 +69,24 @@ function UserPage () { //will probably need to pass id
         </div>
 
       </div>
+      <div>
+        {allReservations?.map((el) =>
+        <div className='UserPage-Reservation'>
+        THIS IS A RESERVATION MADE BY USER
+        <div key={el.id}>{el.checkInDate}-----{el.checkOutDate} Number of Guests-----{el.guests}
+        <div>Name: {el.Listing.name}</div>
+        <div>Address: {el.Listing.address}</div>
+        <div>Baths: {el.Listing.baths}</div>
+        <div>Bedrooms: {el.Listing.bedrooms}</div>
+        <div>Total Price: {el.Listing.price*el.guests}</div>
+        <div>Descrption: {el.Listing.description}</div>
+        </div>
+          <ReservationEditButton el={el}/>
 
-      <section>
+        </div>
+         )}
+      </div>
+      {/* <section>
        <div className="User-page">
          <div className="User-splash">
              <img src={hostSplash} alt="splash2"/>
@@ -98,8 +100,8 @@ function UserPage () { //will probably need to pass id
            </div>
          </div>
        </div>
-      </section>
-    </>
+      </section> */}
+    </div>
   );
 }
 
