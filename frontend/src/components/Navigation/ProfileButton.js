@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import './Profile_button.css';
 
 function ProfileButton({ user }) {
 
@@ -45,10 +46,10 @@ function ProfileButton({ user }) {
       <button onClick={openMenu} className="profile-button">
         <div className="icons">
             <div id="bars">
-            <i className="fas fa-bars"></i>
+              <i className="fas fa-bars fa-2x"></i>
             </div>
             <div id="user">
-            <i className="fas fa-user-circle" />
+              <i className="fas fa-user-circle fa-2x" />
             </div>
         </div>
       </button>

@@ -24,7 +24,7 @@ function ListingsPage(){
 
         <div className='explore-page--header_container_photo'>
             <div className='explore-page--header_container'>
-                <h3 className='explore-page--header'>Discover</h3>
+                <h1 className='explore-page--header'>Discover</h1>
             </div>
         {listings?.map((el, idx) => {
             return <Listing key={idx} list={el} /> })}

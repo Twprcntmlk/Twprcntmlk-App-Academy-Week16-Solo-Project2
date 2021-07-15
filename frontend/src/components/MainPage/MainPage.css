@@ -1,4 +1,8 @@
-
+.Main-page{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
 .Main-splash_container{
     display:grid;
     grid-template-rows: auto auto auto;
@@ -6,7 +10,7 @@
 .Main-splash img{
     width: 100vw;
     z-index: -1;
-    transform: translateY(-100px);
+
 }
 
 .Main-splash {
@@ -15,7 +19,9 @@
     grid-template-columns: 10% 10% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
     height:780px;
-
+    background-image: url("./images/splash-page-img.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .Main-title{
@@ -60,4 +66,11 @@
 .error{
     color:red;
     padding-left: 10px;
+}
+
+.Main-page__middle{
+    height:900px;
+    background-image: url("./images/Main-Page-Middle1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }

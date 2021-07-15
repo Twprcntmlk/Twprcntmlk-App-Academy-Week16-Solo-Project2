@@ -11,7 +11,7 @@ function MainPage(){
   let history = useHistory();
   let [error, setError]=useState("");
   const sessionUser = useSelector((state) => state.session.user);
-  
+
   const direct = () =>{
     if (!sessionUser){
       setError("Please Log In")
@@ -25,7 +25,7 @@ function MainPage(){
     return(
       <div className="Main-page">
         <div className="Main-splash">
-          <img src={splash} alt="splash1"/>
+          {/* <img src={splash} alt="splash1"/> */}
             <div className="Main-title">
               <h1 className ="Main-title_title">The Greatest Outdoors </h1>
               <h3 className ="Main-title_span">Wishlists curated by Airbnb.</h3>
@@ -36,8 +36,8 @@ function MainPage(){
           </div>
         </div>
 
-        <div>
-         <img src={middle} alt="splash1"/>
+        <div className="Main-page__middle">
+          {/* <img src={middle} alt="splash1"/> */}
         </div>
 
         <div className="Main-page_footer">

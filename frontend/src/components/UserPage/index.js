@@ -26,67 +26,11 @@ function UserPage () { //will probably need to pass id
         }, [dispatch, id])
 
 
-
-
-  return (
-    <div>
-      <div>
-
-
         {/* <div className="message_system">
             <Messages />
         </div> */}
 
-
-        <div className="UserBlock_holder">
-          <img className='UserBlock_userImage'src={user?.imageUrl} alt="userPhoto" ></img>
-
-          <div className="UserBlock">
-            <div>
-              {user?.firstName}
-            </div>
-
-            <div>
-              {user?.lastName}
-            </div>
-            <div>
-              {user?.address}
-            </div>
-            <div>
-              {user?.latitude}
-            </div>
-            <div>
-              {user?.longitude}
-            </div>
-            <div>
-              {user?.personal}
-            </div>
-            <div>
-              Host: {`${user?.isHost}`}
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      <div>
-        {allReservations?.map((el) =>
-        <div className='UserPage-Reservation'>
-        THIS IS A RESERVATION MADE BY USER
-        <div key={el.id}>{el.checkInDate}-----{el.checkOutDate} Number of Guests-----{el.guests}
-        <div>Name: {el.Listing.name}</div>
-        <div>Address: {el.Listing.address}</div>
-        <div>Baths: {el.Listing.baths}</div>
-        <div>Bedrooms: {el.Listing.bedrooms}</div>
-        <div>Total Price: {el.Listing.price*el.guests}</div>
-        <div>Descrption: {el.Listing.description}</div>
-        </div>
-          <ReservationEditButton el={el}/>
-
-        </div>
-         )}
-      </div>
-      {/* <section>
+    {/* <section>
        <div className="User-page">
          <div className="User-splash">
              <img src={hostSplash} alt="splash2"/>
@@ -101,6 +45,48 @@ function UserPage () { //will probably need to pass id
          </div>
        </div>
       </section> */}
+
+
+  return (
+    <div className="UserPage">
+
+      <div className="UserPage-Container">
+        <img className='UserPage-Container__Image'src={user?.imageUrl} alt="userPhoto" ></img>
+        <div className="UserPage-Container__Info">
+        <div>
+          <h3>Hi! My Name is:</h3> {user?.firstName} {user?.lastName}
+        </div>
+        <div>
+          <h3>I live at:</h3> {user?.address}
+        </div>
+        <div>
+          <h3>My coordinates are :</h3> {user?.latitude},{user?.longitude}
+        </div>
+        <div>
+          <h3>About me:</h3> {user?.personal}
+        </div>
+        <div>
+          <h3>This Person is a Host:</h3> {`${user?.isHost}`}
+        </div>
+      </div >
+      </div>
+      <div className="UserPage-Container__Trips">
+        {allReservations?.map((el, idx) =>
+          <div className='UserPage-Reservation' key={idx}>
+            <div> Check in Date-----{el.checkInDate}- </div>
+            <div> Check out Date-----{el.checkOutDate} </div>
+            <div> Number of Guests-----{el.guests} </div>
+            <div>Name: {el.Listing.name}</div>
+            <div>Address: {el.Listing.address}</div>
+            <div>Baths: {el.Listing.baths}</div>
+            <div>Bedrooms: {el.Listing.bedrooms}</div>
+            <div>Total Price: {el.Listing.price*el.guests}</div>
+            <div>Descrption: {el.Listing.description}</div>
+
+            <div><ReservationEditButton el={el}/></div>
+          </div>
+          )}
+      </div>
     </div>
   );
 }

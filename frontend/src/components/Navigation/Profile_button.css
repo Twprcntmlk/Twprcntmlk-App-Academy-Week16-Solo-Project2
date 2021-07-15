@@ -1,0 +1,14 @@
+.profile-button{
+    width: 100px;
+    border-radius: 25px;
+}
+
+.icons{
+
+    display:flex;
+    justify-content:space-around;
+}
+
+.fas{
+  height:15px;
+}

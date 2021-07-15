@@ -67,13 +67,13 @@ import './GoogleMapApi.css'
 //   }
 
 
-export function MapContainer (props) {
+export function MapContainer2 (props) {
 
   let coordinates = props.props
 
   const containerStyle = {
-    position: 'fixed',
-    top: '95px',
+    // position: 'fixed',
+    // top: '95px',
     left: '57%',
     // width: '53%',
     // height: '85%',
@@ -88,7 +88,7 @@ if (!props.google){
         <Map google={props.google}
               zoom={4}
               containerStyle={containerStyle}
-              style={{height: '100vh', width: '100%'}}
+              style={{height: '35%', width: '36%'}}
               // initialCenter={{ lat: 39.8283, lng: -98.5795 }}
               >
           {coordinates.map((el) =>{
@@ -101,4 +101,4 @@ if (!props.google){
 
 export default GoogleApiWrapper({
   apiKey: ('AIzaSyBpfbp2b1e6kzv8_A1yrUGO3eVt20eFSNA')
-})(MapContainer)
+})(MapContainer2)

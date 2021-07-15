@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { findlistings } from '../../store/listings';
 import { getReviews } from '../../store/reviews';//, editReview, deleteReview
 import ReviewForm from '../ReviewForm/index';
-import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
+import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi2'
 
 import Reservation from '../Reservation/index';
 import { } from 'react-router-dom';
@@ -102,7 +102,7 @@ function SingleListingPage(){
 
                 <Reservation userId={id} listingId={listingId} price={listingState.price}/>
             </div>
-            <div className="GoogleMap">
+            <div className="GoogleMap2">
                 <GoogleApiWrapper props={[listingState]}/>
             </div>
         </div>
