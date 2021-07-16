@@ -75,10 +75,10 @@ function Listing ({ list }) {
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
-                <a href={`/listings/${list.id}`}>
+                {/* <a href={`/listings/${list.id}`}> */}
                     <Slider prop={OnePhoto} />
                     {/* {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>} */}
-                </a>
+                {/* </a> */}
             </div>
 
             {/* <Slider prop={OnePhoto} /> */}

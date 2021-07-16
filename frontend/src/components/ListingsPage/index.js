@@ -26,14 +26,14 @@ function ListingsPage(){
             <div className='explore-page--header_container'>
                 <h1 className='explore-page--header'>Discover</h1>
             </div>
-        {listings?.map((el, idx) => {
-            return <Listing key={idx} list={el} /> })}
+            {listings?.map((el, idx) => {
+                return <Listing key={idx} list={el} /> })}
 
-        </div>
-        <div id="GoogleMaps">
+            </div>
 
-            <GoogleApiWrapper props={ listings } />
-        </div>
+            <div id="GoogleMaps">
+                <GoogleApiWrapper props={ listings } />
+            </div>
 
     </div>
 

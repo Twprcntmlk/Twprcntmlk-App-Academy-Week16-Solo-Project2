@@ -41,14 +41,13 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
 
     const addedReview = await dispatch(addReview(payload));
     if (addedReview) {
-      setReview('');
+      setReview("");
       setCleanliness("");
       setCommunication("");
       setCheckIn("");
       setAccuracy("");
       setLocation("");
       setValue("");
-
     }
 
   };
@@ -62,14 +61,16 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
     <section className="reviewform">
       <form onSubmit={handleSubmit}>
         <textarea value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
-        <input value={cleanliness} type='number' placeholder="cleanliness" onChange={updateCleanliness }></input>
-        <input value={communication} type='number' placeholder="communication" onChange={updateCommunication}></input>
-        <input value={checkIn} type='number' placeholder="check in" onChange={updateCheckIn}></input>
-        <input value={accuracy} type='number' placeholder="accuracy" onChange={updateAccuracy}></input>
-        <input value={location} type='number' placeholder="location" onChange={updateLocation}></input>
-        <input value={value} type='number' placeholder="value" onChange={updateValue}></input>
-        <button type="submit">Submit Review</button>
-        <button type="button" onClick={handleCancelClick}>Cancel</button>
+        <div id="reviewform-inputs">
+          <input value={cleanliness} type='number' placeholder="cleanliness" min="1" max="5" onChange={updateCleanliness }></input>
+          <input value={communication} type='number' placeholder="communication" min="1" max="5" onChange={updateCommunication}></input>
+          <input value={checkIn} type='number' placeholder="check in" min="1" max="5" onChange={updateCheckIn}></input>
+          <input value={accuracy} type='number' placeholder="accuracy" min="1" max="5" onChange={updateAccuracy}></input>
+          <input value={location} type='number' placeholder="location" min="1" max="5" onChange={updateLocation}></input>
+          <input value={value} type='number' placeholder="value" min="1" max="5" onChange={updateValue}></input>
+          <button type="submit">Submit Review</button>
+          <button type="button" onClick={handleCancelClick}>Cancel</button>
+        </div>
       </form>
     </section>
   );

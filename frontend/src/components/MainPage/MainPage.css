@@ -2,14 +2,20 @@
     display:flex;
     flex-direction: column;
     justify-content:space-between;
+
 }
+
+
 .Main-splash_container{
     display:grid;
     grid-template-rows: auto auto auto;
+    position:fixed;
+    top:0;
 }
 .Main-splash img{
     width: 100vw;
     z-index: -1;
+
 
 }
 
@@ -18,15 +24,15 @@
     display:grid;
     grid-template-columns: 10% 10% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
-    height:780px;
-    background-image: url("./images/splash-page-img.jpg");
+    height:900px;
+    background-image: url("./images/Splash_Background.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 .Main-title{
-    grid-row: 2/3;
-    grid-column: 2/6;
+    grid-row: 3/4;
+    grid-column: 3/6;
 }
 
 .Main-button_div{
@@ -51,12 +57,20 @@
 .Main-title_title{
     font-size:5.75em;
     margin-bottom:0px;
+
 }
 
 .Main-title_span{
     margin-top:0px;
     margin-bottom:10px;
     font-size:3.75em;
+
+}
+.Main-title_span2{
+    margin-top:0px;
+    margin-bottom:10px;
+    font-size:1.75em;
+
 }
 
 .Main-page_footer{
@@ -69,8 +83,52 @@
 }
 
 .Main-page__middle{
-    height:900px;
-    background-image: url("./images/Main-Page-Middle1.jpg");
+    display:flex;
+    justify-content:space-around;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+.Main-page__middle img {
+    border-radius: 30px;
+}
+
+.Main-page__middle_sub{
+    display:flex;
+    justify-content:space-around;
+}
+
+
+.Main-page__middle--container--title{
+    font-size: 2em;
+    margin: 0% 0% 1% 1%;
+}
+
+.Main-page__middle--container{
+    font-weight: bold;
+    font-size: 1.7em;
+    border-radius: 30px;
+    margin: 3% 0% 1% 0%;
+}
+
+
+.Main-page__middle_sub img {
+    border-radius: 30px;
+}
+
+.Main-page__middle_sub--container{
+   margin: 3% 0% 3% 0%;
+}
+.Main-page__middle_sub--container--title{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1% 0% 1% 5%;
+}
+
+.Main-page__middle_sub{
+    display:flex;
+    justify-content:space-around;
+    font-weight: bold;
+    font-size: 1.7em;
+    border-radius: 30px;
+
 }

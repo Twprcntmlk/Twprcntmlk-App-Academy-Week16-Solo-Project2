@@ -14,8 +14,8 @@ function Review({el, listingId}){
 
     return(
     <section className="SingleReview_container">
-        
-        <div>
+
+        <div className="SingleReview_container--review">
             {el.review}
         </div>
         <div className='rating'>

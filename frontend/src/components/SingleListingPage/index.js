@@ -91,11 +91,11 @@ function SingleListingPage(){
         </div >
         <div className='SingleList-description_holder'>
             <div className='SingleList-description'>
-                <p className='SingleList-listing-description'>Description---{listingState.description}</p>
-                <p className='SingleList-listing-price'>Price Per Night---${listingState.price}</p>
-                <p className='SingleList-listing-guests'># of Guests---{listingState.guests}</p>
-                <p className='SingleList-listing-bedrooms'># of Bedrooms---{listingState.bedrooms}</p>
-                <p className='SingleList-listing-baths'># of Baths---{listingState.baths}</p>
+                <p className='SingleList-listing-description'><h3>Description</h3><span>{listingState.description}</span></p>
+                <p className='SingleList-listing-price'><h3>Price Per Night:</h3><span>${listingState.price}</span> </p>
+                <p className='SingleList-listing-guests'><h3># of Guests:</h3><span>{listingState.guests} Adults</span></p>
+                <p className='SingleList-listing-bedrooms'><h3># of Bedrooms:</h3><span>{listingState.bedrooms}</span></p>
+                <p className='SingleList-listing-baths'><h3># of Baths:</h3><span>{listingState.baths}</span></p>
                 <p className='SingleList-listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
             </div>
             <div className='SingleList-reservation'>

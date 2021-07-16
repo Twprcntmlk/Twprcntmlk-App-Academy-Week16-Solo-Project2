@@ -1,15 +1,18 @@
 .SingleReview_container{
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     grid-template-rows: 40% 40% 20%;
     grid-row-gap:8px;
     width: 800px;
     margin: 30px 10px 60px 10px;
     padding: 30px 10px 60px 10px;
-    border: 3px solid;
+    border: 1px dashed;
     border-color: black;
 }
 
+.SingleReview_container--review{
+    font-size:1.5em;
+}
 .rating {
     grid-row: 2/3;
     display:flex;
