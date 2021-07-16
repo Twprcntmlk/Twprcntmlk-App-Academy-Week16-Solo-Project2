@@ -78,3 +78,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Note to Self:
 /cd frontend --> npm start
 /cd backend --> npm start
+
+heroku login
+
+heroku git:remote --app react-solo-project
+
+git add . && git commit -m "initial commit"
+git push heroku master
