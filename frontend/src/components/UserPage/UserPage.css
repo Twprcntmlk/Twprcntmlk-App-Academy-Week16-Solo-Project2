@@ -1,6 +1,6 @@
 .UserPage{
     display:grid;
-    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-columns: 15% 35% 35% 15%;
 
 }
 
@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content:center;
     padding: 10%;
-    margin: 0% 15% 10% 15%;
+    margin: 0% 20% 10% 20%;
 }
 
 .UserPage-Container__Trips{
@@ -20,7 +20,11 @@
 }
 
 .UserPage-Container__Image{
-    padding: 3%;
+
+    margin-bottom: 3%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
 }
 
 .UserPage-Reservation{

@@ -1,5 +1,20 @@
 .form-signin
 {
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid rgba(255, 255, 255, 0.4);
+  background-color:  rgba(255, 255, 255, 0.8);
+  height: 600px;
+  width: 350px;
+  justify-content: center;
+  border-radius: 20px;
+  color: darkslategray;
+  z-index: 1; */
+}
+
+.form-holder_container{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   flex-direction: column;
@@ -12,8 +27,8 @@
   border-radius: 20px;
   color: darkslategray;
   z-index: 1;
-}
 
+}
 .form-inputs
 {
   display: flex;
@@ -31,6 +46,7 @@
 .form-holder
 {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -47,6 +63,7 @@
   color: white;
   border-radius: 5px;
   padding: 5px;
+
 }
 
 button:hover

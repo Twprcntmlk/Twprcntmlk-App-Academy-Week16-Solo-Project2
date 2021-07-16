@@ -21,7 +21,10 @@ function LoginForm() {
     );
   };
 
-  const handleDemoSubmit = () => {
+  const handleDemoSubmit = (e) => {
+    e.preventDefault();
+    setCredential("DemoUser")
+    setPassword("password")
     return dispatch(sessionActions.login({ credential:'DemoUser', password:'password' })).catch(
       async (res) => {
         const data = await res.json();

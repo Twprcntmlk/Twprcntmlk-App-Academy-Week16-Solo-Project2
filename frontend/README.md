@@ -80,8 +80,7 @@ Note to Self:
 /cd backend --> npm start
 
 heroku login
-
 heroku git:remote --app react-solo-project
-
-git add . && git commit -m "initial commit"
-git push heroku master
+git add .
+git commit -m "initial commit"
+git push heroku main
