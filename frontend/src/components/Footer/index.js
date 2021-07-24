@@ -1,4 +1,4 @@
-// frontend/src/components/Footer/index.js
+ // frontend/src/components/Footer/index.js
 import React from 'react';
 import './footer.css';
 import Stephen from '../MainPage/images/stephenC.jpeg';

@@ -1,6 +1,6 @@
 *{
-    border-width: 2px solid;
     box-sizing: border-box;
+    margin: 0px;
 
 }
 
@@ -10,6 +10,7 @@
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 1fr;
     width: 98vw;
+
 
 }
 
@@ -29,11 +30,22 @@
     justify-content:flex-start;
 }
 
+.profile-dropdown{
+    color: white;
+}
+
 .signUpButton{
-    max-height: 30px;
-    max-height: 30px;
+    min-width: 90px;
+    min-height: 50px;
     background-color: darkslategray;
     color: white;
     border-radius: 5px;
-    padding: 5px;
+}
+
+.LoginButton{
+    min-width: 90px;
+    min-height: 50px;
+    background-color: darkslategray;
+    color: white;
+    border-radius: 5px;
 }
