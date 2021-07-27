@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { createReservation} from '../../store/reservations';
 import './reservationform.css';
 
-function ReservationForm({price}) {
+function ReservationForm({price, guests}) {
 
   const { id } = useParams()
   const dispatch = useDispatch();
@@ -18,13 +18,21 @@ function ReservationForm({price}) {
   const [checkOutDate, setCheckOutDate] = useState("");
   const [guest, setGuest] = useState(1);
   const [error, setError] = useState("");
+  const [errorin, setErrorin] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError("Confirmed")
-    setTimeout(() =>{setError("")},1000)
-    const payload={ userId:sessionUser.id , listingId:id, checkInDate, checkOutDate, guests:guest }
-    return dispatch(createReservation(payload))
+    if (checkOutDate < checkInDate){
+      setErrorin("Checkin date must be before Checkout Date")
+      setTimeout(() =>{setErrorin("")},1000)
+    } else{
+      setError("Confirmed")
+      setTimeout(() =>{setError("")},1000)
+      const payload={ userId:sessionUser.id , listingId:id, checkInDate, checkOutDate, guests:guest }
+      return dispatch(createReservation(payload))
+    }
+
   };
 
 
@@ -41,19 +49,25 @@ function ReservationForm({price}) {
           />
         </label>
         <label className="Reservation_Form-checkout">
-            <div>Check-Out Date</div>
-          <input
+          <div>Check-Out Date</div>
+          <div className="Reservation_Form-checkout--date">
+            <input
             type="date"
             value={checkOutDate}
             onChange={(e) => setCheckOutDate(e.target.value)}
             required
           />
+            <div id="In-error">&nbsp;&nbsp;{errorin}</div>
+          </div>
         </label>
+
         <label>
           <div>Guests</div>
           <input
             type="number"
             value={guest}
+            min="1"
+            max={guests}
             onChange={(e) => setGuest(e.target.value)}
             required
           />
@@ -64,7 +78,6 @@ function ReservationForm({price}) {
         <div>Total:----${price*Number(guest)}</div>
         <div id="Res-error">&nbsp;&nbsp;{error}</div>
       </div>
-
     </div>
   );
 }

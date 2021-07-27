@@ -75,7 +75,7 @@ export function MapContainer2 (props) {
     // position: 'fixed',
     // top: '95px',
 
-    width: '23%',
+    width: '500px',
     height: '38%',
   }
 

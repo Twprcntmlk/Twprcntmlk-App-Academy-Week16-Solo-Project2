@@ -92,6 +92,7 @@ function SingleListingPage(){
             </div >
 
             <div className='SingleList-description_holder'>
+       
                 <div className='SingleList-description'>
                     <p className='SingleList-listing-description'><h3>Description</h3><span>{listingState.description}</span></p>
                     <p className='SingleList-listing-price'><h3>Price Per Night:</h3><span>${listingState.price}</span> </p>
@@ -100,12 +101,15 @@ function SingleListingPage(){
                     <p className='SingleList-listing-baths'><h3># of Baths:</h3><span>{listingState.baths}</span></p>
                     <p className='SingleList-listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
                 </div>
+
                 <div className='SingleList-reservation'>
-                    <Reservation userId={id} listingId={listingId} price={listingState.price}/>
+                    <Reservation userId={id} listingId={listingId} price={listingState.price} guests={listingState.guests}/>
                 </div>
+
                 <div className="GoogleMap2">
                     <GoogleApiWrapper props={[listingState]}/>
                 </div>
+
             </div>
 
             <div className='SingleList-reviews'>

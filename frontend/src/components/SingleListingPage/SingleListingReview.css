@@ -16,6 +16,18 @@
 .rating {
     grid-row: 2/3;
     display:flex;
+    margin: 0% 1% 0% 1%  ;
     justify-content: space-between;
 
+}
+
+@media only screen and (max-width: 700px){
+    .SingleReview_container--review{
+        font-size:1.2em;
+
+    }
+    .SingleReview_container{
+        height:100%;
+        width: 100%;
+    }
 }

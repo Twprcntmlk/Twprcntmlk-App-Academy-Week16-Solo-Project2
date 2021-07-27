@@ -19,8 +19,21 @@
     align-items:center;
 }
 
+
+#In-error{
+    color:rgb(235, 53, 21);
+    font-size:.4em;
+    align-items:center;
+}
+
+
 .Confirm-Box{
     display:flex;
     flex-direction:row;
 
+}
+
+.Reservation_Form-checkout--date{
+    display:flex;
+    flex-direction:row;
 }
