@@ -15,14 +15,21 @@ function ListingsPage(){
     const listings = Object.values(listingsState)
     let [filteredListings, setFilteredListings]=useState(listings)
     let [filterword, setFilterword]=useState("")
+    let [filterprice, setFilterprice]=useState([0,1000])
 
 
 
-    console.log(typeof filterword)
     // console.log("filterword2",filtering)
     useEffect(() => {
         setFilteredListings(listings)
         },[listingsState])
+
+    useEffect(() => {
+        console.log(filterprice)
+        let range = listings?.filter((el)=>(el.price >= filterprice[0] && el.price <= filterprice[1] ))
+        let listfiltering = Object.values(range)
+        setFilteredListings(listfiltering)
+        },[filterprice])
 
     useEffect(() => {
         let filteringDesc = listings?.filter((el)=>(el.description.toLowerCase().includes(filterword.toLowerCase())))
@@ -41,26 +48,26 @@ function ListingsPage(){
     // console.log("IS THIS ALL THE LISTINGS",filteredListings)
     return(
     <div className='explore-page'>
-        <div className='explore-page--header_container_photo'>
-            <div className='explore-page--header_container'>
-                <h1 className='explore-page--header'>Discover</h1>
-            </div>
+    <div className='explore-page--header_container_photo'>
+        <div className='explore-page--header_container'>
+            <h1 className='explore-page--header'>Discover</h1>
+        </div>
+        <div className='explore-page--options'>
             <div className='explore-page--searchbar_container'>
                 < SearchBar setFilterword={setFilterword}/>
             </div>
             <div className='explore-page--pricebar_container'>
-                < PriceBar />
+                < PriceBar setFilterprice={setFilterprice}/>
             </div>
-
-
-            {filteredListings?.map((el, idx) => {
-                return <Listing key={idx} list={el} /> })}
-
         </div>
-
+        <div className='explore-page--listings_container'>
+        {filteredListings?.map((el, idx) => {
+            return <Listing key={idx} list={el} /> })}
+        </div>
         <div id="GoogleMaps">
             <GoogleApiWrapper props={ listings } />
         </div>
+    </div>
     </div>
 
     )

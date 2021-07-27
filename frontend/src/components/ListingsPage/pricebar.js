@@ -16,11 +16,13 @@ function valuetext(value) {
     return `$${value}`;
   }
 
-function PriceBar(){
-    const [value, setValue] = React.useState([0, 500]);
+function PriceBar({setFilterprice}){
+    const [value, setValue] = useState([0, 1000]);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (e, newValue) => {
+      e.preventDefault();
       setValue(newValue);
+      setFilterprice(newValue);
     };
 
     // const updateSearch = (e) => setSearch(e.target.value);
@@ -35,18 +37,22 @@ function PriceBar(){
     // }
     return (
         <div className="PriceBar">
-              <Box sx={{ width: 300 }}>
-      <Slider
-        getAriaLabel={() => 'Temperature range'}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaValueText={valuetext}
-      />
-    </Box>
-
-            <button type="button" onClick={EnterSearch}><i class="fas fa-check-circle"></i></button>
-
+            <div className="PriceBar_container">
+                <div>Price Range</div>
+                <div>
+                    <Box sx={{ width: 400 }}>
+                    <Slider
+                    getAriaLabel={() => 'Price range'}
+                    value={value}
+                    onChange={handleChange}
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={1000}
+                    getAriaValueText={valuetext}
+                    />
+                    </Box>
+                </div>
+            </div>
         </div>
     );
 }

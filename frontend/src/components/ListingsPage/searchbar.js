@@ -26,8 +26,8 @@ function SearchBar({setFilterword}){
     return (
         <div className="SearchBar">
             <form onSubmit={handleSubmit}>
-            <input type="text" value={search} placeholder="Search" onChange={updateSearch}></input>
-            <button type="button" onClick={EnterSearch}><i class="fas fa-search"></i></button>
+                <input  className="searchbar"  type="text" value={search}  onChange={updateSearch}></input>
+                <button type="button" onClick={EnterSearch}><i class="fas fa-search"></i></button>
             </form>
         </div>
     );

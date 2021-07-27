@@ -74,11 +74,15 @@ export function MapContainer2 (props) {
   const containerStyle = {
     // position: 'fixed',
     // top: '95px',
-    left: '60%',
-    // width: '53%',
-    // height: '85%',
 
+    width: '23%',
+    height: '38%',
   }
+
+  // const style = {
+  //   width: '10%',
+  //   height: '10%',
+  // }
 
 
 if (!props.google){
@@ -88,8 +92,8 @@ if (!props.google){
         <Map google={props.google}
               zoom={4}
               containerStyle={containerStyle}
-              style={{height: '35%', width: '30%'}}
-              // initialCenter={{ lat: 39.8283, lng: -98.5795 }}
+              style={{height: '100%', width: '100%', display:'flex'}}
+              initialCenter={{ lat: coordinates[0].latitude, lng: coordinates[0].longitude}}
               >
           {coordinates.map((el) =>{
            return <Marker key={el.id} position={{lat: el.latitude, lng: el.longitude}} />

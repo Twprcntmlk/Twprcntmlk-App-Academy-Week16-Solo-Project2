@@ -80,55 +80,59 @@ function SingleListingPage(){
         }, [allListingReview,clean,communication,checkIn,accuracy,location,value])
 
     return(
-        <div>
-        <div className='SingleList-title'>
-            <h1>{listingState.name}</h1>
-            <h3>{listingState.address}</h3>
-            <p>	&#11088; {((clean+communication+checkIn+accuracy+location+value)/6).toFixed(2)} {`(${allListingReview.length} reviews)`} </p>
-        </div>
-        <div className='SingleList-Photos'>
-            {photos?.map((el, i) => <img src={el.photo} id={`photo-${i}`} key={i} alt="listy2"></img>)}
-        </div >
-        <div className='SingleList-description_holder'>
-            <div className='SingleList-description'>
-                <p className='SingleList-listing-description'><h3>Description</h3><span>{listingState.description}</span></p>
-                <p className='SingleList-listing-price'><h3>Price Per Night:</h3><span>${listingState.price}</span> </p>
-                <p className='SingleList-listing-guests'><h3># of Guests:</h3><span>{listingState.guests} Adults</span></p>
-                <p className='SingleList-listing-bedrooms'><h3># of Bedrooms:</h3><span>{listingState.bedrooms}</span></p>
-                <p className='SingleList-listing-baths'><h3># of Baths:</h3><span>{listingState.baths}</span></p>
-                <p className='SingleList-listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
+        <div className="SingleList">
+            <div className='SingleList-title'>
+                <h1>{listingState.name}</h1>
+                <h3>{listingState.address}</h3>
+                <p>	&#11088; {((clean+communication+checkIn+accuracy+location+value)/6).toFixed(2)} {`(${allListingReview.length} reviews)`} </p>
             </div>
-            <div className='SingleList-reservation'>
 
-                <Reservation userId={id} listingId={listingId} price={listingState.price}/>
-            </div>
-            <div className="GoogleMap2">
-                <GoogleApiWrapper props={[listingState]}/>
-            </div>
-        </div>
+            <div className='SingleList-Photos'>
+                {photos?.map((el, i) => <img src={el.photo} id={`photo-${i}`} key={i} alt="listy2"></img>)}
+            </div >
 
-        <div className='SingleList-reviews'>
-            <div className='SingleList-reviews_stats'>
-                <p className='stats SingleList-reviews_stats_rating'>
-                    &#11088; {((clean+communication+checkIn+accuracy+location+value)/6).toFixed(2)} {`(${allListingReview.length} reviews)`}
-                </p>
-                <p className='stats SingleList-reviews_stats_cleanliness'>CLEANLINESS---{Math.ceil(clean)}</p>
-                <p className='stats SingleList-reviews_stats_communication'>COMMUNICATION---{Math.ceil(communication)}</p>
-                <p className='stats SingleList-reviews_stats_checkin'>CHECKIN---{Math.ceil(checkIn)}</p>
-                <p className='stats SingleList-reviews_stats_accuracy'>ACCURACY---{Math.ceil(accuracy)}</p>
-                <p className='stats SingleList-reviews_stats_location'>LOCATION---{Math.ceil(location)}</p>
-                <p className='stats SingleList-reviews_stats_value'>VALUE---{Math.ceil(value)}</p>
-                <ReviewForm className='SingleList-ReviewForm' userId={user.id} listingId={listingId}  />
+            <div className='SingleList-description_holder'>
+                <div className='SingleList-description'>
+                    <p className='SingleList-listing-description'><h3>Description</h3><span>{listingState.description}</span></p>
+                    <p className='SingleList-listing-price'><h3>Price Per Night:</h3><span>${listingState.price}</span> </p>
+                    <p className='SingleList-listing-guests'><h3># of Guests:</h3><span>{listingState.guests} Adults</span></p>
+                    <p className='SingleList-listing-bedrooms'><h3># of Bedrooms:</h3><span>{listingState.bedrooms}</span></p>
+                    <p className='SingleList-listing-baths'><h3># of Baths:</h3><span>{listingState.baths}</span></p>
+                    <p className='SingleList-listing-coordinates'>latitude:---{listingState.latitude},longitude:---{listingState.longitude}</p>
+                </div>
+                <div className='SingleList-reservation'>
+                    <Reservation userId={id} listingId={listingId} price={listingState.price}/>
+                </div>
+                <div className="GoogleMap2">
+                    <GoogleApiWrapper props={[listingState]}/>
+                </div>
             </div>
-            <div>
+
+            <div className='SingleList-reviews'>
+                <div className='SingleList-reviews_stats'>
+                    <p className='stats SingleList-reviews_stats_rating'>
+                        &#11088; {((clean+communication+checkIn+accuracy+location+value)/6).toFixed(2)} {`(${allListingReview.length} reviews)`}
+                    </p>
+                    <p className='stats SingleList-reviews_stats_cleanliness'>CLEANLINESS---{Math.ceil(clean)}</p>
+                    <p className='stats SingleList-reviews_stats_communication'>COMMUNICATION---{Math.ceil(communication)}</p>
+                    <p className='stats SingleList-reviews_stats_checkin'>CHECKIN---{Math.ceil(checkIn)}</p>
+                    <p className='stats SingleList-reviews_stats_accuracy'>ACCURACY---{Math.ceil(accuracy)}</p>
+                    <p className='stats SingleList-reviews_stats_location'>LOCATION---{Math.ceil(location)}</p>
+                    <p className='stats SingleList-reviews_stats_value'>VALUE---{Math.ceil(value)}</p>
+                </div>
+                <div >
+                    <ReviewForm className='SingleList-ReviewForm' userId={user.id} listingId={listingId}  />
+                </div>
+            </div>
+
+            <div className='SingleList-reviews_review_form'>
                 <h1>Reviews</h1>
-            </div>
-            <div>{allListingReview?.map((el) =>
+                <div>{allListingReview?.map((el) =>
                 <div key={el.id} >
                     <Review el={el} listingId={el.listingId}/>
                 </div>)}
-            </div>
-        </div>
+                </div>
+            </div >
         </div>
     )
 }
