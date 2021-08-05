@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-
 import { FaRegWindowClose } from "react-icons/fa";
 import './SignUpForm.css';
 
@@ -18,14 +17,15 @@ function SignupFormPage() {
   const [errors, setErrors] = useState([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-setErrors([]);
+      setErrors([]);
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, firstName, lastName, password }))
+      return dispatch(sessionActions.signup({ email, username, firstName, lastName, password,}))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -37,6 +37,7 @@ setErrors([]);
   const onClose = () => {
     history.push("/");
   }
+
 
   return (
     <div className="form-holder">
