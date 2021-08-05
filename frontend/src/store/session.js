@@ -93,7 +93,7 @@ export const restoreUser = () => async dispatch => {
 
 
 export const updateUser = (user) => async (dispatch) => {
-  const res = await csrfFetch(`/api/users/${user.id}`, {
+  const res = await csrfFetch(`/api/users/${user.id}/`, {
     method: "PATCH",
     body: JSON.stringify(user),
   });
