@@ -1,8 +1,6 @@
 // frontend/src/components/ListingsPage/index.js
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
 import './listingsIndex.css';
@@ -25,16 +23,6 @@ function PriceBar({setFilterprice}){
       setFilterprice(newValue);
     };
 
-    // const updateSearch = (e) => setSearch(e.target.value);
-
-    const EnterSearch = (e) => {
-        e.preventDefault();
-
-    };
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    // }
     return (
         <div className="PriceBar">
             <div className="PriceBar_container">

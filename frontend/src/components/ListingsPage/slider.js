@@ -11,7 +11,6 @@ import "keen-slider/keen-slider.min.css"
 
 function Slider({prop}){
     const [sliderRef] = useKeenSlider()
-    console.log(prop)
     return (
         <div className='photo'>
           <div ref={sliderRef} className="keen-slider">

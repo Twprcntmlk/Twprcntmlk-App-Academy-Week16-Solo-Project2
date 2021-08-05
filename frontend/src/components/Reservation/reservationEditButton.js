@@ -5,7 +5,6 @@ import { useDispatch} from 'react-redux'; //, useSelector
 import {cancelReservation } from '../../store/reservations'; // getReservations,
 import EditReservationForm from './editReservationForm';
 
-
 function ReservationEditButton({el}){
     const {id} =useParams()
     const dispatch = useDispatch();
@@ -13,7 +12,6 @@ function ReservationEditButton({el}){
 
     return(
         <section>
-
             <button id={el.id} onClick={()=> {dispatch(cancelReservation(el.id))}}>Delete</button>
             <button id={el.id} onClick={() => {setToggleState(!toggleState)}}>Edit</button>
             <EditReservationForm Id={el.id} userId={id} listingId={el.listingId} toggleState={toggleState}/>

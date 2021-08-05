@@ -26,7 +26,6 @@ if (res.ok) {
 export const updateImage = (user) => async (dispatch) => {
     const {image, id} = user;
     const formData = new FormData();
-    // console.log(image, id)
     // for single file
     if (image) formData.append("image", image);
 

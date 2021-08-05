@@ -1,5 +1,5 @@
 // frontend/src/components/SignupFormPage/index.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
@@ -37,7 +37,6 @@ function SignupFormPage() {
   const onClose = () => {
     history.push("/");
   }
-
 
   return (
     <div className="form-holder">
@@ -106,9 +105,7 @@ function SignupFormPage() {
               required
             />
           </label>
-
           <button className='form-button' type="submit">Sign Up</button>
-
         </form>
         <button className='form-button' onClick={onClose}>Close</button>
       </div>

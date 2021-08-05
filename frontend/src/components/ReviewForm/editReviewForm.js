@@ -51,7 +51,6 @@ function EditReviewForm ({Id,listingId, button,toggleState}) {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-
   };
 
   return (

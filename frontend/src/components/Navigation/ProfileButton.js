@@ -18,13 +18,10 @@ function ProfileButton({ user }) {
 
   useEffect(() => {
     if (!showMenu) return;
-
     const closeMenu = () => {
       setShowMenu(false);
     };
-
     document.addEventListener('click', closeMenu);
-
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
@@ -32,9 +29,7 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(sessionActions.logout());
     history.push('/')
-
   };
-
 
   const goToProfile = (e) => {
     e.preventDefault()
@@ -42,7 +37,7 @@ function ProfileButton({ user }) {
   }
 
   return (
-    <>
+    <div>
       <button onClick={openMenu} className="profile-button">
         <div className="icons">
             <div id="bars">
@@ -60,11 +55,10 @@ function ProfileButton({ user }) {
           <li>
             <button onClick={goToProfile}>Profile</button>
             <button onClick={logout}>Log Out</button>
-
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 

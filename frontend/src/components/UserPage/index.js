@@ -12,7 +12,7 @@ import Messages from '../../components/Message/message';
 import hostSplash from './images/hostPage.jpeg';
 import "./UserPage.css";
 
-function UserPage () { //will probably need to pass id
+function UserPage () {
     const { id } = useParams();
     const dispatch = useDispatch();
     const [image, setImage] = useState(null);
@@ -20,11 +20,9 @@ function UserPage () { //will probably need to pass id
 
     const userState = useSelector(state => state.user);
     const user = Object.values(userState)[0];
-
     const reservationsState = useSelector(state => state.reservation);
     const reservations = Object.values(reservationsState);
     const allReservations = reservations.filter((el) => (el.userId === Number(id)))
-    console.log(allReservations)
 
     const updateFile = (e) => {
       const file = e.target.files[0];
@@ -53,44 +51,16 @@ function UserPage () { //will probably need to pass id
       dispatch(getReservations(id));
         }, [dispatch, id])
 
-
-        {/* <div className="message_system">
-            <Messages />
-        </div> */}
-
-    {/* <section>
-       <div className="User-page">
-         <div className="User-splash">
-             <img src={hostSplash} alt="splash2"/>
-
-           <div className="User-title">
-             <h1 className ="User-title_title">A space to share, a world to gain </h1>
-             <h3 className ="User-title_span">Hosting can help you turn your extra space into extra income and pursue more of what you love.</h3>
-             <div className="User-button_div">
-               <button className="User-button_Button">Get Hosting</button>
-             </div>
-           </div>
-         </div>
-       </div>
-      </section> */}
-
   return (
     <div className="UserPage">
-
       <div className="UserPage-Container">
         <img className='UserPage-Container__Image'src={user?.imageUrl} alt="userPhoto" ></img>
         <div>
-            {errors.length > 0 &&
-              errors.map((error) => <div key={error}>{error}</div>)}
-          <form
-          style={{ display: "flex", flexFlow: "column" }}
-          onSubmit={handleSubmit}
-        >
-
+            {errors.length > 0 && errors.map((error) => <div key={error}>{error}</div>)}
+          <form style={{ display: "flex", flexFlow: "column" }} onSubmit={handleSubmit}>
           <label>
             <input type="file" onChange={updateFile} />
           </label>
-
           <button type="submit">Upload Profile Picture</button>
           </form>
         </div>

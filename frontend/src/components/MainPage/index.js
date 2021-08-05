@@ -33,7 +33,6 @@ function MainPage(){
     return(
       <div className="Main-page">
         <div className="Main-splash">
-          {/* <img src={splash} alt="splash1"/> */}
             <div className="Main-title">
               <h1 className ="Main-title_title">The Greatest of the Outdoors </h1>
               <h3 className ="Main-title_span">Wishlists curated by Airbnb.</h3>
@@ -104,16 +103,10 @@ function MainPage(){
             </div>
           </div>
         </div>
-
-
-
-
         <div className="Main-page_footer">
           <Footer />
         </div>
-
       </div>
-
     )
   }
   export default MainPage;

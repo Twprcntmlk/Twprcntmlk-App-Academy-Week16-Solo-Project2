@@ -19,8 +19,6 @@ import Review from './review';
 function SingleListingPage(){
     const { id } = useParams();
     const dispatch = useDispatch();
-    // const history = useHistory()
-    // history.go('1')
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
     let [checkIn, setCheckIn]=useState(0);
@@ -92,7 +90,7 @@ function SingleListingPage(){
             </div >
 
             <div className='SingleList-description_holder'>
-       
+
                 <div className='SingleList-description'>
                     <p className='SingleList-listing-description'><h3>Description</h3><span>{listingState.description}</span></p>
                     <p className='SingleList-listing-price'><h3>Price Per Night:</h3><span>${listingState.price}</span> </p>

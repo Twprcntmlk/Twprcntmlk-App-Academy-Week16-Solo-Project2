@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import './LoginFormModal.css';
+import "./LoginFormModal.css";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ function LoginForm() {
           ))}
         </ul>
         <label className="form-inputs-modals">
-          Username or Email
+          <div id="form-inputs-modals__title" >Username or Email</div>
           <input
             type="text"
             value={credential}
@@ -51,7 +51,7 @@ function LoginForm() {
           />
         </label>
         <label className="form-inputs-modals">
-          Password
+          <div>Password</div>
           <input
             type="password"
             value={password}

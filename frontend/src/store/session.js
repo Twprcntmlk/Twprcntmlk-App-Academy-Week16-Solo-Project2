@@ -88,10 +88,6 @@ export const restoreUser = () => async dispatch => {
   return response;
 };
 
-
-
-
-
 export const updateUser = (user) => async (dispatch) => {
   const res = await csrfFetch(`/api/users/${user.id}/`, {
     method: "PATCH",
@@ -103,7 +99,6 @@ export const updateUser = (user) => async (dispatch) => {
   dispatch(setUser(data.user));
   return res;
 };
-
 
 export const logout = () => async (dispatch) => {
   const response = await csrfFetch('/api/session', {

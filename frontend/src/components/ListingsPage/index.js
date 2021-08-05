@@ -17,15 +17,11 @@ function ListingsPage(){
     let [filterword, setFilterword]=useState("")
     let [filterprice, setFilterprice]=useState([0,1000])
 
-
-
-    // console.log("filterword2",filtering)
     useEffect(() => {
         setFilteredListings(listings)
         },[listingsState])
 
     useEffect(() => {
-        console.log(filterprice)
         let range = listings?.filter((el)=>(el.price >= filterprice[0] && el.price <= filterprice[1] ))
         let listfiltering = Object.values(range)
         setFilteredListings(listfiltering)
@@ -36,7 +32,6 @@ function ListingsPage(){
         let filteringAdd = listings?.filter((el)=>(el.address.toLowerCase().includes(filterword.toLowerCase())))
         let filteringName = listings?.filter((el)=>(el.name.toLowerCase().includes(filterword.toLowerCase())))
         let listfiltering = Object.values(filteringDesc.concat(filteringAdd.concat(filteringName)))
-        console.log("filtering_____________",listfiltering)
         setFilteredListings(listfiltering)
         },[filterword])
 
@@ -44,8 +39,6 @@ function ListingsPage(){
         dispatch(getlistings());
         }, [dispatch])
 
-    // console.log("IS THIS ALL THE LISTINGS",listings)
-    // console.log("IS THIS ALL THE LISTINGS",filteredListings)
     return(
     <div className='explore-page'>
     <div className='explore-page--header_container_photo'>

@@ -8,18 +8,14 @@ import { createReservation} from '../../store/reservations';
 import './reservationform.css';
 
 function ReservationForm({price, guests}) {
-
   const { id } = useParams()
   const dispatch = useDispatch();
-
   const sessionUser = useSelector(state => state.session.user);
-
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [guest, setGuest] = useState(1);
   const [error, setError] = useState("");
   const [errorin, setErrorin] = useState("");
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,9 +28,7 @@ function ReservationForm({price, guests}) {
       const payload={ userId:sessionUser.id , listingId:id, checkInDate, checkOutDate, guests:guest }
       return dispatch(createReservation(payload))
     }
-
   };
-
 
   return (
     <div className='Reservation_Form-Holder'>

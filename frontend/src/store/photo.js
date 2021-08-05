@@ -9,11 +9,6 @@ const load = photos => ({
   photos
 });
 
-// const getOne = photo => ({
-//     type: FIND_ONE,
-//     photo
-//   });
-
 //Get photos from database//////////////////////////////
 export const getphotos = () => async dispatch => {
 const res = await csrfFetch('/api/photos'); // problem is here?

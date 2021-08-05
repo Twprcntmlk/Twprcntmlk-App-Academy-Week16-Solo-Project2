@@ -4,14 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
 import { getphotos } from '../../store/photo';
-
 import './listingsComponent.css';
-
 import Slider from '../ListingsPage/slider.js'
 
 function Listing ({ list }) {
     const dispatch = useDispatch();
-
     //////////////////////////////////////////
     let [clean, setClean]=useState(0);
     let [communication, setCommunication]=useState(0);
@@ -20,7 +17,6 @@ function Listing ({ list }) {
     let [location, setLocation]=useState(0);
     let [value, setValue]=useState(0);
 //////////////////////////////////////////////////////
-
     const reviewsState = useSelector(state => state.reviews);
     const reviews = Object.values(reviewsState);
     const allListingReview = reviews.filter((review) => (review.listingId === Number(list.id)))
@@ -29,9 +25,6 @@ function Listing ({ list }) {
     const allphotos = Object.values(PhotosState);
     const OnePhoto = allphotos?.filter((el) => (el.listingId === list.id))
  ////////////////////////////////////////////////
-    // console.log("Should be Array_______",OnePhoto)
-    console.log("Should be list_______",list.id)
-
     useEffect(() => {
         dispatch(getlistings(list.id));
         dispatch(getReviews(list.id));
@@ -75,14 +68,8 @@ function Listing ({ list }) {
     return (
         <div className='listings-main'>
             <div className='listing-photo'>
-                {/* <a href={`/listings/${list.id}`}> */}
-                    <Slider prop={OnePhoto} />
-                    {/* {<img key={list.id} className='photo'src={OnePhoto?.photo} alt="listy"></img>} */}
-                {/* </a> */}
+                <Slider prop={OnePhoto} />
             </div>
-
-            {/* <Slider prop={OnePhoto} /> */}
-
             <a href={`/listings/${list.id}`} className='listing-description_link'>
             <div className='listing-description'>
                 <div className='listing-title_component'>
