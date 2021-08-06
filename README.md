@@ -9,7 +9,7 @@ by Stephen Choung
 
 
 
-[![Splash Page](https://user-images.githubusercontent.com/47694954/128541158-f8e11675-4cf2-4f3e-9413-24e2679b6d07.png|width=500px]](https://youtu.be/siI5UL8wmUw)
+[![Splash Page](https://user-images.githubusercontent.com/47694954/128541158-f8e11675-4cf2-4f3e-9413-24e2679b6d07.png | width=500px]](https://youtu.be/siI5UL8wmUw)
 
 [![Main Pages](https://user-images.githubusercontent.com/47694954/128541058-021528ed-b82e-4a80-a571-f27239e5b6e9.png)](https://youtu.be/ZbWWcBDsOJY)
 
