@@ -7,3 +7,15 @@ by Stephen Choung
 * [Backend Routes](https://github.com/Twprcntmlk/App-Academy-Week16-Solo-Project/wiki/Backend-Routes)
 * [Front End Routes](https://github.com/Twprcntmlk/App-Academy-Week16-Solo-Project/wiki/Frontend-Routes)
 
+
+title: Splash Page
+description: After watching this video, close the first issue in your repository.
+video: https://youtu.be/siI5UL8wmUw
+
+title: Main Pages
+description: After watching this video, close the first issue in your repository.
+video: https://youtu.be/ZbWWcBDsOJY
+
+title: Host Pages
+description: After watching this video, close the first issue in your repository.
+video: https://youtu.be/4r2IhdtBqf8
