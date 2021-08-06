@@ -12,6 +12,8 @@ title: Splash Page
 description: After watching this video, close the first issue in your repository.
 video: https://youtu.be/siI5UL8wmUw
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZbWWcBDsOJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 title: Main Pages
 description: After watching this video, close the first issue in your repository.
 video: https://youtu.be/ZbWWcBDsOJY
