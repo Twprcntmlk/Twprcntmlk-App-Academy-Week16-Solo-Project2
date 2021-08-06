@@ -1,6 +1,3 @@
-
-![JPGAirbnb Intro](https://user-images.githubusercontent.com/47694954/128542802-0ebc6880-d35e-4ee0-b1f3-45f63453a7e1.jpg)
-
 # Welcome to AirBnb Clone
 by Stephen Choung
 
@@ -11,7 +8,7 @@ by Stephen Choung
 * [Front End Routes](https://github.com/Twprcntmlk/App-Academy-Week16-Solo-Project/wiki/Frontend-Routes)
 
 <a href="https://youtu.be/siI5UL8wmUw">
-  <img src="https://user-images.githubusercontent.com/47694954/128541158-f8e11675-4cf2-4f3e-9413-24e2679b6d07.png" width=50% height=50%>
+  <img src="https://user-images.githubusercontent.com/47694954/128542802-0ebc6880-d35e-4ee0-b1f3-45f63453a7e1.jpg" width=50% height=50%>
 </a>
 
 
