@@ -8,15 +8,10 @@ by Stephen Choung
 * [Front End Routes](https://github.com/Twprcntmlk/App-Academy-Week16-Solo-Project/wiki/Frontend-Routes)
 
 
-title: Splash Page
-description: After watching this video, close the first issue in your repository.
-video: 
-[![SC2 Video](https://img.youtube.com/vi/--b-9HrKK6w/0.jpg)](https://youtu.be/siI5UL8wmUw)
 
-title: Main Pages
-description: After watching this video, close the first issue in your repository.
-video: https://youtu.be/ZbWWcBDsOJY
+[![Splash Page](https://user-images.githubusercontent.com/47694954/128541058-021528ed-b82e-4a80-a571-f27239e5b6e9.png)](https://youtu.be/siI5UL8wmUw)
 
-title: Host Pages
-description: After watching this video, close the first issue in your repository.
-video: https://youtu.be/4r2IhdtBqf8
+[![Main Pages](https://img.youtube.com/vi/--b-9HrKK6w/0.jpg)](https://youtu.be/ZbWWcBDsOJY)
+
+[![Host Pages](https://img.youtube.com/vi/--b-9HrKK6w/0.jpg)]( https://youtu.be/4r2IhdtBqf8!
+
