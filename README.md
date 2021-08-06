@@ -8,19 +8,19 @@ by Stephen Choung
 * [Front End Routes](https://github.com/Twprcntmlk/App-Academy-Week16-Solo-Project/wiki/Frontend-Routes)
 
 ## Splash Page
-<img src="./image/AirBnbSplashGif.gif" width=792px height=489px>
-* Contains Navigation Bar
-* Sub-Links
-* Contains Footer
+<img src="./image/AirBnbSplashGif.gif" width=812px height=489px>
+<li> Contains Navigation Bar</li>
+<li>Sub-Links</li>
+<li>Contains Footer</li>
 
 ## Main Pages: Listings Page and Individual Listings Pages
-<img src="./image/AirBnbMainGIF.gif" width=792px height=489px>
-* Can See All Listings
-* Can Search and Filter Listings
-* Can Make Reservations
-* Can Leave reviews
+<img src="./image/AirBnbMainGIF.gif" width=812px height=489px>
+<li>Can See All Listings</li>
+<li>Can Search and Filter Listings</li>
+<li>Can Make Reservations</li>
+<li>Can Leave reviews</li>
 
 ## Users Page
-<img src="./image/AirBnBHostPageGif.gif" width=792px height=489px>
-* Can See Reservations
-* Can Update Profile
+<img src="./image/AirBnBHostPageGif.gif" width=812px height=489px>
+<li>Can See Reservations</li>
+<li>Can Update Profile</li>
