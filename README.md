@@ -9,10 +9,9 @@ by Stephen Choung
 
 
 
-[![Splash Page](https://user-images.githubusercontent.com/47694954/128541158-f8e11675-4cf2-4f3e-9413-24e2679b6d07.png)](https://youtu.be/siI5UL8wmUw)
+[![Splash Page](https://user-images.githubusercontent.com/47694954/128541158-f8e11675-4cf2-4f3e-9413-24e2679b6d07.png = 560x315)](https://youtu.be/siI5UL8wmUw)
 
 [![Main Pages](https://user-images.githubusercontent.com/47694954/128541058-021528ed-b82e-4a80-a571-f27239e5b6e9.png)](https://youtu.be/ZbWWcBDsOJY)
 
-[![Host Pages](https://user-images.githubusercontent.com/47694954/128541177-91cb5247-ceca-4c24-9577-e95c560fbfc7.png)](https://youtu.be/4r2IhdtBqf8!)
-
+[![Host Pages](https://user-images.githubusercontent.com/47694954/128541305-d3b48485-aa67-4c63-88a3-6b462c8d38e7.png)](https://youtu.be/4r2IhdtBqf8!)
 
