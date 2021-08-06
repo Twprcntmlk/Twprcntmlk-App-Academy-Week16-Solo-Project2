@@ -1,3 +1,6 @@
+
+![JPGAirbnb Intro](https://user-images.githubusercontent.com/47694954/128542802-0ebc6880-d35e-4ee0-b1f3-45f63453a7e1.jpg)
+
 # Welcome to AirBnb Clone
 by Stephen Choung
 
