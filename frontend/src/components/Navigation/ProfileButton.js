@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
   }
 
   return (
-    <div>
+    <div className="Profile-container">
       <button onClick={openMenu} className="profile-button">
         <div className="icons">
             <div id="bars">
@@ -52,7 +52,7 @@ function ProfileButton({ user }) {
         <ul className="profile-dropdown">
           <li>{user.username}</li>
           <li>{user.email}</li>
-          <li>
+          <li >
             <button onClick={goToProfile}>Profile</button>
             <button onClick={logout}>Log Out</button>
           </li>

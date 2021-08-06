@@ -14,11 +14,14 @@
 
 }
 
+.Nav{
+    display:flex;
+    width: 200px;
+}
 .nav-dropdown{
     display:flex;
     grid-column: 5/6;
     justify-content:flex-end;
-
 }
 
 .nav-signup-button{
@@ -30,8 +33,20 @@
     justify-content:flex-start;
 }
 
+.Profile-container{
+    display:flex;
+    justify-content: flex-end;
+}
+
 .profile-dropdown{
-    color: white;
+    color:  Grey;
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.profile-dropdown li{
+    width: 200px;
 }
 
 .signUpButton{

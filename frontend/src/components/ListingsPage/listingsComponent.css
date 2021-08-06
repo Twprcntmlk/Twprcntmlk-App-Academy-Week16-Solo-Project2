@@ -3,7 +3,7 @@
 }
 .listings-main{
     display:grid;
-    grid-template-columns: 32% 40% 40%;
+    grid-template-columns: 32% 50% 28%;
     height: 7%;
     border-color: rgb(206, 209, 209);
     grid-gap: 30px;

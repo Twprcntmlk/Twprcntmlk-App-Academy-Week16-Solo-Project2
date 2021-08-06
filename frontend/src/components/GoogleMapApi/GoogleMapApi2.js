@@ -15,7 +15,7 @@ import './GoogleMapApi.css'
 export function MapContainer2 (props) {
 
   let coordinates = props.props
-
+  console.log(coordinates.latitude, coordinates.longitude)
   const containerStyle = {
     width: '500px',
     height: '38%',
@@ -29,11 +29,10 @@ export function MapContainer2 (props) {
                 zoom={4}
                 containerStyle={containerStyle}
                 style={{height: '100%', width: '100%', display:'flex'}}
-                initialCenter={{ lat: coordinates[0].latitude, lng: coordinates[0].longitude}}
+                initialCenter={{ lat: coordinates.latitude, lng: coordinates.longitude}}
                 >
-            {coordinates.map((el) =>{
-            return <Marker key={el.id} position={{lat: el.latitude, lng: el.longitude}} />
-            })}
+          <Marker position={{lat: coordinates.latitude, lng: coordinates.longitude}} />
+
           </Map>
     )
   }

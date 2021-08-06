@@ -33,10 +33,12 @@ function Navigation({ isLoaded }){
           <img src={AirBNBlogo} alt="splash1"/>
         </NavLink>
       </div>
+
       <div className="nav-dropdown">
          <NavLink  exact to="/"></NavLink>
         {isLoaded && sessionLinks}
       </div>
+      
     </ul>
   );
 }

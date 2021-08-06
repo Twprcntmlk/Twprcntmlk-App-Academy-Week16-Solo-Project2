@@ -105,7 +105,7 @@ function SingleListingPage(){
                 </div>
 
                 <div className="GoogleMap2">
-                    <GoogleApiWrapper props={[listingState]}/>
+                    <GoogleApiWrapper props={listingState}/>
                 </div>
 
             </div>
