@@ -14,13 +14,13 @@ by Stephen Choung
 <li>Contains Footer</li>
 
 ## Main Pages: Listings Page and Individual Listings Pages
-<img src="./image/AirBnbMainGIF.gif" width=812px height=489px>
+<img src="./image/AirBnbMainGIF.gif" width=854px height=480px>
 <li>Can See All Listings</li>
 <li>Can Search and Filter Listings</li>
 <li>Can Make Reservations</li>
 <li>Can Leave reviews</li>
 
 ## Users Page
-<img src="./image/AirBnBHostPageGif.gif" width=812px height=489px>
+<img src="./image/AirBnBHostPageGif.gif" width=854px height=480px>
 <li>Can See Reservations</li>
 <li>Can Update Profile</li>
