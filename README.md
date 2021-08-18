@@ -38,7 +38,7 @@ The API has a truly robust feature set, of which this application just scratched
 AirBnb Clone uses an Express server with MongoDB as the database. Compared to the frontend, the backend of AirBnb Clone is fairly simple, with the server sending the front end to the client, receiving requests, and sending data to the frontend. Below are the backend technologies used with some notes regarding their implementation.
 
 ### Backend Technologies Used
-####ExpressJS
+#### ExpressJS
 Express was the natural choice for AirBnb Clone's server-side framework. The minimalism of Express lent itself to the very light-weight responsibilities of AirBnb Clone's server. The server is just a couple of routes and a connection to the database, with a few utilities to facilitate this.
 Conclusion and Next Steps
 Time to break the 4th wall. AirBnb Clone was a ton of fun to build. I'm a lifelong fan of hip-hop, so it was an amazing experience getting to combine that passion with my newer passion for coding.
