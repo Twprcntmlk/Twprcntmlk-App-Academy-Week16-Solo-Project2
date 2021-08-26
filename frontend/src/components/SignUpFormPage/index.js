@@ -41,10 +41,15 @@ function SignupFormPage() {
   return (
     <div className="form-holder">
       <div className="form-holder_container">
+        <div className='exit'>
+          <button className='form-button-close' onClick={onClose}>x</button>
+        </div>
         <form className='form-signin'onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error, idx) => <li className='form-errors' key={idx}>{error}</li>)}
-          </ul>
+        <div className='form-errors'>
+          {errors.map((error, idx) => <div  key={idx}>{error}</div>)}
+        </div>
+          <h2>Sign-Up</h2>
+
           <label className='form-inputs'>
             Email
             <input
@@ -107,7 +112,6 @@ function SignupFormPage() {
           </label>
           <button className='form-button' type="submit">Sign Up</button>
         </form>
-        <button className='form-button' onClick={onClose}>Close</button>
       </div>
     </div>
   );

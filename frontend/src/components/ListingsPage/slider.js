@@ -8,7 +8,6 @@ import './listingsComponent.css';
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 
-
 function Slider({prop}){
     const [sliderRef] = useKeenSlider()
     return (

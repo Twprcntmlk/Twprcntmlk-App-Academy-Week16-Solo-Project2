@@ -10,7 +10,7 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password })).catch(
@@ -36,11 +36,11 @@ function LoginForm() {
   return (
     <div className='form-holder-modals'>
       <form className='.form-signin-modals' onSubmit={handleSubmit}>
-        <ul>
+      <div className="form-errors">
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <div key={idx}>{error}</div>
           ))}
-        </ul>
+        </div>
         <label className="form-inputs-modals">
           <div id="form-inputs-modals__title" >Username or Email</div>
           <input

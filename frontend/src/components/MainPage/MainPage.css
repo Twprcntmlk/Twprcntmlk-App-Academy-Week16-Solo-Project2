@@ -53,6 +53,7 @@
 .Main-button_Button{
     background-color: black;
     color:white;
+    min-width:176px;
     border-radius:20px;
     font-size:1.1em;
     padding: 13px 13px 13px 13px ;

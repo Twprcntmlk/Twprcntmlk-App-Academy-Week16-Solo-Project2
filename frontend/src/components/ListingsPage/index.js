@@ -52,14 +52,15 @@ function ListingsPage(){
             <div className='explore-page--pricebar_container'>
                 < PriceBar setFilterprice={setFilterprice}/>
             </div>
+            <div id="GoogleMaps">
+                <GoogleApiWrapper props={ listings } />
+            </div>
         </div>
         <div className='explore-page--listings_container'>
         {filteredListings?.map((el, idx) => {
             return <Listing key={idx} list={el} /> })}
         </div>
-        <div id="GoogleMaps">
-            <GoogleApiWrapper props={ listings } />
-        </div>
+
     </div>
     </div>
 

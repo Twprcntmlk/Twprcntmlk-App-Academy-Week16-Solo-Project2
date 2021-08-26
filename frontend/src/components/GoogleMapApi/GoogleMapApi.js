@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './GoogleMapApi.css'
-
 // const style = {
 //   width: '75%',
 //   height: '360px',
@@ -17,8 +16,8 @@ export function MapContainer (props) {
 
   const containerStyle = {
     position: 'fixed',
-    top: '260px',
-    left: '60%',
+    // top: '260px',
+    // left: '60%',
   }
 
   if (!props.google){
@@ -28,7 +27,7 @@ export function MapContainer (props) {
           <Map google={props.google}
                 zoom={4}
                 containerStyle={containerStyle}
-                style={{height: '71%', width: '39%'}}
+                style={{height: '79%', width: '37%'}}
                 // initialCenter={{ lat: 39.8283, lng: -98.5795 }}
                 >
             {coordinates.map((el) =>{
@@ -39,4 +38,4 @@ export function MapContainer (props) {
   }
 }
 
-export default GoogleApiWrapper({apiKey: ('AIzaSyBpfbp2b1e6kzv8_A1yrUGO3eVt20eFSNA')})(MapContainer)
+export default GoogleApiWrapper({apiKey: ('AIzaSyDQrHXGw1JayN7O-28ufeC4jBMWwfeY4Og')})(MapContainer)

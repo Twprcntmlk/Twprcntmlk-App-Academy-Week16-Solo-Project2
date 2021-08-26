@@ -38,4 +38,4 @@ export function MapContainer2 (props) {
   }
 }
 
-export default GoogleApiWrapper({apiKey: ('AIzaSyBpfbp2b1e6kzv8_A1yrUGO3eVt20eFSNA')})(MapContainer2)
+export default GoogleApiWrapper({apiKey: ('AIzaSyDQrHXGw1JayN7O-28ufeC4jBMWwfeY4Og')})(MapContainer2)

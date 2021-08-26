@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'; //NavLink,
 import { useSelector } from 'react-redux';
 import { Redirect, useHistory} from 'react-router-dom'; //, Redirect
 import './MainPage.css';
-// import splash from './images/splash-page-img.jpg';
+
 import middleOne from './images/Main_Page1.jpg';
 import middleTwo from './images/Main_Page2.jpg';
 import middleThree from './images/Main_Page3.jpg';
@@ -17,13 +17,13 @@ import middlesubThree from './images/Main_Page_Sub3.jpg';
 import Footer from "../../components/Footer";
 function MainPage(){
   let history = useHistory();
-  let [error, setError]=useState("");
+  let [error, setError]=useState("Explore The World!");
   const sessionUser = useSelector((state) => state.session.user);
 
   const direct = () =>{
     if (!sessionUser){
       setError("Please Log In")
-      setTimeout(() =>{setError("")},1000)
+      setTimeout(() =>{setError("Explore The World!")},1000)
       return Redirect("/");
   } else{
     return history.push("/listings");
@@ -38,8 +38,8 @@ function MainPage(){
               <h3 className ="Main-title_span">Wishlists curated by Airbnb.</h3>
               <h3 className ="Main-title_span2">Not sure where to go? Perfect.</h3>
             <div className="Main-button_div">
-              <button onClick={direct} className="Main-button_Button"> Explore The World!</button>
-              <span className="error">{error}</span>
+              <button onClick={direct} className="Main-button_Button">{error}</button>
+              {/* <span className="error">{error}</span> */}
             </div>
           </div>
         </div>

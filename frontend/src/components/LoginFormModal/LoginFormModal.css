@@ -1,5 +1,4 @@
-.form-signin-modals
-{
+.form-signin-modals{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   flex-direction: column;
@@ -14,35 +13,41 @@
   z-index: 10;
 }
 
-.form-inputs-modals
-{
+.form-inputs-modals{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.form-signin-modals > input
-{
-  padding: 5px 0px;
+.form-signin-modals > input{
+  padding: 0px 0px;
   margin: 0px 0px;
-
 }
 
-.form-holder-modals
-{
+label{
+  width: 300px;
+}
+
+.form-holder-modals{
+  margin: 0px 0px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;  */
+  /* background-size: cover; */
+}
+
+
+#button-modals{
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0px;
-  background-size: cover;
 }
 
-.form-button-modals
-{
+.form-button-modals{
   background-color: darkslategray;
   color: white;
   border-radius: 5px;
   padding: 5px;
+  margin: 0 3% 0 3%;
 }
 
 button:hover
@@ -63,17 +68,14 @@ button:hover
   margin: 12px 0px;
 
 }
-.form-signin-modals
-{
+.form-signin-modals{
+  width: 100%;
   color: orangered;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-#button-modals{
-  display: flex;
-  justify-content:space-evenly;
 
-
-}
 .LoginButton{
   max-height: 30px;
   max-height: 30px;
@@ -81,4 +83,12 @@ button:hover
   color: white;
   border-radius: 5px;
   padding: 5px;
+}
+
+.form-errors{
+  height: 20px;
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  align-items: center;
 }
