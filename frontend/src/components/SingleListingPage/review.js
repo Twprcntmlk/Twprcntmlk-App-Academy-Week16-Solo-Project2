@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteReview } from '../../store/reviews';//, editReview,getReviews,
 import EditReviewForm from '../ReviewForm/editReviewForm';
 import './SingleListingReview.css';
-
+import EditReviewModal from '../ReviewForm/ReviewEditModal'
 
 
 function Review({el, listingId}){
@@ -40,10 +40,19 @@ function Review({el, listingId}){
         </div>
 
         <div>
-        <button className='delete-button' disabled={user && user.id === el.userId ? false : true} id={el.id} onClick={(e) =>  dispatch(deleteReview(e.target.id))}>Delete</button>
-            <button className='edit-button' disabled={user && user.id === el.userId ? false : true} id={el.id} onClick={()=>setToggleState(!toggleState)}>Edit</button>
-            {<EditReviewForm  Id={el.id} listingId={listingId} toggleState={toggleState} />}
-
+            {user && user.id === el.userId ?
+            <div className="SingleReview_container--review--button">
+                <button className='delete-button'  id={el.id} onClick={(e) =>  dispatch(deleteReview(e.target.id))}>Delete</button>
+                {/* <button   id={el.id} onClick={()=>setToggleState(!toggleState)}>Edit</button> */}
+                <div className='edit-button'>
+                    <EditReviewModal/>
+                </div>
+            </div>
+            :
+            null}
+            {/* // <button className='delete-button' disabled={user && user.id === el.userId ? false : true} id={el.id} onClick={(e) =>  dispatch(deleteReview(e.target.id))}>Delete</button>
+            // <button className='edit-button' disabled={user && user.id === el.userId ? false : true} id={el.id} onClick={()=>setToggleState(!toggleState)}>Edit</button> */}
+            {/* {<EditReviewForm  Id={el.id} listingId={listingId} toggleState={toggleState} />} */}
         </div>
 
     </section>
