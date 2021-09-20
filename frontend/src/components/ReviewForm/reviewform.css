@@ -1,8 +1,10 @@
 .reviewform{
+    padding: 10px;
     display:flex;
     flex-direction:column;
-    padding-top: 10px;
+
 }
+
 
 .reviewform textarea {
     height: 225px;
@@ -13,6 +15,10 @@
     display: flex;
 }
 
+.reviewform--buttons{
+    display: flex;
+    flex-direction:row;
+}
 #reviewform-inputs{
     display: flex;
     flex-direction:column;
@@ -27,3 +33,24 @@
     font-size: 1.2em;
     width: 150%;
  }
+
+.edit-form-holder{
+    padding:10px;
+    margin:5%;
+}
+
+.edit-form-holder_textarea{
+    width: 95%;
+    height: 50px;
+    margin: 10px;
+}
+
+.edit-form-holder_form input{
+    width: 95%;
+}
+
+.edit-form-holder_button{
+    margin: 10px;
+    display:flex;
+    justify-content: space-around;
+}

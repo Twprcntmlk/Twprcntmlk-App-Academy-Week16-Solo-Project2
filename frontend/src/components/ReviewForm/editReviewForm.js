@@ -55,16 +55,18 @@ function EditReviewForm ({Id,listingId, button,toggleState}) {
 
   return (
     <section className="edit-form-holder centered middled" hidden={Id===button?toggleState:!toggleState}>
-      <form onSubmit={handleSubmit}>
-        <textarea value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
+      <form className="edit-form-holder_form" onSubmit={handleSubmit}>
+        <textarea className="edit-form-holder_textarea" value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
         <input value={cleanliness} placeholder="cleanliness"type='number' onChange={updateCleanliness }></input>
         <input value={communication} placeholder="communication"type='number' onChange={updateCommunication}></input>
         <input value={checkIn} placeholder="check in"type='number' onChange={updateCheckIn}></input>
         <input value={accuracy} placeholder="accuracy"type='number' onChange={updateAccuracy}></input>
         <input value={location} placeholder="location"type='number' onChange={updateLocation}></input>
         <input value={value} placeholder="value"type='number' onChange={updateValue}></input>
-        <button type="submit">Submit Review</button>
-        <button type="button" onClick={handleCancelClick}>Cancel</button>
+        <div className="edit-form-holder_button">
+          <button type="submit">Submit Review</button>
+          <button type="button" onClick={handleCancelClick}>Cancel</button>
+        </div>
       </form>
     </section>
   );

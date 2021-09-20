@@ -15,6 +15,7 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
   const [accuracy, setAccuracy] = useState(null);
   const [location, setLocation] = useState(null);
   const [value, setValue] = useState(null);
+  const [placeholder, setPlaceholder] = useState('write your review here...');
 
   const updateReview = (e) => setReview(e.target.value);
   const updateCleanliness = (e) => setCleanliness(e.target.value);
@@ -26,28 +27,31 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(review){
+      const payload = {
+        userId,
+        listingId,
+        review,
+        cleanliness,
+        communication,
+        checkIn,
+        accuracy,
+        location,
+        value,
+      };
 
-    const payload = {
-      userId,
-      listingId,
-      review,
-      cleanliness,
-      communication,
-      checkIn,
-      accuracy,
-      location,
-      value,
-    };
-
-    const addedReview = await dispatch(addReview(payload));
-    if (addedReview) {
-      setReview("");
-      setCleanliness("");
-      setCommunication("");
-      setCheckIn("");
-      setAccuracy("");
-      setLocation("");
-      setValue("");
+      const addedReview = await dispatch(addReview(payload));
+      if (addedReview) {
+        setReview("");
+        setCleanliness("");
+        setCommunication("");
+        setCheckIn("");
+        setAccuracy("");
+        setLocation("");
+        setValue("");
+      }
+    } else{
+      setPlaceholder("Please fill out the review before submitting")
     }
 
   };
@@ -59,8 +63,8 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
 
   return (
     <section className="reviewform">
-      <form onSubmit={handleSubmit}>
-        <textarea value={review} placeholder='write your review here...' onChange={updateReview}></textarea>
+      <form className="reviewform_container"onSubmit={handleSubmit}>
+        <textarea value={review} placeholder={placeholder} onChange={updateReview}></textarea>
         <div id="reviewform-inputs">
           <input value={cleanliness} type='number' placeholder="cleanliness" min="1" max="5" onChange={updateCleanliness }></input>
           <input value={communication} type='number' placeholder="communication" min="1" max="5" onChange={updateCommunication}></input>
@@ -68,8 +72,10 @@ function ReviewForm ({listingId, userId}) { //will probably need to pass id user
           <input value={accuracy} type='number' placeholder="accuracy" min="1" max="5" onChange={updateAccuracy}></input>
           <input value={location} type='number' placeholder="location" min="1" max="5" onChange={updateLocation}></input>
           <input value={value} type='number' placeholder="value" min="1" max="5" onChange={updateValue}></input>
-          <button type="submit">Submit Review</button>
-          <button type="button" onClick={handleCancelClick}>Cancel</button>
+          <div className="reviewform--buttons">
+            <button type="submit">Submit Review</button>
+            <button type="button" onClick={handleCancelClick}>Cancel</button>
+          </div>
         </div>
       </form>
     </section>
