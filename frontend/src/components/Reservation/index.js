@@ -1,5 +1,5 @@
 // frontend/src/components/LoginFormModal/LoginForm.js
-import { LocalConvenienceStoreOutlined } from "@material-ui/icons";
+
 import React, { useState, useEffect } from "react";
 // import * as sessionActions from "../../store/session";
 // import { createReservation} from '../../store/session';

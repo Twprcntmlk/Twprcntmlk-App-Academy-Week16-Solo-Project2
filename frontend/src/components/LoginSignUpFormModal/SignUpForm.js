@@ -5,6 +5,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import { FaRegWindowClose } from "react-icons/fa";
 import './SignUpForm.css';
+import { Input } from '@mui/material';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -41,76 +42,103 @@ function SignupFormPage() {
   return (
     <div className="form-holder">
       <div className="form-holder_container">
-        <div className='exit'>
-          <button className='form-button-close' onClick={onClose}>x</button>
-        </div>
-        <form className='form-signin'onSubmit={handleSubmit}>
+        <div className="form-holder-modals-title">SignUp</div>
         <div className='form-errors'>
           {errors.map((error, idx) => <div  key={idx}>{error}</div>)}
         </div>
-          <h2>Sign-Up</h2>
+        <form className='form-signin'onSubmit={handleSubmit}>
 
-          <label className='form-inputs'>
-            Email
-            <input
+          <label className='form-inputs-modals'>
+
+            <Input  type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required/>
+            <div id="form-inputs-modals__title">Email</div>
+            {/* <input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-            />
+            /> */}
           </label>
-          <label className='form-inputs'>
-            Username
-            <input
+          <label className='form-inputs-modals'>
+
+            <Input  type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required/>
+            <div id="form-inputs-modals__title">Username</div>
+            {/* <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
-            />
+            /> */}
           </label>
 
-          <label className='form-inputs'>
-            First Name
-            <input
+          <label className='form-inputs-modals'>
+
+            <Input  type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required/>
+            <div id="form-inputs-modals__title">First Name</div>
+            {/* <input
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
-            />
+            /> */}
           </label>
 
-          <label className='form-inputs'>
-            Last Name
-            <input
+          <label className='form-inputs-modals'>
+
+            <Input  type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required/>
+            <div id="form-inputs-modals__title">Last Name</div>
+            {/* <input
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
-            />
+            /> */}
           </label>
 
 
 
-          <label className='form-inputs'>
-            Password
-            <input
+          <label className='form-inputs-modals'>
+
+            <Input  type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required/>
+            <div id="form-inputs-modals__title">Password</div>
+            {/* <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-            />
+            /> */}
           </label>
 
-          <label className='form-inputs'>
-            Confirm Password
-            <input
+          <label className='form-inputs-modals'>
+
+            <Input  type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required/>
+            <div id="form-inputs-modals__title">Confirm Password</div>
+            {/* <input
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
-            />
+            /> */}
           </label>
-          <button className='form-button' type="submit">Sign Up</button>
+          <button className='form-button-signup' type="submit">Sign Up</button>
         </form>
       </div>
     </div>

@@ -3,9 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  background-color:  rgba(255, 255, 255, 0.8);
-  height: 200px;
   width: 100px;
   justify-content: center;
   border-radius: 20px;
@@ -30,14 +27,19 @@ label{
 
 .form-holder-modals{
   margin: 0px 0px;
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center;  */
+  align-items: center;
+  flex-direction: column;
   /* background-size: cover; */
 }
 
+.form-holder-modals-title{
+  font-size:2em;
+}
 
 #button-modals{
+  margin:3%;
   display: flex;
   justify-content: center;
 }
@@ -45,10 +47,12 @@ label{
 .form-button-modals{
   background-color: darkslategray;
   color: white;
+  min-width: 80px;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5% 10% 5% 10%;
   margin: 0 3% 0 3%;
 }
+
 
 button:hover
 {
@@ -70,7 +74,6 @@ button:hover
 }
 .form-signin-modals{
   width: 100%;
-  color: orangered;
   text-align: center;
   justify-content: center;
   align-items: center;

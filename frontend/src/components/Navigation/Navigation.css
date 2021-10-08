@@ -17,6 +17,8 @@
 .Nav{
     display:flex;
     width: 200px;
+    justify-content:space-between;
+
 }
 .nav-dropdown{
     display:flex;
@@ -32,6 +34,16 @@
     grid-column: 1/2;
     justify-content:flex-start;
 }
+
+.nav-tab{
+    grid-column: 2/4;
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-tab{
+        display:none;
+    }
+  }
 
 .Profile-container{
     display:flex;

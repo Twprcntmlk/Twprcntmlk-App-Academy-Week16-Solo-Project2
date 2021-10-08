@@ -21,10 +21,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Twprcntmlk/Twprcntmlk-App-Academy-Week16-Solo-Project2/issues"
-  },
-  "homepage": "https://github.com/Twprcntmlk/Twprcntmlk-App-Academy-Week16-Solo-Project2#readme",
-  "dependencies": {
-    "@material-ui/core": "^4.12.2",
-    "@material-ui/icons": "^4.11.2"
   }
 }
