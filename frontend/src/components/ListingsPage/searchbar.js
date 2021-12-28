@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
-import './listingsIndex.css';
+import styles from './Listings.module.css';
 
 
 function SearchBar({setFilterword}){

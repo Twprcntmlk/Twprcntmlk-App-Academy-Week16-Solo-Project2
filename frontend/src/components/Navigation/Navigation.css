@@ -4,14 +4,12 @@
 
 }
 
-.nav-list{
+header{
     display: grid;
     padding: 10px 10px 10px 10px;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 1fr;
     width: 98vw;
-
-
 }
 
 .Nav{

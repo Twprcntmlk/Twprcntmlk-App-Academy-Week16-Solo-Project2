@@ -3,7 +3,7 @@ import React, { useState, useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
-import './listingsIndex.css';
+import styles from './Listings.module.css';
 import Slider, { SliderThumb } from '@material-ui/core/Slider';
 import { styled } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';

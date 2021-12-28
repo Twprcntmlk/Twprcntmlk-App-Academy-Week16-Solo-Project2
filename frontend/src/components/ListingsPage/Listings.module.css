@@ -1,7 +1,7 @@
 * {
     margin: 0px;
 }
-.listings-main{
+.listingsMain{
     display:grid;
     grid-template-columns: 34% 50% 28%;
     height: 7%;
@@ -13,7 +13,7 @@
     margin: 2%;
 }
 
-.listing-photo {
+.listingPhoto {
     height:300px;
     width:400px;
     grid-column: 1/2;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-.listing-description_link{
+.listingDescription_link{
     text-decoration: none;
     color: black
 }
@@ -91,10 +91,12 @@
     justify-content: space-around;
 }
 
-.explore-page{
+.ExplorePage{
     display:grid;
     /* grid-template-rows: repeat(3,1fr); */
-    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "options options options"
+    "listing listing map";
 }
 
 .explore-page--header{
@@ -117,17 +119,19 @@
     display: flex;
     justify-content: space-around;
 }
-.explore-page--listings_container{
-    grid-row: 2/3;
-    grid-column: 1/2;
+.ExplorePage_listings_container{
+    grid-area:listing;
 }
 
-/* #GoogleMaps{
-    position: 'fixed';
+.ExplorePage_options_container{
+    grid-area:options;
+}
+#GoogleMaps{
+    grid-area:map;
     top: 40px;
     left: 40px;
 
-} */
+}
 
 .searchbar{
     height:45px;

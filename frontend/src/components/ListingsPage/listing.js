@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
 import { getphotos } from '../../store/photo';
-import './listingsComponent.css';
+import styles from './Listings.module.css';
 import Slider from '../ListingsPage/slider.js'
 
 function Listing ({ list }) {
@@ -66,11 +66,11 @@ function Listing ({ list }) {
         }, [allListingReview,clean,communication,checkIn,accuracy,location,value])
 
     return (
-        <div className='listings-main'>
-            <div className='listing-photo'>
+        <div className={styles.listingsMain}>
+            <div className={styles.listingPhoto}>
                 <Slider prop={OnePhoto} />
             </div>
-            <a href={`/listings/${list.id}`} className='listing-description_link'>
+            <a href={`/listings/${list.id}`} className={styles.listingDescription_link}>
             <div className='listing-description'>
                 <div className='listing-title_component'>
                     <p className='listing-name_parts'>Name---{list.name}</p>

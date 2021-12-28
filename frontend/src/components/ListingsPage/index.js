@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 import { getlistings } from '../../store/listings';
 import Listing from './listing';
-import './listingsIndex.css';
+import styles from './Listings.module.css';
 import SearchBar from './searchbar';
 import PriceBar from './pricebar';
 
@@ -40,29 +40,35 @@ function ListingsPage(){
         }, [dispatch])
 
     return(
-    <div className='explore-page'>
-    <div className='explore-page--header_container_photo'>
-        <div className='explore-page--header_container'>
-            <h1 className='explore-page--header'>Discover</h1>
+    <div className={styles.ExplorePage}>
+
+
+
+        <div className={styles.ExplorePage_options_container}>
+            <div className='explore-page--header_container'>
+                <h1 className='explore-page--header'>Discover</h1>
+            </div>
+            <div className='explore-page--options'>
+                <div className='explore-page--searchbar_container'>
+                    <SearchBar setFilterword={setFilterword}/>
+                </div>
+                <div className='explore-page--pricebar_container'>
+                    <PriceBar setFilterprice={setFilterprice}/>
+                </div>
+            </div>
         </div>
-        <div className='explore-page--options'>
-            <div className='explore-page--searchbar_container'>
-                < SearchBar setFilterword={setFilterword}/>
-            </div>
-            <div className='explore-page--pricebar_container'>
-                < PriceBar setFilterprice={setFilterprice}/>
-            </div>
-            <div id="GoogleMaps">
-                <GoogleApiWrapper props={ listings } />
-            </div>
-        </div>
-        <div className='explore-page--listings_container'>
+
+
+        <div className={styles.ExplorePage_listings_container}>
         {filteredListings?.map((el, idx) => {
             return <Listing key={idx} list={el} /> })}
         </div>
+        <div id={styles.GoogleMaps}>
+            <GoogleApiWrapper  props={ listings } />
+        </div>
 
     </div>
-    </div>
+
 
     )
   }

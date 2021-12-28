@@ -59,29 +59,45 @@ function Navigation({ isLoaded }){
   };
 
   return (
-    <ul className="nav-list">
-      <div className="nav-logo">
-        <NavLink  exact to="/">
-          <img src={AirBNBlogo} alt="splash1"/>
-        </NavLink>
-      </div>
-      <div className="nav-tab">
-
-        <Box>
-          <Tabs value={value} onChange={handleChange}>
-            <Tab label="Places to Stay" />
-            <Tab label="Experiences"/>
-            <Tab label="Online Experiences"  />
-          </Tabs>
-        </Box>
+    <header>
+      <div className="headerLeft">
+        <div className="nav-logo">
+          <NavLink  exact to="/">
+            <img src={AirBNBlogo} alt="splash1"/>
+          </NavLink>
+        </div>
       </div>
 
-      <div className="nav-dropdown">
-         <NavLink  exact to="/"></NavLink>
-        {isLoaded && sessionLinks}
+      <div className="headerMidde">
+
       </div>
 
-    </ul>
+      <div className="headerRight">
+        <div className="nav-dropdown">
+          <NavLink  exact to="/"></NavLink>
+          {isLoaded && sessionLinks}
+        </div>
+      </div>
+
+
+
+
+        {/* <div className="nav-tab">
+
+          <Box>
+            <Tabs value={value} onChange={handleChange}>
+              <Tab label="Places to Stay" />
+              <Tab label="Experiences"/>
+              <Tab label="Online Experiences"  />
+            </Tabs>
+          </Box>
+        </div> */}
+
+
+
+
+   </header>
+
   );
 }
 

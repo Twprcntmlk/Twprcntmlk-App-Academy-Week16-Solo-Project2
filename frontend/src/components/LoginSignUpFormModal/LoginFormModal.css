@@ -41,7 +41,7 @@ label{
 #button-modals{
   margin:3%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .form-button-modals{

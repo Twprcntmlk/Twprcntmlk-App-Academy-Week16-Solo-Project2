@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
 import { getphotos } from '../../store/photo';
-import './listingsComponent.css';
+import styles from './Listings.module.css';
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 

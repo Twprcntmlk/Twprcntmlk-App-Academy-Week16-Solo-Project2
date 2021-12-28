@@ -37,7 +37,7 @@ function LoginForm() {
 
   return (
     <div className='form-holder-modals'>
-      <div className='form-holder-modals-title'>Login</div>
+      <div >Login</div>
       <form className='form-signin-modals' onSubmit={handleSubmit}>
 
         <div className="form-errors">
@@ -69,7 +69,7 @@ function LoginForm() {
           <div>Password</div>
         </label>
         <div id='button-modals'>
-          <button className="form-button-modals" type="submit">Log In</button>
+          <button className="form-button-modals" type="submit">Confirm</button>
           <button className="form-button-modals" type="submit" onClick={handleDemoSubmit}>Demo User</button>
         </div>
       </form>

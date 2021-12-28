@@ -237,14 +237,13 @@
 
 
 .MainPage_Content_Title{
-
     font-size: 2em;
-    margin: 0% 0% 1% 1%;
+    margin: 0% 1% 0% 1%;
 }
 
-.MainPage_Content_Title span{
-    font-size: 1.5em;
-    margin: 0% 0% 1% 1%;
+.MainPage_Content_Title > span{
+    font-size:.66em;
+
 }
 .MainPage_Content{
 
