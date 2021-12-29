@@ -2,7 +2,7 @@
 import React, { useState, useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getlistings } from '../../store/listings';
-import Listing from './listing';
+import Listing from './listingCard';
 import styles from './Listings.module.css';
 import Slider, { SliderThumb } from '@material-ui/core/Slider';
 import { styled } from '@material-ui/core/styles';
@@ -24,8 +24,8 @@ function PriceBar({setFilterprice}){
     };
 
     return (
-        <div className="PriceBar">
-            <div className="PriceBar_container">
+        <div className={styles.PriceBar}>
+            <div className={styles.PriceBar_container}>
                 <div>Price Range</div>
                 <div>
                     <Box sx={{ width: 400 }}>

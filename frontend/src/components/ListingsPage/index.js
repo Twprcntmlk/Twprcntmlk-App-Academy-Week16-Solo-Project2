@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 import { getlistings } from '../../store/listings';
-import Listing from './listing';
+import ListingCard from './listingCard';
 import styles from './Listings.module.css';
 import SearchBar from './searchbar';
 import PriceBar from './pricebar';
+import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 function ListingsPage(){
     const dispatch = useDispatch();
@@ -45,14 +45,14 @@ function ListingsPage(){
 
 
         <div className={styles.ExplorePage_options_container}>
-            <div className='explore-page--header_container'>
-                <h1 className='explore-page--header'>Discover</h1>
+            <div className={styles.explore_page_header_container}>
+                <h1 className={styles.explore_page_header}>Discover</h1>
             </div>
-            <div className='explore-page--options'>
-                <div className='explore-page--searchbar_container'>
+            <div className={styles.explore_page_options}>
+                <div className={styles.explore_page_searchbar_container}>
                     <SearchBar setFilterword={setFilterword}/>
                 </div>
-                <div className='explore-page--pricebar_container'>
+                <div className={styles.explore_page_pricebar_container}>
                     <PriceBar setFilterprice={setFilterprice}/>
                 </div>
             </div>
@@ -60,12 +60,14 @@ function ListingsPage(){
 
 
         <div className={styles.ExplorePage_listings_container}>
-        {filteredListings?.map((el, idx) => {
-            return <Listing key={idx} list={el} /> })}
+            {filteredListings?.map((el, idx) => {
+            return <ListingCard key={idx} list={el} /> })}
         </div>
+
         <div id={styles.GoogleMaps}>
-            <GoogleApiWrapper  props={ listings } />
+             <GoogleApiWrapper  props={ listings } />
         </div>
+
 
     </div>
 

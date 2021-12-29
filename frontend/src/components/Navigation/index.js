@@ -12,8 +12,12 @@ import AirBNBlogo from './images/Airbnb-logo.png';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-
-
+import HomeIcon from '@material-ui/icons/Home';
+import FlagIcon from '@material-ui/icons/Flag';
+import SubscriptionsOutlinedIcon from '@material-ui/icons/SubscriptionsOutlined';
+import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
+import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -68,8 +72,11 @@ function Navigation({ isLoaded }){
         </div>
       </div>
 
-      <div className="headerMidde">
-
+      <div className="headerMiddle">
+        <div className="header__input">
+          <SearchIcon />
+          <input type="text" placeholder=""/>
+        </div>
       </div>
 
       <div className="headerRight">

@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
 import { getphotos } from '../../store/photo';
-import styles from './Listings.module.css';
-import Slider from '../ListingsPage/slider.js'
 
-function Listing ({ list }) {
+import styles from './ListingCard.module.css';
+import Slider from './slider.js'
+
+function ListingCard ({ list }) {
     const dispatch = useDispatch();
     //////////////////////////////////////////
     let [clean, setClean]=useState(0);
@@ -24,6 +25,9 @@ function Listing ({ list }) {
     const PhotosState= useSelector(state => state.photos);
     const allphotos = Object.values(PhotosState);
     const OnePhoto = allphotos?.filter((el) => (el.listingId === list.id))
+ ////////////////////////////////////////////////
+ const listingsState = useSelector(state => state.listings);
+ const listings = Object.values(listingsState)
  ////////////////////////////////////////////////
     useEffect(() => {
         dispatch(getlistings(list.id));
@@ -67,53 +71,56 @@ function Listing ({ list }) {
 
     return (
         <div className={styles.listingsMain}>
+
             <div className={styles.listingPhoto}>
                 <Slider prop={OnePhoto} />
             </div>
+
             <a href={`/listings/${list.id}`} className={styles.listingDescription_link}>
-            <div className='listing-description'>
-                <div className='listing-title_component'>
-                    <p className='listing-name_parts'>Name---{list.name}</p>
-                    <p className='listing-description_parts'>Description---{list.description}</p>
-                </div>
+                <div className={styles.listing_description}>
 
-                <div className='listing-description_component'>
-                    <p className='listpart listing-address_parts'>Address---{list.address}</p>
-                    <p className='listpart listing-guests_parts'># of Guests---{list.guests}</p>
-                    <p className='listpart listing-bedrooms_parts'># of Bedrooms---{list.bedrooms}</p>
-                    <p className='listpart listing-baths_parts'># of Baths---{list.baths}</p>
-                </div>
+                    <div className={styles.listing_title_component}>
+                        <p className={styles.listing_name_parts}>Name---{list.name}</p>
+                        <p className={styles.listing_description_parts}>Description---{list.description}</p>
+                    </div>
 
-                <div className='listing-ratings_parts'>
-                    <div>
-                        Cleanliness: {Math.ceil(clean)}
+                    <div className={styles.listing_description_component}>
+                        <p className={styles.listpart, styles.listing_address_parts}>Address---{list.address}</p>
+                        <p className={styles.listpart, styles.listing_guests_parts}># of Guests---{list.guests}</p>
+                        <p className={styles.listpart, styles.listing_bedrooms_parts}># of Bedrooms---{list.bedrooms}</p>
+                        <p className={styles.listpart, styles.listing_baths_parts}># of Baths---{list.baths}</p>
                     </div>
-                    <div>
-                        Communication:{Math.ceil(communication)}
-                    </div>
-                    <div>
-                        Check In:{Math.ceil(checkIn)}
-                    </div>
-                    <div>
-                        Accuracy:{Math.ceil(accuracy)}
-                    </div>
-                    <div>
-                        Location:{Math.ceil(location)}
-                    </div>
-                    <div>
-                        Value:{Math.ceil(value)}
-                    </div>
-                </div>
 
-                <div className='listing-price_parts'>
-                    <p>Price Per Night---${list.price}</p>
-                </div>
+                    <div className={styles.listing_ratings_parts}>
+                        <div>
+                            Cleanliness: {Math.ceil(clean)}
+                        </div>
+                        <div>
+                            Communication:{Math.ceil(communication)}
+                        </div>
+                        <div>
+                            Check In:{Math.ceil(checkIn)}
+                        </div>
+                        <div>
+                            Accuracy:{Math.ceil(accuracy)}
+                        </div>
+                        <div>
+                            Location:{Math.ceil(location)}
+                        </div>
+                        <div>
+                            Value:{Math.ceil(value)}
+                        </div>
+                    </div>
 
-            </div>
+                    <div className={styles.listing_price_parts}>
+                        <p>Price Per Night---$ {list.price}</p>
+                    </div>
+
+                </div>
             </a>
 
         </div>
     )
 }
 
-export default Listing;
+export default ListingCard;

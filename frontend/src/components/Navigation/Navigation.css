@@ -18,7 +18,7 @@ header{
     justify-content:space-between;
 
 }
-.nav-dropdown{
+.headerRight{
     display:flex;
     grid-column: 5/6;
     justify-content:flex-end;
@@ -32,7 +32,9 @@ header{
     grid-column: 1/2;
     justify-content:flex-start;
 }
-
+.headerMiddle{
+    grid-column: 3/4;
+}
 .nav-tab{
     grid-column: 2/4;
 }
@@ -73,4 +75,25 @@ header{
     background-color: darkslategray;
     color: white;
     border-radius: 5px;
+}
+
+.header__input {
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+}
+
+.header__input{
+    display: flex;
+    align-items: center;
+    border-radius: 999px;
+}
+
+.header__input > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
 }

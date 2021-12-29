@@ -1,10 +1,5 @@
-import React, { useEffect, useState }from 'react';//
-import { Link, useHistory} from 'react-router-dom'; //, Redirect
-import { useDispatch, useSelector } from 'react-redux';
-import { getReviews } from '../../store/reviews';
-import { getlistings } from '../../store/listings';
-import { getphotos } from '../../store/photo';
-import styles from './Listings.module.css';
+import React from 'react';//
+import  './ListingsSlider.css';
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 

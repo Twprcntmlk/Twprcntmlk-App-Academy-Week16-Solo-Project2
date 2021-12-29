@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
-import Listing from './listing';
+import Listing from './listingCard';
 import styles from './Listings.module.css';
 
 
@@ -23,9 +23,9 @@ function SearchBar({setFilterword}){
     }
 
     return (
-        <div className="SearchBar">
+        <div className={styles.SearchBar}>
             <form onSubmit={handleSubmit}>
-                <input  className="searchbar"  type="text" value={search}  onChange={updateSearch}></input>
+                <input  className={styles.searchbar}  type="text" value={search}  onChange={updateSearch}></input>
                 <button type="button" onClick={EnterSearch}><i class="fas fa-search"></i></button>
             </form>
         </div>
