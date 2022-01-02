@@ -6,8 +6,8 @@ import * as sessionActions from "../../store/session";
 import { FaRegWindowClose } from "react-icons/fa";
 import './SignUpForm.css';
 import { Input } from '@mui/material';
-
-function SignupFormPage() {
+import CloseIcon from '@mui/icons-material/Close';
+function SignupFormPage({setShowModal}) {
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
@@ -26,41 +26,40 @@ function SignupFormPage() {
       setErrors([]);
     if (password === confirmPassword) {
       setErrors([]);
+      setShowModal(false)
       return dispatch(sessionActions.signup({ email, username, firstName, lastName, password,}))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
         });
+
     }
+    history.push("/")
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
-  const onClose = () => {
-    history.push("/");
+  const close = ()=> {
+
+    history.push("/")
   }
 
   return (
-    <div className="form-holder">
-      <div className="form-holder_container">
+    <div className="form-holder_container">
         <div className="form-holder-modals-title">SignUp</div>
+        <button id="CloseIcon1" onClick={()=>{window.location.reload(false)}}>
+          <CloseIcon/>
+        </button>
         <div className='form-errors'>
           {errors.map((error, idx) => <div  key={idx}>{error}</div>)}
         </div>
         <form className='form-signin'onSubmit={handleSubmit}>
 
           <label className='form-inputs-modals'>
-
             <Input  type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required/>
             <div id="form-inputs-modals__title">Email</div>
-            {/* <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            /> */}
           </label>
           <label className='form-inputs-modals'>
 
@@ -141,7 +140,9 @@ function SignupFormPage() {
           <button className='form-button-signup' type="submit">Confirm</button>
         </form>
       </div>
-    </div>
+
+
+
   );
 }
 

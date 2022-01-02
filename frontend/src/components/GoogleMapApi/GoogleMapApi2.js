@@ -18,7 +18,7 @@ export function MapContainer2 (props) {
   console.log(coordinates.latitude, coordinates.longitude)
   const containerStyle = {
     width: '500px',
-    height: '38%',
+    height: '400px',
   }
 
   if (!props.google){

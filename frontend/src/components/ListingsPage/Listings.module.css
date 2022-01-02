@@ -4,17 +4,17 @@
 
 
 .ExplorePage{
-    display:grid;
-    /* grid-template-rows: repeat(3,1fr); */
-    grid-template-areas:
-    "options options options"
-    "listing listing map";
+    display:flex;
+    flex-direction: column;
 }
 
 .explore_page_header{
     margin-left:2.5%;
     font-size: 4.5em;
+}
 
+.ExplorePage_container{
+    display:grid;
 }
 /* .explore-page--header_container_photo{
 
@@ -33,19 +33,18 @@
 }
 
 .ExplorePage_listings_container{
-    grid-area: listing;
+    grid-column: 1/2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
 }
 
 .ExplorePage_options_container{
     grid-area:options;
 }
+
 #GoogleMaps{
-    grid-area:map;
-    top: 40px;
-    left: 40px;
+    grid-column: 2/3;
 
 }
 
@@ -56,28 +55,33 @@
     width:450px;
     font-size:16px;
     outline: none;
-
 }
 
 .SearchBar{
-margin:0 auto;
-width:555px;
-border-radius:30px;
-border:5px solid #dcdcdc;
+    margin:0 ;
+    width:500px;
+    border-radius:30px;
+    border:3px solid #dcdcdc;
+    display: flex;
 }
-.SearchBar:hover{
-box-shadow: 1px 1px 8px 1px #dcdcdc;
+/* .SearchBar:hover{
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
 }
 .SearchBar:focus-within{
-box-shadow: 1px 1px 8px 1px #dcdcdc;
-outline:none;
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+    outline:none;
+} */
+
+.searchbar_button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
+
 
 .PriceBar{
     display: flex;
     align-items: center;
-
-
 }
 
 .PriceBar_container{

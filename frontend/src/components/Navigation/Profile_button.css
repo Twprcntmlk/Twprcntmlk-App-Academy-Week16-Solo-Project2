@@ -1,12 +1,25 @@
 .profile-button{
     width: 100px;
     height: 55px;
-    border-radius: 25px;
-    background-color: darkslategray;
+    border-radius: 35px;
+}
+
+.Profile-container{
+  display:flex;
+  flex-direction: column;
+}
+
+.profile-dropdown{
+  display:flex;
+  flex-direction: column;
+  display:block;
+}
+.nav-dropdown_menu{
+  visibility: none;
+
 }
 
 .icons{
-
     display:flex;
     justify-content:space-around;
 }

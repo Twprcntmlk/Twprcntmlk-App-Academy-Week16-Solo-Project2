@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import { getlistings } from '../../store/listings';
 import Listing from './listingCard';
 import styles from './Listings.module.css';
-
-
+import SearchIcon from '@mui/icons-material/Search';
+import Divider from '@mui/material/Divider';
 function SearchBar({setFilterword}){
     let [search, setSearch] = useState(null);
 
@@ -24,10 +24,11 @@ function SearchBar({setFilterword}){
 
     return (
         <div className={styles.SearchBar}>
-            <form onSubmit={handleSubmit}>
-                <input  className={styles.searchbar}  type="text" value={search}  onChange={updateSearch}></input>
-                <button type="button" onClick={EnterSearch}><i class="fas fa-search"></i></button>
-            </form>
+            <input  className={styles.searchbar}  type="text" value={search}  onChange={updateSearch}></input>
+            <Divider sx={{ height: 35, m: .5 }} orientation="vertical"/>
+            <button className={styles.searchbar_button}type="button" onClick={EnterSearch}>
+                <SearchIcon fontSize="large"/>
+            </button>
         </div>
     );
 }

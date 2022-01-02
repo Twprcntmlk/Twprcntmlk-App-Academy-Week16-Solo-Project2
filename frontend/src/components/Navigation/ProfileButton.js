@@ -5,36 +5,32 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Profile_button.css';
 
-function ProfileButton({ user }) {
-
+function ProfileButton({visbility, setVisbility}) {
   const dispatch = useDispatch();
-  const [showMenu, setShowMenu] = useState(false);
   const history = useHistory()
+  const anchorRef = React.useRef(null);
 
   const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+    if (visbility) return;
+    // setShowMenu(true);
+    setVisbility(true)
   };
 
+  // const handleClose = (event) => {
+  //   if (anchorRef.current && anchorRef.current.contains(event.target)) {
+  //     return;
+  //   }
+  // }
+
   useEffect(() => {
-    if (!showMenu) return;
+    if (!visbility) return;
     const closeMenu = () => {
-      setShowMenu(false);
+      // setShowMenu(true);
+      setVisbility(false)
     };
     document.addEventListener('click', closeMenu);
     return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu]);
-
-  const logout = (e) => {
-    e.preventDefault();
-    dispatch(sessionActions.logout());
-    history.push('/')
-  };
-
-  const goToProfile = (e) => {
-    e.preventDefault()
-    history.push(`/users/${user.id}`)
-  }
+  }, [visbility]);
 
   return (
     <div className="Profile-container">
@@ -48,16 +44,6 @@ function ProfileButton({ user }) {
             </div>
         </div>
       </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li >
-            <button onClick={goToProfile}>Profile</button>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
-      )}
     </div>
   );
 }

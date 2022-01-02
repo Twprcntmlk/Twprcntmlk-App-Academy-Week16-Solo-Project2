@@ -7,7 +7,6 @@ import ListingCard from './listingCard';
 import styles from './Listings.module.css';
 import SearchBar from './searchbar';
 import PriceBar from './pricebar';
-import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 function ListingsPage(){
     const dispatch = useDispatch();
@@ -42,12 +41,11 @@ function ListingsPage(){
     return(
     <div className={styles.ExplorePage}>
 
-
-
-        <div className={styles.ExplorePage_options_container}>
+        <div className={styles.explorePage_options_container}>
             <div className={styles.explore_page_header_container}>
                 <h1 className={styles.explore_page_header}>Discover</h1>
             </div>
+
             <div className={styles.explore_page_options}>
                 <div className={styles.explore_page_searchbar_container}>
                     <SearchBar setFilterword={setFilterword}/>
@@ -56,17 +54,22 @@ function ListingsPage(){
                     <PriceBar setFilterprice={setFilterprice}/>
                 </div>
             </div>
+
+        </div>
+
+        <div className={styles.ExplorePage_container}>
+            <div className={styles.ExplorePage_listings_container}>
+                {filteredListings?.map((el, idx) => {
+                return <ListingCard key={idx} list={el} /> })}
+
+
+            </div>
         </div>
 
 
-        <div className={styles.ExplorePage_listings_container}>
-            {filteredListings?.map((el, idx) => {
-            return <ListingCard key={idx} list={el} /> })}
-        </div>
 
-        <div id={styles.GoogleMaps}>
-             <GoogleApiWrapper  props={ listings } />
-        </div>
+
+
 
 
     </div>

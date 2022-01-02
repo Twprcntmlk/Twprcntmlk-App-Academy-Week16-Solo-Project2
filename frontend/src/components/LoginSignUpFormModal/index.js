@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
 import './LoginFormModal.css';
-import Button from '@mui/material/Button';
+import MenuItem from '@material-ui/core/MenuItem';
 
-function LoginInFormModal() {
+
+function LoginInFormModal({showMenu, setShowMenu}) {
   const [showModal, setShowModal] = useState(false);
   const [userState, setUserState] = useState("");
   const sessionUser = useSelector((state) => state.session.user);
@@ -19,16 +20,19 @@ function LoginInFormModal() {
   //   }
   // },[userState])
 
+  // {/* <button className="LoginButton" onClick={() => setShowModal(true)}>Log In</button> */}
+  // {/* <Button variant="text" size="large" onClick={() => setShowModal(true)}>Log In</Button> */}
   return (
-    <div>
-      {/* <button className="LoginButton" onClick={() => setShowModal(true)}>Log In</button> */}
-      <Button variant="text" size="large" onClick={() => setShowModal(true)}>Log In</Button>
+
+
+    <MenuItem onClick={() => setShowModal(true)}>Log In
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
+        <Modal autoFocus onClose={() => setShowModal(false)}>
+          <LoginForm/>
         </Modal>
       )}
-    </div>
+    </MenuItem>
+
   );
 }
 

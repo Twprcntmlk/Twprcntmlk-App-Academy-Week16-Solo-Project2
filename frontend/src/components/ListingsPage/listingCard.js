@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getReviews } from '../../store/reviews';
 import { getlistings } from '../../store/listings';
 import { getphotos } from '../../store/photo';
+import GoogleApiWrapper from '../GoogleMapApi/GoogleMapApi'
 
 import styles from './ListingCard.module.css';
 import Slider from './slider.js'
@@ -26,8 +27,8 @@ function ListingCard ({ list }) {
     const allphotos = Object.values(PhotosState);
     const OnePhoto = allphotos?.filter((el) => (el.listingId === list.id))
  ////////////////////////////////////////////////
- const listingsState = useSelector(state => state.listings);
- const listings = Object.values(listingsState)
+    const listingsState = useSelector(state => state.listings);
+    const listings = Object.values(listingsState)
  ////////////////////////////////////////////////
     useEffect(() => {
         dispatch(getlistings(list.id));
@@ -77,48 +78,50 @@ function ListingCard ({ list }) {
             </div>
 
             <a href={`/listings/${list.id}`} className={styles.listingDescription_link}>
-                <div className={styles.listing_description}>
+            <div className={styles.listing_description}>
 
-                    <div className={styles.listing_title_component}>
-                        <p className={styles.listing_name_parts}>Name---{list.name}</p>
-                        <p className={styles.listing_description_parts}>Description---{list.description}</p>
-                    </div>
-
-                    <div className={styles.listing_description_component}>
-                        <p className={styles.listpart, styles.listing_address_parts}>Address---{list.address}</p>
-                        <p className={styles.listpart, styles.listing_guests_parts}># of Guests---{list.guests}</p>
-                        <p className={styles.listpart, styles.listing_bedrooms_parts}># of Bedrooms---{list.bedrooms}</p>
-                        <p className={styles.listpart, styles.listing_baths_parts}># of Baths---{list.baths}</p>
-                    </div>
-
-                    <div className={styles.listing_ratings_parts}>
-                        <div>
-                            Cleanliness: {Math.ceil(clean)}
-                        </div>
-                        <div>
-                            Communication:{Math.ceil(communication)}
-                        </div>
-                        <div>
-                            Check In:{Math.ceil(checkIn)}
-                        </div>
-                        <div>
-                            Accuracy:{Math.ceil(accuracy)}
-                        </div>
-                        <div>
-                            Location:{Math.ceil(location)}
-                        </div>
-                        <div>
-                            Value:{Math.ceil(value)}
-                        </div>
-                    </div>
-
-                    <div className={styles.listing_price_parts}>
-                        <p>Price Per Night---$ {list.price}</p>
-                    </div>
-
+                <div className={styles.listing_title_component}>
+                    <p className={styles.listing_name_parts}>Name---{list.name}</p>
+                    <p className={styles.listing_description_parts}>Description---{list.description}</p>
                 </div>
-            </a>
 
+                <div className={styles.listing_description_component}>
+                    <p className={styles.listpart, styles.listing_address_parts}>Address---{list.address}</p>
+                    <p className={styles.listpart, styles.listing_guests_parts}># of Guests---{list.guests}</p>
+                    <p className={styles.listpart, styles.listing_bedrooms_parts}># of Bedrooms---{list.bedrooms}</p>
+                    <p className={styles.listpart, styles.listing_baths_parts}># of Baths---{list.baths}</p>
+                </div>
+
+                <div className={styles.listing_ratings_parts}>
+                    <div>
+                        Cleanliness: {Math.ceil(clean)}
+                    </div>
+                    <div>
+                        Communication:{Math.ceil(communication)}
+                    </div>
+                    <div>
+                        Check In:{Math.ceil(checkIn)}
+                    </div>
+                    <div>
+                        Accuracy:{Math.ceil(accuracy)}
+                    </div>
+                    <div>
+                        Location:{Math.ceil(location)}
+                    </div>
+                    <div>
+                        Value:{Math.ceil(value)}
+                    </div>
+                </div>
+
+                <div className={styles.listing_price_parts}>
+                    <p>Price Per Night---$ {list.price}</p>
+                </div>
+            </div>
+            </a>
+            
+            <div id={styles.GoogleMaps}>
+                <GoogleApiWrapper  props={ listings } />
+            </div>
         </div>
     )
 }

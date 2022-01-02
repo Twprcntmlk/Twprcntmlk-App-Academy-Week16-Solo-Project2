@@ -131,7 +131,7 @@ form > textarea{
     grid-row: 4/5;
 }
 .SingleList-reservation{
-
+    width: 400px;
     grid-column: 2/3;
     z-index:5;
 }

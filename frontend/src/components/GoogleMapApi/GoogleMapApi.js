@@ -15,10 +15,7 @@ export function MapContainer (props) {
   let coordinates = props.props
 
   const containerStyle = {
-    position: 'fixed',
-    top: '29%',
-    bottom: '0px',
-    left: '63%',
+
   }
 
   if (!props.google){
@@ -27,8 +24,8 @@ export function MapContainer (props) {
     return(
           <Map google={props.google}
                 zoom={4}
-                containerStyle={containerStyle}
-                style={{height: '90%', width: '38%'}}
+
+                style={{height: '300px', width: '400px'}}
                 // initialCenter={{ lat: 39.8283, lng: -98.5795 }}
                 >
             {coordinates.map((el) =>{
